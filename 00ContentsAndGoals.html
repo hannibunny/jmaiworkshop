@@ -1,0 +1,349 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>AI Seminar Mahle &#8212; Artificial Intelligence Introduction</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-dropdown.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script type="text/javascript" src="_static/togglebutton.js"></script>
+    <script type="text/javascript" src="_static/clipboard.min.js"></script>
+    <script type="text/javascript" src="_static/copybutton.js"></script>
+    <script type="text/javascript" src="_static/sphinx-book-theme.js"></script>
+    <script type="text/javascript">var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" type="text/javascript" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script type="text/javascript">
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" type="text/javascript" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Introduction: What’s Artificial Intelligence (AI)" href="01Introduction.html" />
+    <link rel="prev" title="Artificial Intelligence and Machine Learning" href="00Overview.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/hdmlogomed.jpg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Artificial Intelligence Introduction</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="00Overview.html">
+   Artificial Intelligence and Machine Learning
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   AI Seminar Mahle
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01Introduction.html">
+   Introduction: What’s Artificial Intelligence (AI)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01aWhatsAI.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03SearchAndPlan.html">
+   Search and Planning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04Inference.html">
+   Knowledge-based Systems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05Uncertainty.html">
+   Modelling of Uncertainty
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06MLintro.html">
+   Machine Learning: Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06Data.html">
+   Data
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/00ContentsAndGoals.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/00ContentsAndGoals.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/00ContentsAndGoals.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overall-goals">
+   Overall Goals
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#block-1-ai-categories-and-some-sample-applications">
+   Block 1: AI categories and some sample applications
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#block-2-implementation-of-data-mining-process-in-python">
+   Block 2: Implementation of Data Mining Process in Python
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#block-3-neural-networks-and-their-implementations-and-applications-in-python">
+   Block 3: Neural Networks and their Implementations and Applications in Python
+  </a>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="ai-seminar-mahle">
+<h1>AI Seminar Mahle<a class="headerlink" href="#ai-seminar-mahle" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Author: Prof. Dr. Johannes Maucher</p></li>
+<li><p>Date: 09.10.2020</p></li>
+<li><p>Location:</p></li>
+</ul>
+<div class="section" id="overall-goals">
+<h2>Overall Goals<a class="headerlink" href="#overall-goals" title="Permalink to this headline">¶</a></h2>
+<p>This workshop consists of 3 blocks, which are described below. The overall goals are:</p>
+<ul class="simple">
+<li><p>Artificial Intelligence (AI) is not about creating super-human-science-fiction-creatures. AI, instead provides an extremely flexible and comprehensive toolbox, which can be applied for an almost infinite field of applications. The main goal of this workshop is to provide you a glimpse into the immense AI potential. In the best case you will find out, that some of your daily work or projects can be better solved by <strong>applying AI-tools.</strong></p></li>
+<li><p><strong>Just do it!</strong> - You should not be afraid of AI and it’s supposed complexity. Instead immediately start your first project after this seminar by adapting the provided Jupyter-notebooks to your task and data. You will find out, that there are solutions (Jupyter Notebooks) for a vast variety of different problems on GitHub, Bitbucket, etc. If you manage to <strong>abstract your problem</strong>, you will find a solution, which can be adapted to solve your problem.</p></li>
+</ul>
+</div>
+<div class="section" id="block-1-ai-categories-and-some-sample-applications">
+<h2>Block 1: AI categories and some sample applications<a class="headerlink" href="#block-1-ai-categories-and-some-sample-applications" title="Permalink to this headline">¶</a></h2>
+<p>The field of Artificial lIntelligence is usually partitioned into the following 4 categories:</p>
+<ul class="simple">
+<li><p>Search and Plan</p></li>
+<li><p>Knowledge Representation and Inference</p></li>
+<li><p>Modelling of Uncertainty</p></li>
+<li><p>Machine Learning</p></li>
+</ul>
+<p>In this first block the general concepts of these categories are described. For each of the categories some representative applications are discussed.</p>
+<p>The first 3 categories will be sketched only on a shallow abstract level. The fourth category <strong>Machine Learning</strong> is currently by far the most important one. Actually, if people speak about AI they almost always mean Machine Leraning and in particular <strong>Deep Learning</strong>. Hence, in the following two blocks we focus only on Machine Learning and Deep Learning.</p>
+</div>
+<div class="section" id="block-2-implementation-of-data-mining-process-in-python">
+<h2>Block 2: Implementation of Data Mining Process in Python<a class="headerlink" href="#block-2-implementation-of-data-mining-process-in-python" title="Permalink to this headline">¶</a></h2>
+<p>Machine Learning algorithms are at the heart of any Data Mining process. However, the entire Data Mining process consists of other modules:</p>
+<ol class="simple">
+<li><p>Data Access</p></li>
+<li><p>Data Understanding and Selection</p></li>
+<li><p>Data Cleaning</p></li>
+<li><p>Data Transformations</p></li>
+<li><p>Modelling (&lt;- that’s the Machine Learning part)</p></li>
+<li><p>Evaluation</p></li>
+<li><p>Visualisation and Interpretation</p></li>
+</ol>
+<p>In this block the entire Data Mining process chain is implemented in Python and the following Python packages:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://www.numpy.org">numpy</a> and <a class="reference external" href="https://www.scipy.org">scipy</a> for efficient datastructures and scientific calculations</p></li>
+<li><p><a class="reference external" href="https://pandas.pydata.org">pandas</a> for typical data science tasks, such as data access, descriptive statistics, joining of datasets, correlation analysis, etc.</p></li>
+<li><p><a class="reference external" href="https://matplotlib.org">matplotlib</a> and <a class="reference external" href="https://bokeh.pydata.org/en/latest/">Bokeh</a></p></li>
+<li><p><a class="reference external" href="https://scikit-learn.org/stable/">scikit-learn</a> for conventional Machine Learning. I.e. all but Deep Neural Networks</p></li>
+<li><p><a class="reference external" href="https://www.tensorflow.org">tensorflow</a> and <a class="reference external" href="https://keras.io">keras</a> for Deep Neural Networks</p></li>
+</ul>
+</div>
+<div class="section" id="block-3-neural-networks-and-their-implementations-and-applications-in-python">
+<h2>Block 3: Neural Networks and their Implementations and Applications in Python<a class="headerlink" href="#block-3-neural-networks-and-their-implementations-and-applications-in-python" title="Permalink to this headline">¶</a></h2>
+<p>Almost all of the recently popular AI applications, such as AlphaZero, Object Recognition, Speech Recognition, Language Understanding, Automatic Translation, Style-Transfer, Image-Captioning, Automatic generation of text, speech, audio, images, video, … are Deep Neural Networks.</p>
+<p>In this block the basics of conventional neural networks are presented. Then the most important concepts, layer-types and architectures of deep neural networks are introduced. Finally it is shown how deep neural network applications can be implemented in a fast and efficient way applying <a class="reference external" href="https://www.tensorflow.org">tensorflow</a> and <a class="reference external" href="https://keras.io">keras</a>. Jupyter Notebooks, e.g. for Object Recognition, Document Classification and Time Series Prediction are provided.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="00Overview.html" title="previous page">Artificial Intelligence and Machine Learning</a>
+    <a class='right-next' id="next-link" href="01Introduction.html" title="next page">Introduction: What’s Artificial Intelligence (AI)</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Prof. Dr. Johannes Maucher<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="_static/js/index.js"></script>
+    
+  </body>
+</html>

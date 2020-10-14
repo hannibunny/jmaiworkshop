@@ -1,0 +1,504 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Introduction &#8212; Artificial Intelligence Introduction</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-dropdown.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script type="text/javascript" src="_static/togglebutton.js"></script>
+    <script type="text/javascript" src="_static/clipboard.min.js"></script>
+    <script type="text/javascript" src="_static/copybutton.js"></script>
+    <script type="text/javascript" src="_static/sphinx-book-theme.js"></script>
+    <script type="text/javascript">var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" type="text/javascript" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script type="text/javascript">
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" type="text/javascript" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Search and Planning" href="03SearchAndPlan.html" />
+    <link rel="prev" title="Introduction: What’s Artificial Intelligence (AI)" href="01Introduction.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/hdmlogomed.jpg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Artificial Intelligence Introduction</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="00Overview.html">
+   Artificial Intelligence and Machine Learning
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="00ContentsAndGoals.html">
+   AI Seminar Mahle
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01Introduction.html">
+   Introduction: What’s Artificial Intelligence (AI)
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03SearchAndPlan.html">
+   Search and Planning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04Inference.html">
+   Knowledge-based Systems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05Uncertainty.html">
+   Modelling of Uncertainty
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06MLintro.html">
+   Machine Learning: Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06Data.html">
+   Data
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/01aWhatsAI.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/01aWhatsAI.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/01aWhatsAI.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-intelligence">
+   What is Intelligence?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-artificial-intelligence">
+   What is Artificial Intelligence?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#rational-agents">
+     Rational Agents
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#specification-of-environment">
+   Specification of Environment
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#environment-consists-of">
+     Environment consists of
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#environment-attributes">
+     Environment Attributes
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#agent-types">
+   Agent Types
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#simple-reflex-agent">
+     Simple-Reflex Agent
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#model-based-agent">
+     Model-based Agent
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#goal-based-agent">
+     Goal-based Agent
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#utility-based-agent">
+     Utility-based Agent
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#knowledge-based-agent">
+     Knowledge-based Agent
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#learning-agent">
+     Learning Agent
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Author: Johannes Maucher</p></li>
+<li><p>Last Update: 04.03.2018</p></li>
+</ul>
+<h1>Table of Contents<span class="tocSkip"></span></h1>
+<div class="toc"><ul class="toc-item"><li><span><a href="#Introduction" data-toc-modified-id="Introduction-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Introduction</a></span><ul class="toc-item"><li><span><a href="#What-is-Intelligence?" data-toc-modified-id="What-is-Intelligence?-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>What is Intelligence?</a></span></li><li><span><a href="#What-is-Artificial-Intelligence?" data-toc-modified-id="What-is-Artificial-Intelligence?-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>What is Artificial Intelligence?</a></span><ul class="toc-item"><li><span><a href="#Rational-Agents" data-toc-modified-id="Rational-Agents-1.2.1"><span class="toc-item-num">1.2.1&nbsp;&nbsp;</span>Rational Agents</a></span></li></ul></li><li><span><a href="#Specification-of-Environment" data-toc-modified-id="Specification-of-Environment-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Specification of Environment</a></span><ul class="toc-item"><li><span><a href="#Environment-consists-of" data-toc-modified-id="Environment-consists-of-1.3.1"><span class="toc-item-num">1.3.1&nbsp;&nbsp;</span>Environment consists of</a></span></li><li><span><a href="#Environment-Attributes" data-toc-modified-id="Environment-Attributes-1.3.2"><span class="toc-item-num">1.3.2&nbsp;&nbsp;</span>Environment Attributes</a></span></li></ul></li><li><span><a href="#Agent-Types" data-toc-modified-id="Agent-Types-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>Agent Types</a></span><ul class="toc-item"><li><span><a href="#Simple-Reflex-Agent" data-toc-modified-id="Simple-Reflex-Agent-1.4.1"><span class="toc-item-num">1.4.1&nbsp;&nbsp;</span>Simple-Reflex Agent</a></span></li><li><span><a href="#Model-based-Agent" data-toc-modified-id="Model-based-Agent-1.4.2"><span class="toc-item-num">1.4.2&nbsp;&nbsp;</span>Model-based Agent</a></span></li><li><span><a href="#Goal-based-Agent" data-toc-modified-id="Goal-based-Agent-1.4.3"><span class="toc-item-num">1.4.3&nbsp;&nbsp;</span>Goal-based Agent</a></span></li><li><span><a href="#Utility-based-Agent" data-toc-modified-id="Utility-based-Agent-1.4.4"><span class="toc-item-num">1.4.4&nbsp;&nbsp;</span>Utility-based Agent</a></span></li><li><span><a href="#Knowledge-based-Agent" data-toc-modified-id="Knowledge-based-Agent-1.4.5"><span class="toc-item-num">1.4.5&nbsp;&nbsp;</span>Knowledge-based Agent</a></span></li><li><span><a href="#Learning-Agent" data-toc-modified-id="Learning-Agent-1.4.6"><span class="toc-item-num">1.4.6&nbsp;&nbsp;</span>Learning Agent</a></span></li></ul></li></ul></li></ul></div><p><strong>Goals of this section:</strong></p>
+<ul class="simple">
+<li><p>Raise awareness of the essential factors of (artificial) intelligence</p></li>
+<li><p>Understand AI definition of <a class="reference external" href="http://aima.cs.berkeley.edu">S. Russel and P. Norvig</a></p></li>
+<li><p>This definition yields a <font color="red">process model</font> for a structured development of any AI-project <span class="math notranslate nohighlight">\(\Rightarrow\)</span> <font color="red">Learn to proceed according to this model.</font></p></li>
+</ul>
+<div class="section" id="what-is-intelligence">
+<h2>What is Intelligence?<a class="headerlink" href="#what-is-intelligence" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="what-is-artificial-intelligence">
+<h2>What is Artificial Intelligence?<a class="headerlink" href="#what-is-artificial-intelligence" title="Permalink to this headline">¶</a></h2>
+<p>AI develops …</p>
+<img alt="https://maucher.home.hdm-stuttgart.de/Pics/aiDefinitions.png" src="https://maucher.home.hdm-stuttgart.de/Pics/aiDefinitions.png" />
+<p>Engineer’s definition (<a class="reference external" href="http://aima.cs.berkeley.edu">S. Russel and P. Norvig</a>): <font color = red><em>AI develops rational agents</em></font></p>
+<div class="section" id="rational-agents">
+<h3>Rational Agents<a class="headerlink" href="#rational-agents" title="Permalink to this headline">¶</a></h3>
+<p><img alt="agentGeneral.png" src="https://maucher.home.hdm-stuttgart.de/Pics/agentGeneral.png" /></p>
+<p>A rational agent is anything that is</p>
+<ol class="simple">
+<li><p><strong>perceiving</strong> its environment through sensors</p></li>
+<li><p><strong>thinking</strong> and deciding on the next actions</p></li>
+<li><p><strong>acting</strong> through actuators</p></li>
+</ol>
+<p>Rational means, that the agent acts in a way that is expected to maximize its performance measure, given it’s</p>
+<ul class="simple">
+<li><p>built-in knowledge</p></li>
+<li><p>perceived experience</p></li>
+<li><p>acting capabilities</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="specification-of-environment">
+<h2>Specification of Environment<a class="headerlink" href="#specification-of-environment" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>AI-specific specification of problem domain</p></li>
+<li><p>Determines which <font color="red">agent type</font> is required</p></li>
+<li><p>Agent type determines</p>
+<ul class="simple">
+<li><p>required modules in the agent</p></li>
+<li><p>algorithm categories required in the agent</p></li>
+</ul>
+</li>
+</ol>
+<div class="section" id="environment-consists-of">
+<h3>Environment consists of<a class="headerlink" href="#environment-consists-of" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>P</strong>erformance Measure</p></li>
+<li><p><strong>E</strong>nvironment</p></li>
+<li><p><strong>A</strong>ctors</p></li>
+<li><p><strong>S</strong>ensors</p></li>
+</ul>
+</div>
+<div class="section" id="environment-attributes">
+<h3>Environment Attributes<a class="headerlink" href="#environment-attributes" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>fully or partially <strong>observable</strong></p></li>
+<li><p><strong>Deterministic</strong> or <strong>Stochastic</strong></p></li>
+<li><p><strong>Episodic</strong> or <strong>Sequential</strong></p></li>
+<li><p><strong>Static</strong>, <strong>Semi-Static</strong> or <strong>Dynamic</strong></p></li>
+<li><p><strong>Single-</strong> or <strong>Multi-Agent</strong></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="agent-types">
+<h2>Agent Types<a class="headerlink" href="#agent-types" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="simple-reflex-agent">
+<h3>Simple-Reflex Agent<a class="headerlink" href="#simple-reflex-agent" title="Permalink to this headline">¶</a></h3>
+<p><img alt="agentGeneral.png" src="https://maucher.home.hdm-stuttgart.de/Pics/agentRule.png" /></p>
+<p>The <strong>Simple-Reflex-Agent</strong> seems quite unintelligent. It applies it’s set of rules on the current perceived state in order to select an action. Note that this type of agent even does not have a memory. Example:</p>
+<ul class="simple">
+<li><p>theromstat</p></li>
+<li><p>simple web-site, which reacts on klicks and provides new views, pages, etc.</p></li>
+</ul>
+</div>
+<div class="section" id="model-based-agent">
+<h3>Model-based Agent<a class="headerlink" href="#model-based-agent" title="Permalink to this headline">¶</a></h3>
+<p><img alt="agentModel.png" src="https://maucher.home.hdm-stuttgart.de/Pics/agentModel.png" /></p>
+<p>If the environment is not fully-observable, the non-observable part must be modelled. The model may describe how</p>
+<ul class="simple">
+<li><p>the environment behaves independent of the agent (external state)</p></li>
+<li><p>how the agent behaves in the environment (internal state)</p></li>
+</ul>
+<p>Examples:</p>
+<ul class="simple">
+<li><p>In recommender systems users are modelled by their previous purchases</p></li>
+<li><p>In autonomous driving movement of other vehicles, pedestrians, … is modelled</p></li>
+<li><p>Search engines model the user by their click-history, location, …</p></li>
+<li><p>Cleaning robots may learn a dirt-distribution model of rooms</p></li>
+</ul>
+</div>
+<div class="section" id="goal-based-agent">
+<h3>Goal-based Agent<a class="headerlink" href="#goal-based-agent" title="Permalink to this headline">¶</a></h3>
+<p><img alt="agentGoal.png" src="https://maucher.home.hdm-stuttgart.de/Pics/agentGoal.png" /></p>
+<p>In Goal-based agents one or a set of goals are given. The task is typically to find/plan a sequence of actions, which efficiently lead from the current state to a goal-state. Note that the planning of actions is done offline. Only after a path to the goal has been found, the corresponding actions are executed.</p>
+<p>Examples:</p>
+<ul class="simple">
+<li><p>Pathfinding, Navigation</p></li>
+<li><p>Planning in board-games such as checkers, chess, …</p></li>
+</ul>
+</div>
+<div class="section" id="utility-based-agent">
+<h3>Utility-based Agent<a class="headerlink" href="#utility-based-agent" title="Permalink to this headline">¶</a></h3>
+<p><img alt="agentUtility.png" src="https://maucher.home.hdm-stuttgart.de/Pics/agentUtility.png" /></p>
+<p>Utility-based agents are similar to goal-based agents. They are applicable if</p>
+<ul class="simple">
+<li><p>concrete goals can hardly be defined,</p></li>
+<li><p>if many goals exist,</p></li>
+<li><p>if a complete planning from the current state to a goal state may be too complex,</p></li>
+</ul>
+<p>Utility based agents can bea applied for all <strong>kinds of optimization problems</strong>. Prerequisite is the definition of a utility-function.</p>
+<p>Examples:</p>
+<ul class="simple">
+<li><p>In board-games like chess planning to the end is way to complex. Instead planning is done only for a predefined number of next moves (planning horizon). Then a utility-function is required to evaluate all states, which are reachable within the planning horizon.</p></li>
+<li><p>Logistic</p></li>
+<li><p>Scheduling</p></li>
+<li><p>Network coverage</p></li>
+</ul>
+</div>
+<div class="section" id="knowledge-based-agent">
+<h3>Knowledge-based Agent<a class="headerlink" href="#knowledge-based-agent" title="Permalink to this headline">¶</a></h3>
+<p><img alt="agentKnowledge.png" src="https://maucher.home.hdm-stuttgart.de/Pics/agentKnowledge.png" /></p>
+<p>Knowledge-based agents infere their actions, based on a comprehensive knowledge-base. There may exist some in-built-knowledge, but knowledge increases while the agent acts in it’s environments and perceives new experience. Key-elements of this type of agents are:</p>
+<ul class="simple">
+<li><p>Formal knowledge representation, e.g. by knowledge graphs, first-order-logic, probabilities,</p></li>
+<li><p>Ways to infere new knowledge and actions (logic solvers, Bayes-Net, etc.)</p></li>
+</ul>
+<p>Example:</p>
+<ul class="simple">
+<li><p>Expert-Systems for e.g. medical or technical diagnosis</p></li>
+<li><p>IBM-Watson</p></li>
+</ul>
+</div>
+<div class="section" id="learning-agent">
+<h3>Learning Agent<a class="headerlink" href="#learning-agent" title="Permalink to this headline">¶</a></h3>
+<p><img alt="agentLearning.png" src="https://maucher.home.hdm-stuttgart.de/Pics/agentLearn.png" /></p>
+<ul class="simple">
+<li><p><strong>Performing element</strong> is any of the agent types, described above. E.g. if it is</p>
+<ul>
+<li><p>a simple-reflex agent, the rules can be learned</p></li>
+<li><p>a model-based agent, the model can be learned</p></li>
+<li><p>a goal-based agent, the goals can be adapted</p></li>
+<li><p>…</p></li>
+</ul>
+</li>
+<li><p>The <strong>Compare</strong>-block evaluates the current perceived state with respect to the performance measure and provides negative or positive feedback to the learning element.</p></li>
+<li><p>Depending on the received feedback, the <strong>Learning-Element</strong> adapts elements of the Performing Element.</p></li>
+<li><p>The <strong>Explore</strong> element suggests actions, which do not fully <strong>exploit</strong> the current available knowledge, but enables the agent to gather new <strong>experience</strong></p></li>
+</ul>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="01Introduction.html" title="previous page">Introduction: What’s Artificial Intelligence (AI)</a>
+    <a class='right-next' id="next-link" href="03SearchAndPlan.html" title="next page">Search and Planning</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Prof. Dr. Johannes Maucher<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="_static/js/index.js"></script>
+    
+  </body>
+</html>
