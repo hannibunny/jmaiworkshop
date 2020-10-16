@@ -36,7 +36,7 @@
     <script async="async" type="text/javascript" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Introduction" href="01aWhatsAI.html" />
+    <link rel="next" title="Rational Agents" href="01aWhatsAI.html" />
     <link rel="prev" title="Artificial Intelligence and Machine Learning" href="00Overview.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -85,7 +85,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01aWhatsAI.html">
-   Introduction
+   Rational Agents
   </a>
  </li>
  <li class="toctree-l1">
@@ -206,11 +206,6 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#goals-of-this-lecture">
-   Goals of this lecture
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#impact-of-ai">
    Impact of AI
   </a>
@@ -238,6 +233,16 @@
       </a>
      </li>
     </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#from-human-intelligence-to-automation">
+     From Human Intelligence to Automation …
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#and-from-automation-to-machine-learning">
+     … and from Automation to Machine Learning
+    </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id1">
@@ -274,6 +279,73 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#some-popular-ai-applications">
+   Some popular AI Applications
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#digital-assistant">
+     Digital Assistant
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#recommender-systems">
+     Recommender Systems
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#face-scene-and-objectrecognition">
+     Face-, Scene- and Objectrecognition
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#chess-go-poker">
+     Chess, Go, Poker, …
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#early-detection-of-diabetic-retinopathie">
+     Early Detection of Diabetic Retinopathie
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cancer-detection">
+     Cancer Detection
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#crime">
+     Crime
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#personality-classification">
+     Personality Classification
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#automatic-text-generation">
+     Automatic Text Generation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#image-generation-and-manipulation">
+     Image Generation and Manipulation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#style-transfer">
+     Style Transfer
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#drawing">
+     Drawing
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#some-final-words-to-ai-compared-to-human-intelligence">
    Some final words to AI compared to Human Intelligence
   </a>
@@ -292,18 +364,10 @@
 <h1>Introduction: What’s Artificial Intelligence (AI)<a class="headerlink" href="#introduction-what-s-artificial-intelligence-ai" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
 <li><p>Author: Johannes Maucher</p></li>
-<li><p>Last Update: 31.01.2020</p></li>
+<li><p>Last Update: 15.10.2020</p></li>
 </ul>
 <h1>Table of Contents<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#Introduction:-What's-Artificial-Intelligence-(AI)" data-toc-modified-id="Introduction:-What's-Artificial-Intelligence-(AI)-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Introduction: What's Artificial Intelligence (AI)</a></span><ul class="toc-item"><li><span><a href="#Goals-of-this-lecture" data-toc-modified-id="Goals-of-this-lecture-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Goals of this lecture</a></span></li><li><span><a href="#Impact-of-AI" data-toc-modified-id="Impact-of-AI-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Impact of AI</a></span><ul class="toc-item"><li><span><a href="#AI-is-a-toolbox-for-a-wide-range-of-problems-and-applications" data-toc-modified-id="AI-is-a-toolbox-for-a-wide-range-of-problems-and-applications-1.2.1"><span class="toc-item-num">1.2.1&nbsp;&nbsp;</span>AI is a toolbox for a wide range of problems and applications</a></span></li></ul></li><li><span><a href="#What-is-Artificial-Intelligence?" data-toc-modified-id="What-is-Artificial-Intelligence?-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>What is Artificial Intelligence?</a></span><ul class="toc-item"><li><span><a href="#What-is-intelligence?" data-toc-modified-id="What-is-intelligence?-1.3.1"><span class="toc-item-num">1.3.1&nbsp;&nbsp;</span>What is intelligence?</a></span><ul class="toc-item"><li><span><a href="#Example:-Plan-Route" data-toc-modified-id="Example:-Plan-Route-1.3.1.1"><span class="toc-item-num">1.3.1.1&nbsp;&nbsp;</span>Example: Plan Route</a></span></li></ul></li><li><span><a href="#What-is-Artificial-Intelligence?" data-toc-modified-id="What-is-Artificial-Intelligence?-1.3.2"><span class="toc-item-num">1.3.2&nbsp;&nbsp;</span>What is Artificial Intelligence?</a></span><ul class="toc-item"><li><span><a href="#Turing-Test" data-toc-modified-id="Turing-Test-1.3.2.1"><span class="toc-item-num">1.3.2.1&nbsp;&nbsp;</span>Turing Test</a></span></li><li><span><a href="#Categorization-of-AI-Definitions" data-toc-modified-id="Categorization-of-AI-Definitions-1.3.2.2"><span class="toc-item-num">1.3.2.2&nbsp;&nbsp;</span>Categorization of AI-Definitions</a></span></li><li><span><a href="#Rational-Agents" data-toc-modified-id="Rational-Agents-1.3.2.3"><span class="toc-item-num">1.3.2.3&nbsp;&nbsp;</span>Rational Agents</a></span></li></ul></li><li><span><a href="#AI-is-not-new" data-toc-modified-id="AI-is-not-new-1.3.3"><span class="toc-item-num">1.3.3&nbsp;&nbsp;</span>AI is not new</a></span></li></ul></li><li><span><a href="#Categories-of-AI" data-toc-modified-id="Categories-of-AI-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>Categories of AI</a></span><ul class="toc-item"><li><ul class="toc-item"><li><span><a href="#Applications-of-this-category" data-toc-modified-id="Applications-of-this-category-1.4.0.1"><span class="toc-item-num">1.4.0.1&nbsp;&nbsp;</span>Applications of this category</a></span></li></ul></li></ul></li><li><span><a href="#Some-final-words-to-AI-compared-to-Human-Intelligence" data-toc-modified-id="Some-final-words-to-AI-compared-to-Human-Intelligence-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>Some final words to AI compared to Human Intelligence</a></span></li></ul></li></ul></div><div class="section" id="goals-of-this-lecture">
-<h2>Goals of this lecture<a class="headerlink" href="#goals-of-this-lecture" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>Providing a basic understanding of the concept of Artificial Intelligence, by</p></li>
-<li><p>… describing the categories of AI …</p></li>
-<li><p>… and impressing applications of each category</p></li>
-</ul>
-</div>
-<div class="section" id="impact-of-ai">
+<div class="toc"><ul class="toc-item"><li><span><a href="#Introduction:-What's-Artificial-Intelligence-(AI)" data-toc-modified-id="Introduction:-What's-Artificial-Intelligence-(AI)-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Introduction: What's Artificial Intelligence (AI)</a></span><ul class="toc-item"><li><span><a href="#Impact-of-AI" data-toc-modified-id="Impact-of-AI-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Impact of AI</a></span><ul class="toc-item"><li><span><a href="#AI-is-a-toolbox-for-a-wide-range-of-problems-and-applications" data-toc-modified-id="AI-is-a-toolbox-for-a-wide-range-of-problems-and-applications-1.1.1"><span class="toc-item-num">1.1.1&nbsp;&nbsp;</span>AI is a toolbox for a wide range of problems and applications</a></span></li></ul></li><li><span><a href="#What-is-Artificial-Intelligence?" data-toc-modified-id="What-is-Artificial-Intelligence?-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>What is Artificial Intelligence?</a></span><ul class="toc-item"><li><span><a href="#What-is-intelligence?" data-toc-modified-id="What-is-intelligence?-1.2.1"><span class="toc-item-num">1.2.1&nbsp;&nbsp;</span>What is intelligence?</a></span><ul class="toc-item"><li><span><a href="#Example:-Plan-Route" data-toc-modified-id="Example:-Plan-Route-1.2.1.1"><span class="toc-item-num">1.2.1.1&nbsp;&nbsp;</span>Example: Plan Route</a></span></li></ul></li><li><span><a href="#From-Human-Intelligence-to-Automation-..." data-toc-modified-id="From-Human-Intelligence-to-Automation-...-1.2.2"><span class="toc-item-num">1.2.2&nbsp;&nbsp;</span>From Human Intelligence to Automation ...</a></span></li><li><span><a href="#...-and-from-Automation-to-Machine-Learning" data-toc-modified-id="...-and-from-Automation-to-Machine-Learning-1.2.3"><span class="toc-item-num">1.2.3&nbsp;&nbsp;</span>... and from Automation to Machine Learning</a></span></li><li><span><a href="#What-is-Artificial-Intelligence?" data-toc-modified-id="What-is-Artificial-Intelligence?-1.2.4"><span class="toc-item-num">1.2.4&nbsp;&nbsp;</span>What is Artificial Intelligence?</a></span><ul class="toc-item"><li><span><a href="#Turing-Test" data-toc-modified-id="Turing-Test-1.2.4.1"><span class="toc-item-num">1.2.4.1&nbsp;&nbsp;</span>Turing Test</a></span></li><li><span><a href="#Categorization-of-AI-Definitions" data-toc-modified-id="Categorization-of-AI-Definitions-1.2.4.2"><span class="toc-item-num">1.2.4.2&nbsp;&nbsp;</span>Categorization of AI-Definitions</a></span></li><li><span><a href="#Rational-Agents" data-toc-modified-id="Rational-Agents-1.2.4.3"><span class="toc-item-num">1.2.4.3&nbsp;&nbsp;</span>Rational Agents</a></span></li></ul></li><li><span><a href="#AI-is-not-new" data-toc-modified-id="AI-is-not-new-1.2.5"><span class="toc-item-num">1.2.5&nbsp;&nbsp;</span>AI is not new</a></span></li></ul></li><li><span><a href="#Categories-of-AI" data-toc-modified-id="Categories-of-AI-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Categories of AI</a></span></li><li><span><a href="#Some-popular-AI-Applications" data-toc-modified-id="Some-popular-AI-Applications-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>Some popular AI Applications</a></span><ul class="toc-item"><li><span><a href="#Digital-Assistant" data-toc-modified-id="Digital-Assistant-1.4.1"><span class="toc-item-num">1.4.1&nbsp;&nbsp;</span>Digital Assistant</a></span></li><li><span><a href="#Recommender-Systems" data-toc-modified-id="Recommender-Systems-1.4.2"><span class="toc-item-num">1.4.2&nbsp;&nbsp;</span>Recommender Systems</a></span></li><li><span><a href="#Face-,-Scene--and-Objectrecognition" data-toc-modified-id="Face-,-Scene--and-Objectrecognition-1.4.3"><span class="toc-item-num">1.4.3&nbsp;&nbsp;</span>Face-, Scene- and Objectrecognition</a></span></li><li><span><a href="#Chess,-Go,-Poker,-..." data-toc-modified-id="Chess,-Go,-Poker,-...-1.4.4"><span class="toc-item-num">1.4.4&nbsp;&nbsp;</span>Chess, Go, Poker, ...</a></span></li><li><span><a href="#Early-Detection-of-Diabetic-Retinopathie" data-toc-modified-id="Early-Detection-of-Diabetic-Retinopathie-1.4.5"><span class="toc-item-num">1.4.5&nbsp;&nbsp;</span>Early Detection of Diabetic Retinopathie</a></span></li><li><span><a href="#Cancer-Detection" data-toc-modified-id="Cancer-Detection-1.4.6"><span class="toc-item-num">1.4.6&nbsp;&nbsp;</span>Cancer Detection</a></span></li><li><span><a href="#Crime" data-toc-modified-id="Crime-1.4.7"><span class="toc-item-num">1.4.7&nbsp;&nbsp;</span>Crime</a></span></li><li><span><a href="#Personality-Classification" data-toc-modified-id="Personality-Classification-1.4.8"><span class="toc-item-num">1.4.8&nbsp;&nbsp;</span>Personality Classification</a></span></li><li><span><a href="#Automatic-Text-Generation" data-toc-modified-id="Automatic-Text-Generation-1.4.9"><span class="toc-item-num">1.4.9&nbsp;&nbsp;</span>Automatic Text Generation</a></span></li><li><span><a href="#Image-Generation-and-Manipulation" data-toc-modified-id="Image-Generation-and-Manipulation-1.4.10"><span class="toc-item-num">1.4.10&nbsp;&nbsp;</span>Image Generation and Manipulation</a></span></li><li><span><a href="#Style-Transfer" data-toc-modified-id="Style-Transfer-1.4.11"><span class="toc-item-num">1.4.11&nbsp;&nbsp;</span>Style Transfer</a></span></li><li><span><a href="#Drawing" data-toc-modified-id="Drawing-1.4.12"><span class="toc-item-num">1.4.12&nbsp;&nbsp;</span>Drawing</a></span></li></ul></li><li><span><a href="#Some-final-words-to-AI-compared-to-Human-Intelligence" data-toc-modified-id="Some-final-words-to-AI-compared-to-Human-Intelligence-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>Some final words to AI compared to Human Intelligence</a></span></li></ul></li></ul></div><div class="section" id="impact-of-ai">
 <h2>Impact of AI<a class="headerlink" href="#impact-of-ai" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p><em>Artificial intelligence has reached a new stage of maturity in recent years and, as a basic innovation, is developing into a <strong>driver of digitalization and autonomous systems in all areas of life</strong>. State, society, economy, administration and science are called upon to face the chances and risks of AI.</em> Source: <a class="reference external" href="https://www.bmbf.de/files/Nationale_KI-Strategie.pdf">Strategiepapier zur Künstlichen Intelligenz der Bundesregierung</a></p></li>
@@ -333,6 +397,12 @@
 <h4>Example: Plan Route<a class="headerlink" href="#example-plan-route" title="Permalink to this headline">¶</a></h4>
 <img alt="https://maucher.home.hdm-stuttgart.de/Pics/planRoute.png" class="align-center" src="https://maucher.home.hdm-stuttgart.de/Pics/planRoute.png" />
 </div>
+</div>
+<div class="section" id="from-human-intelligence-to-automation">
+<h3>From Human Intelligence to Automation …<a class="headerlink" href="#from-human-intelligence-to-automation" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="and-from-automation-to-machine-learning">
+<h3>… and from Automation to Machine Learning<a class="headerlink" href="#and-from-automation-to-machine-learning" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="id1">
 <h3>What is Artificial Intelligence?<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
@@ -379,6 +449,61 @@
 <h2>Categories of AI<a class="headerlink" href="#categories-of-ai" title="Permalink to this headline">¶</a></h2>
 <img alt="https://maucher.home.hdm-stuttgart.de/Pics/KiKategorien.png" src="https://maucher.home.hdm-stuttgart.de/Pics/KiKategorien.png" />
 </div>
+<div class="section" id="some-popular-ai-applications">
+<h2>Some popular AI Applications<a class="headerlink" href="#some-popular-ai-applications" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="digital-assistant">
+<h3>Digital Assistant<a class="headerlink" href="#digital-assistant" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="recommender-systems">
+<h3>Recommender Systems<a class="headerlink" href="#recommender-systems" title="Permalink to this headline">¶</a></h3>
+<img alt="https://maucher.home.hdm-stuttgart.de/Pics/amazon.png" class="align-left" src="https://maucher.home.hdm-stuttgart.de/Pics/amazon.png" />
+</div>
+<div class="section" id="face-scene-and-objectrecognition">
+<h3>Face-, Scene- and Objectrecognition<a class="headerlink" href="#face-scene-and-objectrecognition" title="Permalink to this headline">¶</a></h3>
+<img alt="https://maucher.home.hdm-stuttgart.de/Pics/yoloLocalisationRun.png" class="align-center" src="https://maucher.home.hdm-stuttgart.de/Pics/yoloLocalisationRun.png" />
+</div>
+<div class="section" id="chess-go-poker">
+<h3>Chess, Go, Poker, …<a class="headerlink" href="#chess-go-poker" title="Permalink to this headline">¶</a></h3>
+<img alt="https://maucher.home.hdm-stuttgart.de/Pics/poker.jpg" class="align-center" src="https://maucher.home.hdm-stuttgart.de/Pics/poker.jpg" />
+</div>
+<div class="section" id="early-detection-of-diabetic-retinopathie">
+<h3>Early Detection of Diabetic Retinopathie<a class="headerlink" href="#early-detection-of-diabetic-retinopathie" title="Permalink to this headline">¶</a></h3>
+<div>
+    <img src="https://maucher.home.hdm-stuttgart.de/Pics/retinopathie-app.png" style="width:250px" align="left">
+    <img src="https://maucher.home.hdm-stuttgart.de/Pics/retinopathie-beispiel.png" style="width:650px" align="left">
+</div></div>
+<div class="section" id="cancer-detection">
+<h3>Cancer Detection<a class="headerlink" href="#cancer-detection" title="Permalink to this headline">¶</a></h3>
+<img alt="https://maucher.home.hdm-stuttgart.de/Pics/jtHealth.png" src="https://maucher.home.hdm-stuttgart.de/Pics/jtHealth.png" />
+</div>
+<div class="section" id="crime">
+<h3>Crime<a class="headerlink" href="#crime" title="Permalink to this headline">¶</a></h3>
+<img alt="https://maucher.home.hdm-stuttgart.de/Pics/lkagan.PNG" class="align-center" src="https://maucher.home.hdm-stuttgart.de/Pics/lkagan.PNG" />
+</div>
+<div class="section" id="personality-classification">
+<h3>Personality Classification<a class="headerlink" href="#personality-classification" title="Permalink to this headline">¶</a></h3>
+<img alt="https://maucher.home.hdm-stuttgart.de/Pics/zeitAIbewerbung.PNG" src="https://maucher.home.hdm-stuttgart.de/Pics/zeitAIbewerbung.PNG" />
+</div>
+<div class="section" id="automatic-text-generation">
+<h3>Automatic Text Generation<a class="headerlink" href="#automatic-text-generation" title="Permalink to this headline">¶</a></h3>
+<img alt="https://maucher.home.hdm-stuttgart.de/Pics/textGenerationRetresco.png" src="https://maucher.home.hdm-stuttgart.de/Pics/textGenerationRetresco.png" />
+<p>Source: <a class="reference external" href="https://www.retresco.de">https://www.retresco.de</a></p>
+</div>
+<div class="section" id="image-generation-and-manipulation">
+<h3>Image Generation and Manipulation<a class="headerlink" href="#image-generation-and-manipulation" title="Permalink to this headline">¶</a></h3>
+<img alt="https://maucher.home.hdm-stuttgart.de/Pics/jtGan.png" src="https://maucher.home.hdm-stuttgart.de/Pics/jtGan.png" />
+</div>
+<div class="section" id="style-transfer">
+<h3>Style Transfer<a class="headerlink" href="#style-transfer" title="Permalink to this headline">¶</a></h3>
+<img alt="https://maucher.home.hdm-stuttgart.de/Pics/styleTransfer.png" src="https://maucher.home.hdm-stuttgart.de/Pics/styleTransfer.png" />
+<p>Source: <a class="reference external" href="https://deepart.io">https://deepart.io</a></p>
+</div>
+<div class="section" id="drawing">
+<h3>Drawing<a class="headerlink" href="#drawing" title="Permalink to this headline">¶</a></h3>
+<img alt="https://maucher.home.hdm-stuttgart.de/Pics/gauGanDemo.png" src="https://maucher.home.hdm-stuttgart.de/Pics/gauGanDemo.png" />
+<p>Source: <a class="reference external" href="http://nvidia-research-mingyuliu.com/gaugan/">http://nvidia-research-mingyuliu.com/gaugan/</a></p>
+</div>
+</div>
 <div class="section" id="some-final-words-to-ai-compared-to-human-intelligence">
 <h2>Some final words to AI compared to Human Intelligence<a class="headerlink" href="#some-final-words-to-ai-compared-to-human-intelligence" title="Permalink to this headline">¶</a></h2>
 <img alt="https://maucher.home.hdm-stuttgart.de/Pics/captionbotexample.png" src="https://maucher.home.hdm-stuttgart.de/Pics/captionbotexample.png" />
@@ -415,7 +540,7 @@
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="00Overview.html" title="previous page">Artificial Intelligence and Machine Learning</a>
-    <a class='right-next' id="next-link" href="01aWhatsAI.html" title="next page">Introduction</a>
+    <a class='right-next' id="next-link" href="01aWhatsAI.html" title="next page">Rational Agents</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

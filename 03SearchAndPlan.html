@@ -37,7 +37,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Knowledge-based Systems" href="04Inference.html" />
-    <link rel="prev" title="Introduction" href="01aWhatsAI.html" />
+    <link rel="prev" title="Rational Agents" href="01aWhatsAI.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -85,7 +85,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01aWhatsAI.html">
-   Introduction
+   Rational Agents
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -351,7 +351,8 @@
 <li><p>Author: Johannes Maucher</p></li>
 <li><p>Last Update: 12.10.2020</p></li>
 </ul>
-<div class="section" id="goal-based-agent">
+<h1>Table of Contents<span class="tocSkip"></span></h1>
+<div class="toc"><ul class="toc-item"><li><span><a href="#Search-and-Planning" data-toc-modified-id="Search-and-Planning-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Search and Planning</a></span><ul class="toc-item"><li><span><a href="#Goal-based-Agent" data-toc-modified-id="Goal-based-Agent-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Goal-based Agent</a></span></li><li><span><a href="#Utility-based-Agent" data-toc-modified-id="Utility-based-Agent-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Utility-based Agent</a></span></li><li><span><a href="#Applications" data-toc-modified-id="Applications-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Applications</a></span></li><li><span><a href="#Requirements" data-toc-modified-id="Requirements-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>Requirements</a></span></li><li><span><a href="#Problem-Specification" data-toc-modified-id="Problem-Specification-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>Problem Specification</a></span></li><li><span><a href="#Performance-Metrics-for-Search--and-Planning-Algorithms" data-toc-modified-id="Performance-Metrics-for-Search--and-Planning-Algorithms-1.6"><span class="toc-item-num">1.6&nbsp;&nbsp;</span>Performance Metrics for Search- and Planning-Algorithms</a></span></li><li><span><a href="#Algorithm-Categories" data-toc-modified-id="Algorithm-Categories-1.7"><span class="toc-item-num">1.7&nbsp;&nbsp;</span>Algorithm Categories</a></span></li><li><span><a href="#Uninformed-Search" data-toc-modified-id="Uninformed-Search-1.8"><span class="toc-item-num">1.8&nbsp;&nbsp;</span>Uninformed Search</a></span><ul class="toc-item"><li><span><a href="#Breadth-First" data-toc-modified-id="Breadth-First-1.8.1"><span class="toc-item-num">1.8.1&nbsp;&nbsp;</span>Breadth-First</a></span></li><li><span><a href="#Depth-First" data-toc-modified-id="Depth-First-1.8.2"><span class="toc-item-num">1.8.2&nbsp;&nbsp;</span>Depth-First</a></span></li><li><span><a href="#Uniform-Cost-search" data-toc-modified-id="Uniform-Cost-search-1.8.3"><span class="toc-item-num">1.8.3&nbsp;&nbsp;</span>Uniform Cost search</a></span></li></ul></li><li><span><a href="#Heuristic-Search" data-toc-modified-id="Heuristic-Search-1.9"><span class="toc-item-num">1.9&nbsp;&nbsp;</span>Heuristic Search</a></span><ul class="toc-item"><li><span><a href="#A*-Algorithm" data-toc-modified-id="A*-Algorithm-1.9.1"><span class="toc-item-num">1.9.1&nbsp;&nbsp;</span>A*-Algorithm</a></span></li></ul></li><li><span><a href="#2-Player-Games" data-toc-modified-id="2-Player-Games-1.10"><span class="toc-item-num">1.10&nbsp;&nbsp;</span>2-Player Games</a></span><ul class="toc-item"><li><span><a href="#MinMax-Algorithm" data-toc-modified-id="MinMax-Algorithm-1.10.1"><span class="toc-item-num">1.10.1&nbsp;&nbsp;</span>MinMax-Algorithm</a></span></li></ul></li><li><span><a href="#Monte-Carlo-Tree-Search" data-toc-modified-id="Monte-Carlo-Tree-Search-1.11"><span class="toc-item-num">1.11&nbsp;&nbsp;</span>Monte-Carlo Tree Search</a></span></li><li><span><a href="#AlphaGo-and-AlphaZero" data-toc-modified-id="AlphaGo-and-AlphaZero-1.12"><span class="toc-item-num">1.12&nbsp;&nbsp;</span>AlphaGo and AlphaZero</a></span></li><li><span><a href="#Constraint-Satisfaction-Problems-(CSP)" data-toc-modified-id="Constraint-Satisfaction-Problems-(CSP)-1.13"><span class="toc-item-num">1.13&nbsp;&nbsp;</span>Constraint Satisfaction Problems (CSP)</a></span><ul class="toc-item"><li><span><a href="#Problem-Specification" data-toc-modified-id="Problem-Specification-1.13.1"><span class="toc-item-num">1.13.1&nbsp;&nbsp;</span>Problem Specification</a></span></li><li><span><a href="#Backtracking-Algorithm" data-toc-modified-id="Backtracking-Algorithm-1.13.2"><span class="toc-item-num">1.13.2&nbsp;&nbsp;</span>Backtracking Algorithm</a></span></li></ul></li><li><span><a href="#Local-Search-/-Optimisation-Algorithms" data-toc-modified-id="Local-Search-/-Optimisation-Algorithms-1.14"><span class="toc-item-num">1.14&nbsp;&nbsp;</span>Local Search / Optimisation Algorithms</a></span><ul class="toc-item"><li><span><a href="#Genetic-Algorithm" data-toc-modified-id="Genetic-Algorithm-1.14.1"><span class="toc-item-num">1.14.1&nbsp;&nbsp;</span>Genetic Algorithm</a></span></li><li><span><a href="#Applications" data-toc-modified-id="Applications-1.14.2"><span class="toc-item-num">1.14.2&nbsp;&nbsp;</span>Applications</a></span></li><li><span><a href="#Problem-Specification:" data-toc-modified-id="Problem-Specification:-1.14.3"><span class="toc-item-num">1.14.3&nbsp;&nbsp;</span>Problem Specification:</a></span></li></ul></li></ul></li></ul></div><div class="section" id="goal-based-agent">
 <h2>Goal-based Agent<a class="headerlink" href="#goal-based-agent" title="Permalink to this headline">¶</a></h2>
 <p><img alt="agentGoal.png" src="https://maucher.home.hdm-stuttgart.de/Pics/agentGoal.png" /></p>
 </div>
@@ -722,7 +723,7 @@ $<span class="math notranslate nohighlight">\(
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="01aWhatsAI.html" title="previous page">Introduction</a>
+    <a class='left-prev' id="prev-link" href="01aWhatsAI.html" title="previous page">Rational Agents</a>
     <a class='right-next' id="next-link" href="04Inference.html" title="next page">Knowledge-based Systems</a>
 
     </div>
