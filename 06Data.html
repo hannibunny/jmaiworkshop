@@ -36,6 +36,7 @@
     <script async="async" type="text/javascript" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Neural Networks Introduction" href="07NeuralNets.html" />
     <link rel="prev" title="Machine Learning: Introduction" href="06MLintro.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -110,6 +111,11 @@
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07NeuralNets.html">
+   Neural Networks Introduction
   </a>
  </li>
 </ul>
@@ -327,14 +333,12 @@ One of the central questions before starting a Machine Learning project is</p>
 </div>
 <div class="section" id="type-of-data">
 <h2>Type of Data<a class="headerlink" href="#type-of-data" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>numeric vs categorical type; nominal vs ordinal
-<img src="https://maucher.home.hdm-stuttgart.de/Pics/dataTypes.png" style="width:300px" align="center"></p></li>
-</ul>
-<p><strong>Type of Data:</strong> i.i.d.
-<img src="https://maucher.home.hdm-stuttgart.de/Pics/creditWorthiness.png" style="width:600px" align="center"></p>
-<p><strong>Type of Data:</strong> sequential and dependent
-<img src="https://maucher.home.hdm-stuttgart.de/Pics/stockData.png" style="width:600px" align="center"></p>
+<p><strong>numeric vs categorical type; nominal vs ordinal</strong></p>
+<a class="reference internal image-reference" href="https://maucher.home.hdm-stuttgart.de/Pics/dataTypes.png"><img alt="https://maucher.home.hdm-stuttgart.de/Pics/dataTypes.png" class="align-center" src="https://maucher.home.hdm-stuttgart.de/Pics/dataTypes.png" style="width: 300px;" /></a>
+<p><strong>Type of Data:</strong> i.i.d.</p>
+<a class="reference internal image-reference" href="https://maucher.home.hdm-stuttgart.de/Pics/creditWorthiness.png"><img alt="https://maucher.home.hdm-stuttgart.de/Pics/creditWorthiness.png" class="align-center" src="https://maucher.home.hdm-stuttgart.de/Pics/creditWorthiness.png" style="width: 500px;" /></a>
+<p><strong>Type of Data:</strong> sequential and dependent</p>
+<a class="reference internal image-reference" href="https://maucher.home.hdm-stuttgart.de/Pics/stockData.png"><img alt="https://maucher.home.hdm-stuttgart.de/Pics/stockData.png" class="align-center" src="https://maucher.home.hdm-stuttgart.de/Pics/stockData.png" style="width: 500px;" /></a>
 <p><strong>Type of Data:</strong> Even more challenging dependent data:</p>
 <img alt="https://maucher.home.hdm-stuttgart.de/Pics/dependantDatatext.png" class="align-center" src="https://maucher.home.hdm-stuttgart.de/Pics/dependantDatatext.png" />
 </div>
@@ -434,8 +438,8 @@ One of the central questions before starting a Machine Learning project is</p>
 <li><p>In the plot on the left a simple linear model seems to be sufficient <span class="math notranslate nohighlight">\(\Rightarrow\)</span> Small number of samples</p></li>
 <li><p>On the right hand side a more complex model must be learned <span class="math notranslate nohighlight">\(\Rightarrow\)</span> Larger number of samples</p></li>
 </ul>
-<p><strong>Amount of required data depends on …</strong>
-<img src="https://maucher.home.hdm-stuttgart.de/Pics/amountDataNew.png" style="width:500px" align="center"></p>
+<p><strong>Amount of required data depends on …</strong></p>
+<a class="reference internal image-reference" href="https://maucher.home.hdm-stuttgart.de/Pics/amountDataNew.png"><img alt="https://maucher.home.hdm-stuttgart.de/Pics/amountDataNew.png" class="align-center" src="https://maucher.home.hdm-stuttgart.de/Pics/amountDataNew.png" style="width: 500px;" /></a>
 <ul class="simple">
 <li><p>Complexity of Model:</p></li>
 </ul>
@@ -548,12 +552,12 @@ One of the central questions before starting a Machine Learning project is</p>
 <p>On an abstract level the architecture of a Deep Neural Network looks like this:</p>
 <img alt="Drawing" src="https://maucher.home.hdm-stuttgart.de/Pics/dnnExtractorClassifier.png" />
 <p>The goal of deep learning is to extract meaningful features. The <em>Extractor-Part</em> of the network learns from low-level features (e.g. pixel values) at the input of the network a hierarchy of increasingly meaningful features.</p>
-<img alt="Drawing" src="https://maucher.home.hdm-stuttgart.de/Pics/cnnConceptCat.png" />
+<a class="reference internal image-reference" href="https://maucher.home.hdm-stuttgart.de/Pics/cnnConceptCat.png"><img alt="Drawing" src="https://maucher.home.hdm-stuttgart.de/Pics/cnnConceptCat.png" style="width: 500px;" /></a>
 <p>Image source: <a class="reference external" href="https://www.manning.com/books/deep-learning-with-python">F. Chollet, Deep Learning with Python</a></p>
 </div>
 <div class="section" id="deep-learning-is-superior-in-the-case-of-large-amounts-of-data">
 <h3>Deep Learning is superior in the case of large amounts of data (?)<a class="headerlink" href="#deep-learning-is-superior-in-the-case-of-large-amounts-of-data" title="Permalink to this headline">¶</a></h3>
-<img alt="https://maucher.home.hdm-stuttgart.de/Pics/deepLearningDataAmount.png" class="align-center" src="https://maucher.home.hdm-stuttgart.de/Pics/deepLearningDataAmount.png" />
+<a class="reference internal image-reference" href="https://maucher.home.hdm-stuttgart.de/Pics/deepLearningDataAmount.png"><img alt="https://maucher.home.hdm-stuttgart.de/Pics/deepLearningDataAmount.png" class="align-center" src="https://maucher.home.hdm-stuttgart.de/Pics/deepLearningDataAmount.png" style="width: 500px;" /></a>
 <p><strong>Some comments on the previous slide:</strong></p>
 <ul class="simple">
 <li><p>Deep Learning is suitable for learning <strong>complex models</strong></p></li>
@@ -640,6 +644,7 @@ One of the central questions before starting a Machine Learning project is</p>
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="06MLintro.html" title="previous page">Machine Learning: Introduction</a>
+    <a class='right-next' id="next-link" href="07NeuralNets.html" title="next page">Neural Networks Introduction</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
