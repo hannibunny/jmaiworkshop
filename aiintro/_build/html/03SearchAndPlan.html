@@ -1,0 +1,753 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Search and Planning &#8212; Artificial Intelligence Introduction</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-dropdown.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script type="text/javascript" src="_static/togglebutton.js"></script>
+    <script type="text/javascript" src="_static/clipboard.min.js"></script>
+    <script type="text/javascript" src="_static/copybutton.js"></script>
+    <script type="text/javascript" src="_static/sphinx-book-theme.js"></script>
+    <script type="text/javascript">var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" type="text/javascript" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script type="text/javascript">
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" type="text/javascript" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Knowledge-based Systems" href="04Inference.html" />
+    <link rel="prev" title="Rational Agents" href="01aWhatsAI.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/hdmlogomed.jpg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Artificial Intelligence Introduction</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="00Overview.html">
+   Artificial Intelligence and Machine Learning
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01Introduction.html">
+   Introduction: What’s Artificial Intelligence (AI)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01aWhatsAI.html">
+   Rational Agents
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Search and Planning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04Inference.html">
+   Knowledge-based Systems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05Uncertainty.html">
+   Modelling of Uncertainty
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06MLintro.html">
+   Machine Learning: Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06Data.html">
+   Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07NeuralNets.html">
+   Neural Networks Introduction
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/03SearchAndPlan.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/03SearchAndPlan.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/03SearchAndPlan.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#goal-based-agent">
+   Goal-based Agent
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#utility-based-agent">
+   Utility-based Agent
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#applications">
+   Applications
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#requirements">
+   Requirements
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#problem-specification">
+   Problem Specification
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#performance-metrics-for-search-and-planning-algorithms">
+   Performance Metrics for Search- and Planning-Algorithms
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#algorithm-categories">
+   Algorithm Categories
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#uninformed-search">
+   Uninformed Search
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#breadth-first">
+     Breadth-First
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#depth-first">
+     Depth-First
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#uniform-cost-search">
+     Uniform Cost search
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#heuristic-search">
+   Heuristic Search
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-algorithm">
+     A*-Algorithm
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#player-games">
+   2-Player Games
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#minmax-algorithm">
+     MinMax-Algorithm
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#monte-carlo-tree-search">
+   Monte-Carlo Tree Search
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#alphago-and-alphazero">
+   AlphaGo and AlphaZero
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#constraint-satisfaction-problems-csp">
+   Constraint Satisfaction Problems (CSP)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Problem Specification
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#backtracking-algorithm">
+     Backtracking Algorithm
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#local-search-optimisation-algorithms">
+   Local Search / Optimisation Algorithms
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#genetic-algorithm">
+     Genetic Algorithm
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Applications
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Problem Specification:
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="search-and-planning">
+<h1>Search and Planning<a class="headerlink" href="#search-and-planning" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Author: Johannes Maucher</p></li>
+<li><p>Last Update: 12.10.2020</p></li>
+</ul>
+<div class="section" id="goal-based-agent">
+<h2>Goal-based Agent<a class="headerlink" href="#goal-based-agent" title="Permalink to this headline">¶</a></h2>
+<p><img alt="agentGoal.png" src="https://maucher.home.hdm-stuttgart.de/Pics/agentGoal.png" /></p>
+</div>
+<div class="section" id="utility-based-agent">
+<h2>Utility-based Agent<a class="headerlink" href="#utility-based-agent" title="Permalink to this headline">¶</a></h2>
+<p><img alt="agentGoal.png" src="https://maucher.home.hdm-stuttgart.de/Pics/agentUtility.png" /></p>
+</div>
+<div class="section" id="applications">
+<h2>Applications<a class="headerlink" href="#applications" title="Permalink to this headline">¶</a></h2>
+<p><strong>Navigation:</strong> <span class="math notranslate nohighlight">\(\Rightarrow\)</span> Uniform-Cost- / A*-Algorithm
+<img src="https://maucher.home.hdm-stuttgart.de/Pics/bingsuche.PNG" style="width:800px" align="center"></p>
+<p><strong>General Planning Problems:</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;6J_Kaklz4f0&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="800"
+    height="300"
+    src="https://www.youtube.com/embed/6J_Kaklz4f0"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+<p><strong>8-Puzzle:</strong> <span class="math notranslate nohighlight">\(\Rightarrow\)</span> Breadth-First-Algorithm
+<img src="https://maucher.home.hdm-stuttgart.de/Pics/8puzzleExample.png" style="width:800px" align="center"></p>
+<p><strong>Boardgames (Chess)</strong> <span class="math notranslate nohighlight">\(\Rightarrow\)</span> MinMax-Algorithm
+<img src="https://maucher.home.hdm-stuttgart.de/Pics/ibmDeepBlue.PNG" style="width:400px" align="center"></p>
+<p><strong>Go:</strong> <span class="math notranslate nohighlight">\(\Rightarrow\)</span> Monte-Carlo-Tree-Search
+<img src="https://maucher.home.hdm-stuttgart.de/Pics/goGame.png" style="width:500px" align="center"></p>
+<p><strong>Constraint Satisfaction Problem:</strong></p>
+<div>
+    <img src="https://maucher.home.hdm-stuttgart.de/Pics/colormapTask.png" style="width:400px" align="left">
+    <div style="padding-top: 80px">
+        <p>Color regions with either red, green or blue,</p>
+        <p>such that no pair of neighboring regions have same color</p>
+    </div>
+</div><p><strong>Sudoku:</strong> <span class="math notranslate nohighlight">\(\Rightarrow\)</span> Constraint-Satisfaction Problem (Backtracking)
+<img src="https://maucher.home.hdm-stuttgart.de/Pics/sudoku.gif" style="width:500px" align="center"></p>
+<p><strong>General Logistics and Scheduling Problems:</strong> <span class="math notranslate nohighlight">\(\Rightarrow\)</span> Constraint Satisfaction Problem / Genetic Algorithm
+<img src="https://maucher.home.hdm-stuttgart.de/Pics/genAlgLogistikLager.PNG" style="width:600px" align="center"></p>
+<p><strong>General Logistiks and Scheduling Problems:</strong> <span class="math notranslate nohighlight">\(\Rightarrow\)</span> Constraint Satisfaction Problem / Genetic Algorithm
+<img src="https://maucher.home.hdm-stuttgart.de/Pics/genAlgLogistikPackung.PNG" style="width:400px" align="center"></p>
+</div>
+<div class="section" id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>The algorithms, discussed in this notebook require a environment, which is</p>
+<ul>
+<li><p>Fully observable</p></li>
+<li><p>Deterministic</p></li>
+<li><p>Static</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="problem-specification">
+<h2>Problem Specification<a class="headerlink" href="#problem-specification" title="Permalink to this headline">¶</a></h2>
+<p>For each problem, which shall be solved by an approach of this notebook, the following must be specified:</p>
+<ul class="simple">
+<li><p>What is a <strong>state</strong>?</p></li>
+<li><p>What is the initial state? What is the goal-state?</p></li>
+<li><p>If initial- or goal- state is hard to define a <strong>utility-function</strong> may do the job</p></li>
+<li><p>What is an <strong>action</strong>? Which actions are available in which states?</p></li>
+<li><p>What are the <strong>costs</strong> of actions?</p></li>
+<li><p>For heuristic algorithms: How to estimate the <strong>utility</strong> of an arbitrary state</p></li>
+</ul>
+</div>
+<div class="section" id="performance-metrics-for-search-and-planning-algorithms">
+<h2>Performance Metrics for Search- and Planning-Algorithms<a class="headerlink" href="#performance-metrics-for-search-and-planning-algorithms" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Completeness:</strong> Algorithm guarantees to find a solution.</p></li>
+<li><p><strong>Optimal:</strong> Algorithm guarantees to find optimimum solution.</p></li>
+<li><p><strong>Complexity:</strong> In terms of time and memory</p></li>
+<li><p><strong>Global:</strong> Solution is a path from intitial- to goal-state</p></li>
+<li><p><strong>Local:</strong> Solution is a good state</p></li>
+</ul>
+</div>
+<div class="section" id="algorithm-categories">
+<h2>Algorithm Categories<a class="headerlink" href="#algorithm-categories" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>uninformed</p></li>
+<li><p>heuristic (informed)</p></li>
+<li><p>global</p></li>
+<li><p>local</p></li>
+<li><p>goal-based</p></li>
+<li><p>utility-based</p></li>
+</ul>
+</div>
+<div class="section" id="uninformed-search">
+<h2>Uninformed Search<a class="headerlink" href="#uninformed-search" title="Permalink to this headline">¶</a></h2>
+<p>Find solution by construction of search-tree from current-state to goal-state</p>
+<ul class="simple">
+<li><p>Breadth-First</p></li>
+<li><p>Depth-First</p></li>
+<li><p>Uniform Cost Search</p></li>
+</ul>
+<div class="section" id="breadth-first">
+<h3>Breadth-First<a class="headerlink" href="#breadth-first" title="Permalink to this headline">¶</a></h3>
+<img alt="https://maucher.home.hdm-stuttgart.de/Pics/breadthfirst.png" class="align-center" src="https://maucher.home.hdm-stuttgart.de/Pics/breadthfirst.png" />
+<ol>
+<li><p>Start from the initial node</p></li>
+<li><p>Expand node by applying all available actions of this state and obtain the corresponding sucessor states.</p></li>
+<li><p>Select next state to expand, which is <font color="red">the topmost not yet expanded node</font>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">If</span></code> the selected node is the <strong>goal-state</strong>:
+Terminate and return path from initial- to goal-state</p>
+<p><code class="docutils literal notranslate"><span class="pre">Else</span></code>: Continue with step 2</p>
+</li>
+</ol>
+</div>
+<div class="section" id="depth-first">
+<h3>Depth-First<a class="headerlink" href="#depth-first" title="Permalink to this headline">¶</a></h3>
+<a class="reference internal image-reference" href="https://maucher.home.hdm-stuttgart.de/Pics/depthfirst.png"><img alt="https://maucher.home.hdm-stuttgart.de/Pics/depthfirst.png" class="align-center" src="https://maucher.home.hdm-stuttgart.de/Pics/depthfirst.png" style="width: 500px;" /></a>
+<ol>
+<li><p>Start from the initial node</p></li>
+<li><p>Expand node by applying all available actions of this state and obtain the corresponding sucessor states.</p></li>
+<li><p>Select next state to expand, which is <font color="red">the deepest not yet expanded node</font>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">If</span></code> the selected node is the <strong>goal-state</strong>:
+Terminate and return path from initial- to goal-state</p>
+<p><code class="docutils literal notranslate"><span class="pre">Else</span></code>: Continue with step 2</p>
+</li>
+</ol>
+</div>
+<div class="section" id="uniform-cost-search">
+<h3>Uniform Cost search<a class="headerlink" href="#uniform-cost-search" title="Permalink to this headline">¶</a></h3>
+<ol>
+<li><p>Start from the initial node</p></li>
+<li><p>Expand node by applying all available actions of this state and obtain the corresponding sucessor states.</p></li>
+<li><p>Select next state to expand, which is <font color="red">the not yet expanded node, with the lowest accumulated costs</font>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">If</span></code> the selected node is the <strong>goal-state</strong>:
+Terminate and return path from initial- to goal-state</p>
+<p><code class="docutils literal notranslate"><span class="pre">Else</span></code>: Continue with step 2</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="heuristic-search">
+<h2>Heuristic Search<a class="headerlink" href="#heuristic-search" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>A*</p></li>
+<li><p>Find solution by construction of search-tree from current-state to goal-state</p></li>
+</ul>
+<div class="section" id="a-algorithm">
+<h3>A*-Algorithm<a class="headerlink" href="#a-algorithm" title="Permalink to this headline">¶</a></h3>
+<img alt="https://maucher.home.hdm-stuttgart.de/Pics/8puzzleAstern.png" class="align-center" src="https://maucher.home.hdm-stuttgart.de/Pics/8puzzleAstern.png" />
+<ol>
+<li><p>Start from the initial node</p></li>
+<li><p>Expand node by applying all available actions of this state and obtain the corresponding sucessor states.</p></li>
+<li><p>Select next state to expand, which is <font color="red">the not yet expanded node, with the lowest value of <em>costs + heuristic</em></font>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">If</span></code> the selected node is the <strong>goal-state</strong>:
+Terminate and return path from initial- to goal-state</p>
+<p><code class="docutils literal notranslate"><span class="pre">Else</span></code>: Continue with step 2</p>
+</li>
+</ol>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.hdm-stuttgart.de/~maucher/Python/FunktionenAlgorithmen/html/SearchAlgos.html">Simple (own) implementation of BFS, DFS and UCS</a></p></li>
+<li><p><a class="reference external" href="http://simpleai.readthedocs.io/en/latest/">Python module simpleai</a></p></li>
+<li><p><span class="xref myst">Non-informed solution of the 8-puzzle problem, using <em>simpleai</em></span></p></li>
+<li><p><span class="xref myst">Informed solution of the 8-puzzle problem, using <em>simpleai</em></span></p></li>
+<li><p><span class="xref myst">Non-informed solution of Jug-pouring puzzle, using <em>simpleai</em></span></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="player-games">
+<h2>2-Player Games<a class="headerlink" href="#player-games" title="Permalink to this headline">¶</a></h2>
+<p>The algorithm described in this section is applicable for all games with the following characteristics:</p>
+<ul class="simple">
+<li><p>2 players</p></li>
+<li><p>fully observable</p></li>
+<li><p>deterministic</p></li>
+<li><p>Zero-Sum</p></li>
+</ul>
+<p><strong>Examples:</strong> Checkers, Chess, Go, Reversi, Backgammon, …</p>
+<div class="section" id="minmax-algorithm">
+<h3>MinMax-Algorithm<a class="headerlink" href="#minmax-algorithm" title="Permalink to this headline">¶</a></h3>
+<p><strong>Evaluation of states in level <span class="math notranslate nohighlight">\(L\)</span> (planning horizon)</strong>
+<img src="https://maucher.home.hdm-stuttgart.de/Pics/tree-0.png" style="width:900px" align="center"></p>
+<ul class="simple">
+<li><p>Root node of the tree is the current state of the game. Player <strong>Max</strong> is in turn.</p></li>
+<li><p><strong>Max</strong> has two possible actions, the corresponding successor states are the states for which the other player, <strong>Min</strong>, must find a good action.</p></li>
+<li><p>In each of the two states in <strong>Min’s</strong> level 2 actions are available. Again all successor states can be generated for the next level, which belongs to <strong>Max</strong></p></li>
+<li><p>…</p></li>
+</ul>
+<p>In this way a tree can be calculated down to a level <span class="math notranslate nohighlight">\(L\)</span>. This level <span class="math notranslate nohighlight">\(L\)</span> constitutes the <em>planning horizon</em> and depends on the affordable complexity.</p>
+<p>Once all nodes in level <span class="math notranslate nohighlight">\(L\)</span> are generated a <strong>utility function</strong> is applied to all states in this level.</p>
+<p>If level <span class="math notranslate nohighlight">\(L-1\)</span> belongs to <strong>Min</strong> he will choose in each state the action, which leads to a successor of minimum utility - since minimum utility for <strong>Max</strong> is maximum utility of <strong>Min</strong>. Therefore, to each node in level <span class="math notranslate nohighlight">\(L-1\)</span>, the minimum utility of it’s successor nodes is assigned.</p>
+<p>In the same way to each node in level <span class="math notranslate nohighlight">\(L-2\)</span>, the maximum utility of it’s successor nodes in level <span class="math notranslate nohighlight">\(L-1\)</span> is assigned.</p>
+<p>This process is repeated up to the root node. Player <strong>Max</strong> then knows his next action: The one, which yields to a successor with maximum utility-value.</p>
+<p><strong>Player Min selects actions to nodes with minimum utility for Player Max:</strong>
+<img src="https://maucher.home.hdm-stuttgart.de/Pics/tree-1.png" style="width:900px" align="center"></p>
+<p><strong>Player Max selects actions to nodes with maximum utility:</strong>
+<img src="https://maucher.home.hdm-stuttgart.de/Pics/tree-2.png" style="width:900px" align="center"></p>
+<p><strong>Player Min selects actions to nodes with minimum utility for Player Max:</strong>
+<img src="https://maucher.home.hdm-stuttgart.de/Pics/tree-3.png" style="width:900px" align="center"></p>
+<p><strong>Player Max selects actions to nodes with maximum utility:</strong>
+<img src="https://maucher.home.hdm-stuttgart.de/Pics/tree-4.png" style="width:900px" align="center"></p>
+<img alt="https://maucher.home.hdm-stuttgart.de/Pics/tttBewertet2.PNG" class="align-center" src="https://maucher.home.hdm-stuttgart.de/Pics/tttBewertet2.PNG" />
+</div>
+</div>
+<div class="section" id="monte-carlo-tree-search">
+<h2>Monte-Carlo Tree Search<a class="headerlink" href="#monte-carlo-tree-search" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>The concept of a <font color="red">limited planning horizon</font>, as applied in the Min/Max-algorithm is one way to handle complex problems, which can not be planned to the goal-state in one step.</p></li>
+<li><p>Another concept is to construct a tree until a final state in such a way that in each state only <font color="red"> promising actions </font> and corresponding successors are generated. This concept is applied by <font color="red"> Monte Carlo Tree Search </font>.</p></li>
+</ul>
+<p><strong>Monte-Carlo Tree Search:</strong></p>
+<img alt="https://maucher.home.hdm-stuttgart.de/Pics/mcts.png" class="align-center" src="https://maucher.home.hdm-stuttgart.de/Pics/mcts.png" />
+<p><strong>Monte Carlo Tree Search:</strong></p>
+<ul class="simple">
+<li><p><strong>Selection:</strong> Starting from the root node, apply <em>Tree Policy</em> in order to select next action. Tree Policy exploits node-statistics</p></li>
+<li><p><strong>Expansion:</strong> In a leaf-node select an arbitrary action and generate the corresponding new child-node.</p></li>
+<li><p><strong>Simulation:</strong> Simulate the game, starting from the new child-node. Action-Selection during simulation according to <em>Default Policy</em>, e.g.:</p>
+<ul>
+<li><p>Randomly (Pure Monte Carlo)</p></li>
+<li><p>Favor actions with higher estimated chance of success, if corresponding heuristics are available.</p></li>
+</ul>
+</li>
+<li><p>At the end of each simulation: Game is won or lost.</p></li>
+<li><p><strong>Backpropagation:</strong> Adapt node-statistics of all nodes in tree, starting from the leaf-node of previous simulation.</p></li>
+</ul>
+<p>If the computational budget is reached MCTS returns with the best action a for the given root node.</p>
+<p><strong>Characteristics of MCTS:</strong></p>
+<ul class="simple">
+<li><p>Applicable even for games with very large branching factor</p></li>
+<li><p>Basic Algorithm easy to implement</p></li>
+<li><p>Configurable stop-time (Longer time yields better game play)</p></li>
+<li><p><strong>Doesn’t require domain knowledge</strong></p></li>
+</ul>
+</div>
+<div class="section" id="alphago-and-alphazero">
+<h2>AlphaGo and AlphaZero<a class="headerlink" href="#alphago-and-alphazero" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>AlphaGo is MCTS, which applies (Deep) Neural Networks in order to calculate good heuristics for</p></li>
+</ul>
+<ul class="simple">
+<li><p>the next action to choose in the selection-phase</p></li>
+<li><p>which leaf-node to extend in the expansion phase</p></li>
+<li><p>which actions to choose in the simulation phase</p></li>
+</ul>
+<ul class="simple">
+<li><p>In AlphaGo the networks for the heuristics in the selection- and the simulation-phase are trained from expert-moves</p></li>
+<li><p>In AlphaZero no Domain-knowledge (database of expert moves) is required.</p></li>
+</ul>
+</div>
+<div class="section" id="constraint-satisfaction-problems-csp">
+<h2>Constraint Satisfaction Problems (CSP)<a class="headerlink" href="#constraint-satisfaction-problems-csp" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>Problem Specification<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Set of <font color="red">variables</font>:
+$<span class="math notranslate nohighlight">\(
+\mathcal{X}=\lbrace X_1, X_2, \ldots,X_n \rbrace
+\)</span>$</p></li>
+<li><p><font color="red">Domain <span class="math notranslate nohighlight">\(D_i\)</span></font> of a variable <span class="math notranslate nohighlight">\(X_i\)</span> is the set of possible values for <span class="math notranslate nohighlight">\(X_i\)</span>.</p></li>
+<li><p>Set of <font color="red">constraints</font>:
+$<span class="math notranslate nohighlight">\(
+\mathcal{C}=\lbrace C_1, C_2,, \ldots,C_m \rbrace
+\)</span>$</p></li>
+<li><p>Each constraint refers to a set of variables from <span class="math notranslate nohighlight">\(\mathcal{X}\)</span></p></li>
+</ul>
+<p><strong>Problem Specification</strong> (continued):</p>
+<ul class="simple">
+<li><p><font color="red">State</font> is a concrete assignment of values to a set of variables from <span class="math notranslate nohighlight">\(\mathcal{X}\)</span></p></li>
+<li><p>An assignment of values, which does not violate any constraint is called <font color="red">consistent</font>.</p></li>
+<li><p><font color="red">Complete Assignment:</font> If values are assigned to all variables</p></li>
+<li><p><font color="red">Solution of CSP</font>: If a complete assignment is consistent.</p></li>
+<li><p>Sometimes solutions that <font color="red">maximize a utility function</font> are required.
+\end{itemize}</p></li>
+</ul>
+</div>
+<div class="section" id="backtracking-algorithm">
+<h3>Backtracking Algorithm<a class="headerlink" href="#backtracking-algorithm" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Backtracking is a variant of deep-first-search, which assigns in each level values to only one variable.</p></li>
+<li><p>Values are assigned to variables such that assignment is consistent</p></li>
+<li><p>Target test: Check if assignment is complete and consistent</p></li>
+<li><p>Example: <span class="xref myst">Backtracking Solution of Sudoku using simpleai</span></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="local-search-optimisation-algorithms">
+<h2>Local Search / Optimisation Algorithms<a class="headerlink" href="#local-search-optimisation-algorithms" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="genetic-algorithm">
+<h3>Genetic Algorithm<a class="headerlink" href="#genetic-algorithm" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Realizes concept of Darwin’s Theory of Evolution</p>
+<ul>
+<li><p><strong>Population of individuals</strong></p></li>
+<li><p>Individuals are <strong>selected</strong> (randomly).</p></li>
+<li><p>Selection probability depends on <strong>fitness</strong> of individuals</p></li>
+<li><p>Selected individuals generate new individuals by <strong>crossover</strong> (randomly)</p></li>
+<li><p>There may be random <strong>mutations</strong> in new individuals</p></li>
+<li><p>Each individual has a fitness</p></li>
+<li><p><strong>Only the fittest survive</strong></p></li>
+</ul>
+</li>
+</ul>
+<img alt="https://maucher.home.hdm-stuttgart.de/Pics/AblaufGenAlgEng.png" class="align-center" src="https://maucher.home.hdm-stuttgart.de/Pics/AblaufGenAlgEng.png" />
+<img alt="https://maucher.home.hdm-stuttgart.de/Pics/GeneticAlg.png" class="align-center" src="https://maucher.home.hdm-stuttgart.de/Pics/GeneticAlg.png" />
+</div>
+<div class="section" id="id2">
+<h3>Applications<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Genetic Algorithms are applied for a wide range of search- and optimisation problems.</p></li>
+<li><p>Examples:</p>
+<ul>
+<li><p>Best solution in the Daimler container packing project</p></li>
+<li><p>Network optimisation</p></li>
+<li><p>Neural network optimisation</p></li>
+<li><p>Logistik and Scheduling problems of all types</p></li>
+<li><p>Find optimal parameters for complex control systems (motor-control)</p></li>
+<li><p>Gaming AI</p>
+<ul>
+<li><p>Evolution of artificial agents</p></li>
+<li><p>Procedural Content Generation</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://www.hdm-stuttgart.de/~maucher/Python/FunktionenAlgorithmen/html/genAlgTSP.html">Traveling Salesman Problem</a></p></li>
+<li><p><a class="reference external" href="http://rednuht.org/genetic_cars_2/">Vehicle Configuration Demo</a>.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h3>Problem Specification:<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>What is an individual (a <em>state</em>)?</p></li>
+<li><p>Define random selection</p></li>
+<li><p>Define function for crossover</p></li>
+<li><p>Define function for mutation</p></li>
+<li><p>Define fitness-function</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="01aWhatsAI.html" title="previous page">Rational Agents</a>
+    <a class='right-next' id="next-link" href="04Inference.html" title="next page">Knowledge-based Systems</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Prof. Dr. Johannes Maucher<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="_static/js/index.js"></script>
+    
+  </body>
+</html>

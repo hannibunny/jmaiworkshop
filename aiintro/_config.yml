@@ -1,0 +1,11 @@
+# Book settings
+title: Artificial Intelligence Introduction
+author: Prof. Dr. Johannes Maucher
+logo: hdmlogomed.jpg
+
+parse:
+  myst_extended_syntax: true
+
+latex:
+  latex_documents:
+    targetname: nlpbook.tex

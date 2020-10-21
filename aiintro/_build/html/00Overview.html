@@ -1,0 +1,431 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Artificial Intelligence and Machine Learning &#8212; Artificial Intelligence Introduction</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-dropdown.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script type="text/javascript" src="_static/togglebutton.js"></script>
+    <script type="text/javascript" src="_static/clipboard.min.js"></script>
+    <script type="text/javascript" src="_static/copybutton.js"></script>
+    <script type="text/javascript" src="_static/sphinx-book-theme.js"></script>
+    <script type="text/javascript">var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" type="text/javascript" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script type="text/javascript">
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" type="text/javascript" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Introduction: What’s Artificial Intelligence (AI)" href="01Introduction.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/hdmlogomed.jpg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Artificial Intelligence Introduction</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="#">
+   Artificial Intelligence and Machine Learning
+  </a>
+ </li>
+</ul>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01Introduction.html">
+   Introduction: What’s Artificial Intelligence (AI)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01aWhatsAI.html">
+   Rational Agents
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03SearchAndPlan.html">
+   Search and Planning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04Inference.html">
+   Knowledge-based Systems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05Uncertainty.html">
+   Modelling of Uncertainty
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06MLintro.html">
+   Machine Learning: Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06Data.html">
+   Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07NeuralNets.html">
+   Neural Networks Introduction
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/00Overview.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/00Overview.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/00Overview.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#goals-of-this-workshop">
+   Goals of this workshop
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#contents">
+   Contents
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#introduction">
+     <span class="xref myst">
+      Introduction
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#searching-and-planning">
+     <span class="xref myst">
+      Searching and Planning
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#knowledge-and-inference">
+     <span class="xref myst">
+      Knowledge and Inference
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#modelling-of-uncertainty">
+     <span class="xref myst">
+      Modelling of Uncertainty
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#machine-learning-intro">
+     <span class="xref myst">
+      Machine Learning Intro
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-for-machine-learning">
+     <span class="xref myst">
+      Data for Machine Learning
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#neural-networks-introduction">
+     <span class="xref myst">
+      Neural Networks Introduction
+     </span>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="artificial-intelligence-and-machine-learning">
+<h1>Artificial Intelligence and Machine Learning<a class="headerlink" href="#artificial-intelligence-and-machine-learning" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Author: Johannes Maucher</p></li>
+<li><p>Date: October, 12th, 2020</p></li>
+<li><p><a class="reference external" href="http://maucher.pages.mi.hdm-stuttgart.de/ai/">http://maucher.pages.mi.hdm-stuttgart.de/ai/</a></p></li>
+</ul>
+<div class="section" id="goals-of-this-workshop">
+<h2>Goals of this workshop<a class="headerlink" href="#goals-of-this-workshop" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Artificial Intelligence (AI) is not about creating super-human-science-fiction-creatures. AI, instead provides an <strong>extremely flexible and comprehensive toolbox</strong>, which can be applied for an almost infinite field of applications. The main goal of this seminar is to provide you a glimpse into the immense AI potential. In the best case you will find out, that some of your daily work or projects can be better solved by applying AI-tools.</p></li>
+<li><p>This seminar should provide a structured introduction to AI. <strong>The wide range of AI is subdivided into 4 categories</strong>. For each of these categories the main concepts and application-areas are presented. Knowing the fundamentals of these categories is the <strong>perfect starting point to deepen knowledge in specific subcategories</strong>, e.g. Deeplearning. Moreover it provides the capability to <strong>assign, classify and assess any statement, idea or application on AI</strong> (on a high level).</p></li>
+</ul>
+</div>
+<div class="section" id="contents">
+<h2>Contents<a class="headerlink" href="#contents" title="Permalink to this headline">¶</a></h2>
+<img alt="https://maucher.home.hdm-stuttgart.de/Pics/categoriesEnglish.png" class="align-center" src="https://maucher.home.hdm-stuttgart.de/Pics/categoriesEnglish.png" />
+<p>The field of Artificial lIntelligence is usually partitioned into the following 4 categories:</p>
+<ul class="simple">
+<li><p>Search and Plan</p></li>
+<li><p>Knowledge Representation and Inference</p></li>
+<li><p>Modelling of Uncertainty</p></li>
+<li><p>Machine Learning</p></li>
+</ul>
+<div class="section" id="introduction">
+<h3><a class="reference internal" href="01Introduction.html"><span class="doc std std-doc">Introduction</span></a><a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>What is AI?</p></li>
+<li><p>AI Categories</p></li>
+<li><p>AI applications by category</p></li>
+</ul>
+</div>
+<div class="section" id="searching-and-planning">
+<h3><a class="reference internal" href="03SearchAndPlan.html"><span class="doc std std-doc">Searching and Planning</span></a><a class="headerlink" href="#searching-and-planning" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Example Applications</p></li>
+<li><p>Environment Requirements</p></li>
+<li><p>Uninformed Search</p></li>
+<li><p>Informed Search</p></li>
+<li><p>Optimisation / Genetic Algorithm</p></li>
+</ul>
+</div>
+<div class="section" id="knowledge-and-inference">
+<h3><a class="reference internal" href="04Inference.html"><span class="doc std std-doc">Knowledge and Inference</span></a><a class="headerlink" href="#knowledge-and-inference" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Applications:</p>
+<ul>
+<li><p>Expert Systems, e.g. for medical or technical diagnosis</p></li>
+<li><p>Semantic Web</p></li>
+<li><p>Google Knowledge Graph</p></li>
+</ul>
+</li>
+<li><p>Knowledge Base</p></li>
+<li><p>Inference</p></li>
+</ul>
+</div>
+<div class="section" id="modelling-of-uncertainty">
+<h3><a class="reference internal" href="05Uncertainty.html"><span class="doc std std-doc">Modelling of Uncertainty</span></a><a class="headerlink" href="#modelling-of-uncertainty" title="Permalink to this headline">¶</a></h3>
+<p>Bayesian Networks</p>
+<ul class="simple">
+<li><p>Applications, e.g. medical or technical Diagnosis</p></li>
+<li><p>Definition of Bayesian Network: Graphs, Edges, CPTs</p></li>
+<li><p>Inference in Bayesian Networks</p></li>
+</ul>
+</div>
+<div class="section" id="machine-learning-intro">
+<h3><a class="reference internal" href="06MLintro.html"><span class="doc std std-doc">Machine Learning Intro</span></a><a class="headerlink" href="#machine-learning-intro" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Categorization: Supervised, Unsupervised, Reinforcement, Dimensionality Reduction, Outlier Detection</p></li>
+<li><p>Application categories: Object Recognition, NLP, Data Mining</p></li>
+<li><p>Machine Learning Process in general</p></li>
+<li><p>Machine Learning in the context of Data Mining</p></li>
+</ul>
+</div>
+<div class="section" id="data-for-machine-learning">
+<h3><a class="reference internal" href="06Data.html"><span class="doc std std-doc">Data for Machine Learning</span></a><a class="headerlink" href="#data-for-machine-learning" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Data Types: numeric, nominal, ordinal, sequential, independent, …</p></li>
+<li><p>How much data is required? …</p></li>
+<li><p>…It depends on …</p></li>
+<li><p>Methods to decrease the required amount of data</p></li>
+<li><p>Data in the context of Deep Learning</p></li>
+</ul>
+</div>
+<div class="section" id="neural-networks-introduction">
+<h3><a class="reference internal" href="07NeuralNets.html"><span class="doc std std-doc">Neural Networks Introduction</span></a><a class="headerlink" href="#neural-networks-introduction" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Single Neuron operation</p></li>
+<li><p>General Notions of Neural Networks</p></li>
+<li><p>Single Layer Perceptron (SLP)</p></li>
+<li><p>Multi Layer Perceptron (MLP)</p></li>
+</ul>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='right-next' id="next-link" href="01Introduction.html" title="next page">Introduction: What’s Artificial Intelligence (AI)</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Prof. Dr. Johannes Maucher<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="_static/js/index.js"></script>
+    
+  </body>
+</html>
