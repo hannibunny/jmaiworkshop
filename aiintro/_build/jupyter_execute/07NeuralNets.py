@@ -10,7 +10,8 @@ Neurons are the basic elements for information processing. A neuron consists of 
 
 ## Artificial Neuron
 
-<img src="http://maucher.home.hdm-stuttgart.de/Pics/slpPresentationSingle.png" width="350" align="middle">
+
+<img src="http://maucher.home.hdm-stuttgart.de/Pics/slpPresentationSingle.png" width="400">
 
 
 The artificial model of a neuron is shown in the picture below. At the input of each neuron the weighted sum 

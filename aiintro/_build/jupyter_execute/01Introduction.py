@@ -100,13 +100,17 @@ Rational means, that the agent acts in a way that is expected to maximize its pe
 <img src="https://maucher.home.hdm-stuttgart.de/Pics/poker.jpg" style="width:500px" align="center">
 
 ### Early Detection of Diabetic Retinopathie
+
 <div>
-    <img src="https://maucher.home.hdm-stuttgart.de/Pics/retinopathie-app.png" style="width:250px" align="left">
-    <img src="https://maucher.home.hdm-stuttgart.de/Pics/retinopathie-beispiel.png" style="width:650px" align="left">
+    <img src="https://maucher.home.hdm-stuttgart.de/Pics/retinopathie-app.png" width="200" align="left">
+    <img src="https://maucher.home.hdm-stuttgart.de/Pics/retinopathie-beispiel.png" width="550" align="right">
 </div>
+---------------------------------------------------------------------------------------------------------------
+
 
 ### Cancer Detection
-<img src="https://maucher.home.hdm-stuttgart.de/Pics/prostate_cancer.png" style="width:800px" align="middle">
+
+<img src="https://maucher.home.hdm-stuttgart.de/Pics/prostate_cancer.png" width="700" align="center">
 
 
 <img src="https://maucher.home.hdm-stuttgart.de/Pics/jtHealth.png" style="width:800px">
