@@ -1,6 +1,6 @@
 # Knowledge-based Systems
 * Author: Johannes Maucher
-* Last update: 16.03.2018
+* Last update: 26.10.2020
 
 ![agentKnowledge.png](https://maucher.home.hdm-stuttgart.de/Pics/agentKnowledge.png)
 
@@ -58,7 +58,7 @@ Source: [Watson Discovery Knowledge Graph](https://console.bluemix.net/docs/serv
     - NLP (Natural Language Processing) is applied to determine subject,predicate,object
     - these elements are the triples, which constitute the graph
 
-**Knowledge, Graphs, Triple-Stores, Queries:**
+### Knowledge, Graphs, Triple-Stores, Queries
 <img src="https://maucher.home.hdm-stuttgart.de/Pics/wikiEntries.PNG" style="width:600px" align="center">
 
 **Knowledge, Graphs, Triple-Stores, Queries:**
@@ -69,6 +69,16 @@ Source: [Watson Discovery Knowledge Graph](https://console.bluemix.net/docs/serv
 
 **Knowledge, Graphs, Triple-Stores, Queries:**
 <img src="https://maucher.home.hdm-stuttgart.de/Pics/wikiQueries.PNG" style="width:600px" align="center">
+
+### More complex Problem Solving
+**Prolog Example:** Program consists of facts and rules.
+
+<img src="https://maucher.home.hdm-stuttgart.de/Pics/prologscreenshot.png" style="width:700px">
+
+
+**Solving Logic Puzzles:**
+
+<img src="https://maucher.home.hdm-stuttgart.de/Pics/cherylsbirthday.jpg" style="width:600px">
 
 ## Examples of Knowledge Graphs
 
@@ -89,4 +99,3 @@ Source: [Watson Discovery Knowledge Graph](https://console.bluemix.net/docs/serv
 * Amazon Product Graph
 * AirBnB 
 * IBM Watson
-

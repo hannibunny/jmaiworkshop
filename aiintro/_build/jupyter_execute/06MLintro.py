@@ -1,13 +1,22 @@
 # Machine Learning: Introduction
 
 * Author: Johannes Maucher
-* Last Update: 12.10.2020
+* Last Update: 26.10.2020
 
 ## Definition
 **Definition by Tom Mitchell:**
 *A computer program is said to learn from <font color="red">experience E</font> with respect to some class of <font color="red">tasks T</font> and <font color="red">performance measure P</font> if its performance at tasks in T, as measured by P, improves with experience E.*
 
 Similar as the definition of *rational Agents* for AI in general, this definition of Machine Learning defines a practical guideline to start any new project in this field: At the very beginning of each new project in this field specify the task T, the performance measure P and the experience E. For some applications some of these elements may be trivial, but sometimes it can be very challenging. E.g. what is the performance measure for a recommender system? 
+
+### Example: Recommender System Online Shop
+
+1. Task T:
+    * ?
+2. Experience E:
+    * ?
+3. Performance Measure P:
+    * ?
 
 ## Categories of Machine Learning
 <img src="http://maucher.home.hdm-stuttgart.de/Pics/mlCategories.png" style="width:800px" align="center">
@@ -91,4 +100,3 @@ The output of the evaluation is usually fed back to the first phases (business- 
 ## Machine Learning Applications
 
 **Almost all of the applications in the [Introduction](01Introduction.ipynb) are Machine Learning applications**
-

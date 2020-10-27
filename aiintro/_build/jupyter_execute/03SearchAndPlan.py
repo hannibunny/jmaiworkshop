@@ -1,6 +1,6 @@
 # Search and Planning
 * Author: Johannes Maucher
-* Last Update: 12.10.2020
+* Last Update: 26.10.2020
 
 ## Goal-based Agent
 ![agentGoal.png](https://maucher.home.hdm-stuttgart.de/Pics/agentGoal.png)
@@ -47,7 +47,7 @@ YouTubeVideo('6J_Kaklz4f0', width=800, height=300)
 <img src="https://maucher.home.hdm-stuttgart.de/Pics/genAlgLogistikPackung.PNG" style="width:400px" align="center">
 
 ## Requirements
-* The algorithms, discussed in this notebook require a environment, which is
+* The algorithms, discussed in this notebook require an environment, which is
     * Fully observable
     * Deterministic
     * Static
@@ -56,14 +56,14 @@ YouTubeVideo('6J_Kaklz4f0', width=800, height=300)
 For each problem, which shall be solved by an approach of this notebook, the following must be specified:
 * What is a **state**?
 * What is the initial state? What is the goal-state?
-* If initial- or goal- state is hard to define a **utility-function** may do the job
+* If initial- and/or goal- state is hard to define a **utility-function** may do the job
 * What is an **action**? Which actions are available in which states?
 * What are the **costs** of actions?
 * For heuristic algorithms: How to estimate the **utility** of an arbitrary state
 
 ## Performance Metrics for Search- and Planning-Algorithms
 * **Completeness:** Algorithm guarantees to find a solution.
-* **Optimal:** Algorithm guarantees to find optimimum solution.
+* **Optimal:** Algorithm guarantees to find optimal solution.
 * **Complexity:** In terms of time and memory
 * **Global:** Solution is a path from intitial- to goal-state
 * **Local:** Solution is a good state
@@ -76,12 +76,31 @@ For each problem, which shall be solved by an approach of this notebook, the fol
 * goal-based
 * utility-based
 
-## Uninformed Search
+## Global, Uninformed Search
 
 Find solution by construction of search-tree from current-state to goal-state
 * Breadth-First
 * Depth-First
 * Uniform Cost Search
+
+**Example: 8-puzzle**
+
+Initial State:
+
+|       |       |       |
+|  -    |   -   |   -   |
+| 4 	| 1 	| 2 	|
+| 7 	| e 	| 3 	|
+| 8	    | 5 	| 6 	|
+
+Goal State:
+
+
+|       |       |       |
+|  -    |   -   |   -   |
+| 1 	| 2 	| 3 	|
+| 4 	| 5 	| 6 	|
+| 7 	| 8 	| e 	|
 
 ### Breadth-First
 <img src="https://maucher.home.hdm-stuttgart.de/Pics/breadthfirst.png" style="width:900px" align="center">
@@ -118,8 +137,9 @@ Find solution by construction of search-tree from current-state to goal-state
    `Else`: Continue with step 2
 
 ## Heuristic Search
-* A*
+* A* algorithm
 * Find solution by construction of search-tree from current-state to goal-state 
+* *Which node shall be expanded next?* regards not only previous costs, but also **estimated Costs to Goal**.
 
 ### A*-Algorithm
 <img src="https://maucher.home.hdm-stuttgart.de/Pics/8puzzleAstern.png" style="width:700px" align="center">
@@ -131,13 +151,6 @@ Find solution by construction of search-tree from current-state to goal-state
     Terminate and return path from initial- to goal-state
     
    `Else`: Continue with step 2
-
-* [Simple (own) implementation of BFS, DFS and UCS](https://www.hdm-stuttgart.de/~maucher/Python/FunktionenAlgorithmen/html/SearchAlgos.html)
-* [Python module simpleai](http://simpleai.readthedocs.io/en/latest/)
-* [Non-informed solution of the 8-puzzle problem, using *simpleai*](8puzzle.ipynb)
-* [Informed solution of the 8-puzzle problem, using *simpleai*](8puzzleAstern.ipynb)
-* [Non-informed solution of Jug-pouring puzzle, using *simpleai*](Fillpuzzle.ipynb)
-
 
 ## 2-Player Games
 The algorithm described in this section is applicable for all games with the following characteristics:
@@ -243,7 +256,6 @@ $$
 * Backtracking is a variant of deep-first-search, which assigns in each level values to only one variable.
 * Values are assigned to variables such that assignment is consistent
 * Target test: Check if assignment is complete and consistent
-* Example: [Backtracking Solution of Sudoku using simpleai](sudoku.ipynb)
 
 ## Local Search / Optimisation Algorithms
 
@@ -265,11 +277,18 @@ $$
 <img src="https://maucher.home.hdm-stuttgart.de/Pics/GeneticAlg.png" style="width:800px" align="center">
 
 
+### Problem Specification:
+* What is an individual (a *state*)?
+* Define random selection
+* Define function for crossover
+* Define function for mutation
+* Define fitness-function
+
 ### Applications
 * Genetic Algorithms are applied for a wide range of search- and optimisation problems.
 * Examples:
     - Best solution in the Daimler container packing project
-    - Network optimisation
+    - Wireless Network optimisation
     - Neural network optimisation
     - Logistik and Scheduling problems of all types
     - Find optimal parameters for complex control systems (motor-control)
@@ -278,10 +297,3 @@ $$
         - Procedural Content Generation
     - [Traveling Salesman Problem](https://www.hdm-stuttgart.de/~maucher/Python/FunktionenAlgorithmen/html/genAlgTSP.html)
     - [Vehicle Configuration Demo](http://rednuht.org/genetic_cars_2/).
-
-### Problem Specification:
-* What is an individual (a *state*)?
-* Define random selection
-* Define function for crossover
-* Define function for mutation
-* Define fitness-function

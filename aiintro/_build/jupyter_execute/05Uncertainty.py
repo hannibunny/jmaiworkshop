@@ -1,26 +1,18 @@
 # Modelling of Uncertainty
 * Author: Johannes Maucher
-* Last Update: 12.10.2020
+* Last Update: 26.10.2020
 
-## Motivation and Applications
+## Motivation
 
 <img src="https://maucher.home.hdm-stuttgart.de/Pics/cancerSlide.png" style="width:700px" align="center">
 
 **Motivation:**
 
-* This example demonstrates how intuition can mislead us.
+* This example demonstrates <font color="red"> how intuition can mislead us</font>.
 * The book [D. Kahnemann, Thinking Fast and Slow](https://en.wikipedia.org/wiki/Thinking,_Fast_and_Slow) is full of such examples, where we estimate probabilities and risks just by intuition.
 * Estimation of risks (e.g. in the planning of complex projects) is hard, because of the interaction of many non-deterministic factors
 * Bayesian Networks help to model such complex problems.
 * They <font color="red">allow global probability calculation, based on local (pairwise) probability estimates.</font> 
-
-**Applications:**
-
-* Insurance companies: Risk assessment and -estimation
-* Medical Diagnosis
-* Technical Diagnosis
-* Situation Analysis (Project with Daimler). E.g. given the input of many sensors, estimate the probability that a neighbouring car changes lines.
-
 
 ## Estimation of Probabilities from a sample
 
@@ -66,6 +58,14 @@ $P(iphone | ipad)=\frac{2}{5}=0.4$
 * allow inference in both directions: 
     - causal
     - diagnostic
+
+**Applications:**
+
+* Insurance companies: Risk assessment and -estimation
+* Medical Diagnosis
+* Technical Diagnosis
+* Situation Analysis (Project with Daimler). E.g. given the input of many sensors, estimate the probability that a neighbouring car changes lines.
+
 
 **Bayesian Networks:**
 
@@ -123,4 +123,3 @@ Given the observation $Smoker positiv$ and *X-Ray positive* the probability for 
     <p>What is the most likely reason, if it is known that the requirements were correctly defined from the beginning?</p>
 </div>
 <img src="https://maucher.home.hdm-stuttgart.de/Pics/bayesNetProjectMgmtDiagnose.PNG">
-

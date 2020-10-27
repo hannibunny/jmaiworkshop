@@ -248,11 +248,6 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#if-you-have-more-than-enough-data">
-   If you have more than enough data
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#in-the-case-of-unbalanced-data">
    In the case of Unbalanced Data
   </a>
@@ -308,7 +303,7 @@
 <h1>Data<a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
 <li><p>Author: Johannes Maucher</p></li>
-<li><p>Last Update: 12.10.2020</p></li>
+<li><p>Last Update: 27.10.2020</p></li>
 </ul>
 <p><strong>Motivation:</strong><br />
 One of the central questions before starting a Machine Learning project is</p>
@@ -466,8 +461,8 @@ One of the central questions before starting a Machine Learning project is</p>
 <ul class="simple">
 <li><p>What you actually should verify is</p></li>
 </ul>
-<center><font color="red">Does the sample cover the entire complexity of the entire population?</font></center>
-* A crucial challenge in this respect is to <center><font color="red">distinguish outliers from quite specific cases</font></center>
+<center><font color="red">Does the sample reliably represent the distribution of the entire data-population?</font></center>
+* A crucial challenge in this respect is <center><font color="red">Which outliers can be disregarded?</font></center>
 * Advice:
 <center><font color="red"><i>Consult problem-domain experts</i></font></center><p><strong>How to determine outliers?</strong></p>
 <ul class="simple">
@@ -499,11 +494,13 @@ One of the central questions before starting a Machine Learning project is</p>
 <li><p>Learn model from different training-sample subsets and determine performance variance</p></li>
 <li><p>This is actually cross-validation</p></li>
 </ul>
-<p><strong>Learning Curve:</strong>
+<p><strong>Learning Curve for increasing amount of training data:</strong>
 <img src="https://maucher.home.hdm-stuttgart.de/Pics/learningcurve.png" style="width:800px" align="center"></p>
+<p>As long as the validation accuracy increases with increasing training data, one should go for more training data.</p>
 <p><strong>Cross Validation:</strong></p>
 <img alt="https://maucher.home.hdm-stuttgart.de/Pics/CrossValidation.jpg" class="align-center" src="https://maucher.home.hdm-stuttgart.de/Pics/CrossValidation.jpg" />
 <img alt="https://maucher.home.hdm-stuttgart.de/Pics/crossValidation.png" class="align-center" src="https://maucher.home.hdm-stuttgart.de/Pics/crossValidation.png" />
+<p>If the accuracy in the individual iterations of cross validation varies strongly, the amount of labeled data is probably too low.</p>
 </div>
 <div class="section" id="if-you-do-not-have-enough-data">
 <h2>If you do not have enough data<a class="headerlink" href="#if-you-do-not-have-enough-data" title="Permalink to this headline">¶</a></h2>
@@ -518,15 +515,6 @@ One of the central questions before starting a Machine Learning project is</p>
 </ul>
 <p><strong>Active Learning:</strong></p>
 <img alt="https://maucher.home.hdm-stuttgart.de/Pics/activeLearning.png" class="align-center" src="https://maucher.home.hdm-stuttgart.de/Pics/activeLearning.png" />
-</div>
-<div class="section" id="if-you-have-more-than-enough-data">
-<h2>If you have more than enough data<a class="headerlink" href="#if-you-have-more-than-enough-data" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p><font color="red"><strong>The more the better?</strong></font></p></li>
-<li><p><strong>No!</strong></p></li>
-<li><p>Too much data may yield overfitting.</p></li>
-<li><p>Calculate <em>learning curves</em> (see other notebook) and determine optimum size of training data.</p></li>
-</ul>
 </div>
 <div class="section" id="in-the-case-of-unbalanced-data">
 <h2>In the case of Unbalanced Data<a class="headerlink" href="#in-the-case-of-unbalanced-data" title="Permalink to this headline">¶</a></h2>
@@ -611,7 +599,9 @@ One of the central questions before starting a Machine Learning project is</p>
 </div>
 <div class="section" id="concluding-remark">
 <h3>Concluding Remark<a class="headerlink" href="#concluding-remark" title="Permalink to this headline">¶</a></h3>
-<center><font color="red"><i> $\Rightarrow$ Before applying Deep Learning you should understand your data and your task. In order to do so application of simple conventional approaches may help</i></font></center> </div>
+<p><span class="math notranslate nohighlight">\(\Rightarrow\)</span> <center><font color="red"><i>Before applying Deep Learning you should understand your data and your task. In order to do so application of simple conventional approaches may help</i></font></center></p>
+<img alt="https://maucher.home.hdm-stuttgart.de/Pics/kanonenaufspatzen.jpg" class="align-center" src="https://maucher.home.hdm-stuttgart.de/Pics/kanonenaufspatzen.jpg" />
+</div>
 </div>
 </div>
 

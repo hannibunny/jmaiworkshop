@@ -1,9 +1,23 @@
 # Artificial Intelligence and Machine Learning
 * Author: Johannes Maucher
-* Date: October, 12th, 2020
-* [http://maucher.pages.mi.hdm-stuttgart.de/ai/](http://maucher.pages.mi.hdm-stuttgart.de/ai/)
+* Date: October, 28th, 2020
 
-## Goals of this workshop
+
+* Homepage Maucher: [http://maucher.pages.mi.hdm-stuttgart.de/ai/](http://maucher.pages.mi.hdm-stuttgart.de/ai/)
+* Institute for Applied Artificial Intelligence (IAAI): [https://ai.hdm-stuttgart.de/](https://ai.hdm-stuttgart.de/)
+* This lecture: [https://maucher.home.hdm-stuttgart.de/jmaiworkshop](https://maucher.home.hdm-stuttgart.de/jmaiworkshop/)
+
+## AI Lectures @Mahle
+
+1. Introduction Artificial Intelligence and Machine Learning
+    * Basic categories, concepts and applications
+    * October 28th, 2020
+2. Neural Networks and Deep Neural Networks
+    * Deep Neural Network Architectures
+    * Implementation of Neural Networks in Python, Tensorflow and Keras
+    * November 18th, 2020
+
+## Goals of this seminar
 
 * Artificial Intelligence (AI) is not about creating super-human-science-fiction-creatures. AI, instead provides an **extremely flexible and comprehensive toolbox**, which can be applied for an almost infinite field of applications. The main goal of this seminar is to provide you a glimpse into the immense AI potential. In the best case you will find out, that some of your daily work or projects can be better solved by applying AI-tools.
 
@@ -66,8 +80,6 @@ Bayesian Networks
 * General Notions of Neural Networks
 * Single Layer Perceptron (SLP)
 * Multi Layer Perceptron (MLP)
-
-
 
 
 ```{toctree}

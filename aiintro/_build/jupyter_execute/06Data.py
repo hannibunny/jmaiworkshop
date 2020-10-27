@@ -1,6 +1,6 @@
 # Data
 * Author: Johannes Maucher
-* Last Update: 12.10.2020
+* Last Update: 27.10.2020
 
 **Motivation:**    
 One of the central questions before starting a Machine Learning project is 
@@ -130,8 +130,8 @@ plt.show()
 
 ## How to check if you have enough training data
 * What you actually should verify is
-<center><font color="red">Does the sample cover the entire complexity of the entire population?</font></center>
-* A crucial challenge in this respect is to <center><font color="red">distinguish outliers from quite specific cases</font></center>
+<center><font color="red">Does the sample reliably represent the distribution of the entire data-population?</font></center>
+* A crucial challenge in this respect is <center><font color="red">Which outliers can be disregarded?</font></center>
 * Advice:
 <center><font color="red"><i>Consult problem-domain experts</i></font></center>
 
@@ -158,14 +158,18 @@ plt.show()
 * Learn model from different training-sample subsets and determine performance variance
 * This is actually cross-validation
 
-**Learning Curve:**
+**Learning Curve for increasing amount of training data:**
 <img src="https://maucher.home.hdm-stuttgart.de/Pics/learningcurve.png" style="width:800px" align="center">
+
+As long as the validation accuracy increases with increasing training data, one should go for more training data.
 
 **Cross Validation:**
 
 <img src="https://maucher.home.hdm-stuttgart.de/Pics/CrossValidation.jpg" style="width:800px" align="center">
 
 <img src="https://maucher.home.hdm-stuttgart.de/Pics/crossValidation.png" style="width:800px" align="center">
+
+If the accuracy in the individual iterations of cross validation varies strongly, the amount of labeled data is probably too low.
 
 ## If you do not have enough data
 * Try to learn a simple modell
@@ -180,12 +184,6 @@ plt.show()
 
 <img src="https://maucher.home.hdm-stuttgart.de/Pics/activeLearning.png" style="width:600px" align="center">
 Source: [B. Settles, Active Learning Survey](http://www.cs.cmu.edu/~10701/slides/Settles_notes.pdf)
-
-## If you have more than enough data
-* <font color="red">**The more the better?**</font> 
-* **No!**
-* Too much data may yield overfitting.
-* Calculate *learning curves* (see other notebook) and determine optimum size of training data.
 
 ## In the case of Unbalanced Data
 <img src="https://maucher.home.hdm-stuttgart.de/Pics/churnClassDistribution.png" style="width:600px" align="center">
@@ -262,5 +260,6 @@ Image source: [F. Chollet, Deep Learning with Python](https://www.manning.com/bo
 
 ### Concluding Remark
 
-<center><font color="red"><i> $\Rightarrow$ Before applying Deep Learning you should understand your data and your task. In order to do so application of simple conventional approaches may help</i></font></center> 
+$\Rightarrow$ <center><font color="red"><i>Before applying Deep Learning you should understand your data and your task. In order to do so application of simple conventional approaches may help</i></font></center> 
 
+<img src="https://maucher.home.hdm-stuttgart.de/Pics/kanonenaufspatzen.jpg" style="width:600px" align="center">

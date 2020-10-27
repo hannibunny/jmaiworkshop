@@ -33,14 +33,14 @@ If you manage to translate your problem into the **language of AI**, you may com
 ### From Human Intelligence to Automation ...
 
 
-<img src="https://maucher.home.hdm-stuttgart.de/Pics/automatisierungOhneKI.PNG" style="width:1024px" align="middle">
+<img src="https://maucher.home.hdm-stuttgart.de/Pics/automatisierungOhneKI.PNG" width = "600" align="center">
 
 ### ... and from Automation to Machine Learning
-<img src="https://maucher.home.hdm-stuttgart.de/Pics/automatisierungMachineLearning.PNG" style="width:1024px" align="middle">
+<img src="https://maucher.home.hdm-stuttgart.de/Pics/automatisierungMachineLearning.PNG" width = "600" align="center">
 
 ### What is Artificial Intelligence?
 * **AI tries to integrate cognitive abilities**, such as inference, planning, problem solving, learning etc. in computer systems.
-* The goal of AI reserch is to enable modern AI systems (learning systems) such as machines, robots and software systems to **autonomously process and solve abstract tasks and problems even under changed conditions** - without a human being programming an explicit solution. 
+* The goal of AI research is to enable modern AI systems (learning systems) such as machines, robots and software systems to **autonomously process and solve abstract tasks and problems even under changed conditions** - without a human being programming an explicit solution. 
 * All AI systems that are technically feasible today enable problem solving in limited contexts (e.g. speech or image recognition) and thus belong to the so-called **weak AI**
 
 #### Turing Test

@@ -246,8 +246,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#uninformed-search">
-   Uninformed Search
+  <a class="reference internal nav-link" href="#global-uninformed-search">
+   Global, Uninformed Search
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -330,12 +330,12 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id2">
-     Applications
+     Problem Specification:
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id3">
-     Problem Specification:
+     Applications
     </a>
    </li>
   </ul>
@@ -354,7 +354,7 @@
 <h1>Search and Planning<a class="headerlink" href="#search-and-planning" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
 <li><p>Author: Johannes Maucher</p></li>
-<li><p>Last Update: 12.10.2020</p></li>
+<li><p>Last Update: 26.10.2020</p></li>
 </ul>
 <div class="section" id="goal-based-agent">
 <h2>Goal-based Agent<a class="headerlink" href="#goal-based-agent" title="Permalink to this headline">¶</a></h2>
@@ -410,7 +410,7 @@
 <div class="section" id="requirements">
 <h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>The algorithms, discussed in this notebook require a environment, which is</p>
+<li><p>The algorithms, discussed in this notebook require an environment, which is</p>
 <ul>
 <li><p>Fully observable</p></li>
 <li><p>Deterministic</p></li>
@@ -425,7 +425,7 @@
 <ul class="simple">
 <li><p>What is a <strong>state</strong>?</p></li>
 <li><p>What is the initial state? What is the goal-state?</p></li>
-<li><p>If initial- or goal- state is hard to define a <strong>utility-function</strong> may do the job</p></li>
+<li><p>If initial- and/or goal- state is hard to define a <strong>utility-function</strong> may do the job</p></li>
 <li><p>What is an <strong>action</strong>? Which actions are available in which states?</p></li>
 <li><p>What are the <strong>costs</strong> of actions?</p></li>
 <li><p>For heuristic algorithms: How to estimate the <strong>utility</strong> of an arbitrary state</p></li>
@@ -435,7 +435,7 @@
 <h2>Performance Metrics for Search- and Planning-Algorithms<a class="headerlink" href="#performance-metrics-for-search-and-planning-algorithms" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><strong>Completeness:</strong> Algorithm guarantees to find a solution.</p></li>
-<li><p><strong>Optimal:</strong> Algorithm guarantees to find optimimum solution.</p></li>
+<li><p><strong>Optimal:</strong> Algorithm guarantees to find optimal solution.</p></li>
 <li><p><strong>Complexity:</strong> In terms of time and memory</p></li>
 <li><p><strong>Global:</strong> Solution is a path from intitial- to goal-state</p></li>
 <li><p><strong>Local:</strong> Solution is a good state</p></li>
@@ -452,14 +452,61 @@
 <li><p>utility-based</p></li>
 </ul>
 </div>
-<div class="section" id="uninformed-search">
-<h2>Uninformed Search<a class="headerlink" href="#uninformed-search" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="global-uninformed-search">
+<h2>Global, Uninformed Search<a class="headerlink" href="#global-uninformed-search" title="Permalink to this headline">¶</a></h2>
 <p>Find solution by construction of search-tree from current-state to goal-state</p>
 <ul class="simple">
 <li><p>Breadth-First</p></li>
 <li><p>Depth-First</p></li>
 <li><p>Uniform Cost Search</p></li>
 </ul>
+<p><strong>Example: 8-puzzle</strong></p>
+<p>Initial State:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p>7</p></td>
+<td><p>e</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-even"><td><p>8</p></td>
+<td><p>5</p></td>
+<td><p>6</p></td>
+</tr>
+</tbody>
+</table>
+<p>Goal State:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>5</p></td>
+<td><p>6</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>8</p></td>
+<td><p>e</p></td>
+</tr>
+</tbody>
+</table>
 <div class="section" id="breadth-first">
 <h3>Breadth-First<a class="headerlink" href="#breadth-first" title="Permalink to this headline">¶</a></h3>
 <img alt="https://maucher.home.hdm-stuttgart.de/Pics/breadthfirst.png" class="align-center" src="https://maucher.home.hdm-stuttgart.de/Pics/breadthfirst.png" />
@@ -502,8 +549,9 @@ Terminate and return path from initial- to goal-state</p>
 <div class="section" id="heuristic-search">
 <h2>Heuristic Search<a class="headerlink" href="#heuristic-search" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>A*</p></li>
+<li><p>A* algorithm</p></li>
 <li><p>Find solution by construction of search-tree from current-state to goal-state</p></li>
+<li><p><em>Which node shall be expanded next?</em> regards not only previous costs, but also <strong>estimated Costs to Goal</strong>.</p></li>
 </ul>
 <div class="section" id="a-algorithm">
 <h3>A*-Algorithm<a class="headerlink" href="#a-algorithm" title="Permalink to this headline">¶</a></h3>
@@ -517,13 +565,6 @@ Terminate and return path from initial- to goal-state</p>
 <p><code class="docutils literal notranslate"><span class="pre">Else</span></code>: Continue with step 2</p>
 </li>
 </ol>
-<ul class="simple">
-<li><p><a class="reference external" href="https://www.hdm-stuttgart.de/~maucher/Python/FunktionenAlgorithmen/html/SearchAlgos.html">Simple (own) implementation of BFS, DFS and UCS</a></p></li>
-<li><p><a class="reference external" href="http://simpleai.readthedocs.io/en/latest/">Python module simpleai</a></p></li>
-<li><p><span class="xref myst">Non-informed solution of the 8-puzzle problem, using <em>simpleai</em></span></p></li>
-<li><p><span class="xref myst">Informed solution of the 8-puzzle problem, using <em>simpleai</em></span></p></li>
-<li><p><span class="xref myst">Non-informed solution of Jug-pouring puzzle, using <em>simpleai</em></span></p></li>
-</ul>
 </div>
 </div>
 <div class="section" id="player-games">
@@ -639,7 +680,6 @@ $<span class="math notranslate nohighlight">\(
 <li><p>Backtracking is a variant of deep-first-search, which assigns in each level values to only one variable.</p></li>
 <li><p>Values are assigned to variables such that assignment is consistent</p></li>
 <li><p>Target test: Check if assignment is complete and consistent</p></li>
-<li><p>Example: <span class="xref myst">Backtracking Solution of Sudoku using simpleai</span></p></li>
 </ul>
 </div>
 </div>
@@ -664,13 +704,23 @@ $<span class="math notranslate nohighlight">\(
 <img alt="https://maucher.home.hdm-stuttgart.de/Pics/GeneticAlg.png" class="align-center" src="https://maucher.home.hdm-stuttgart.de/Pics/GeneticAlg.png" />
 </div>
 <div class="section" id="id2">
-<h3>Applications<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<h3>Problem Specification:<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>What is an individual (a <em>state</em>)?</p></li>
+<li><p>Define random selection</p></li>
+<li><p>Define function for crossover</p></li>
+<li><p>Define function for mutation</p></li>
+<li><p>Define fitness-function</p></li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h3>Applications<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Genetic Algorithms are applied for a wide range of search- and optimisation problems.</p></li>
 <li><p>Examples:</p>
 <ul>
 <li><p>Best solution in the Daimler container packing project</p></li>
-<li><p>Network optimisation</p></li>
+<li><p>Wireless Network optimisation</p></li>
 <li><p>Neural network optimisation</p></li>
 <li><p>Logistik and Scheduling problems of all types</p></li>
 <li><p>Find optimal parameters for complex control systems (motor-control)</p></li>
@@ -684,16 +734,6 @@ $<span class="math notranslate nohighlight">\(
 <li><p><a class="reference external" href="http://rednuht.org/genetic_cars_2/">Vehicle Configuration Demo</a>.</p></li>
 </ul>
 </li>
-</ul>
-</div>
-<div class="section" id="id3">
-<h3>Problem Specification:<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>What is an individual (a <em>state</em>)?</p></li>
-<li><p>Define random selection</p></li>
-<li><p>Define function for crossover</p></li>
-<li><p>Define function for mutation</p></li>
-<li><p>Define fitness-function</p></li>
 </ul>
 </div>
 </div>

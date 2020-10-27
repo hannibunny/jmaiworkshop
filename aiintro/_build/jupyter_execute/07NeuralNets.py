@@ -1,6 +1,6 @@
 # Neural Networks Introduction
 * Author: Johannes Maucher
-* Last Update: 20.10.2020
+* Last Update: 27.10.2020
 
 ## Natural Neuron
 
@@ -306,4 +306,3 @@ The ALVINN net is a MLP with one hidden layer. It has been designed and trained 
 <img src="https://maucher.home.hdm-stuttgart.de/Pics/alvinnNN.jpg" width=450 class="center">
 
 After training the vehicle cruised autonomously for 90 miles on a highway at a speed of up to 70mph. The test-highway has not been included in the training cruises. 
-
