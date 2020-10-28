@@ -5,7 +5,7 @@
 
 * Homepage Maucher: [http://maucher.pages.mi.hdm-stuttgart.de/ai/](http://maucher.pages.mi.hdm-stuttgart.de/ai/)
 * Institute for Applied Artificial Intelligence (IAAI): [https://ai.hdm-stuttgart.de/](https://ai.hdm-stuttgart.de/)
-* This lecture: [https://maucher.home.hdm-stuttgart.de/jmaiworkshop](https://maucher.home.hdm-stuttgart.de/jmaiworkshop/)
+* This lecture: [https://maucher.home.hdm-stuttgart.de/jmaiworkshop/html/](https://maucher.home.hdm-stuttgart.de/jmaiworkshop/html/)
 
 ## AI Lectures @Mahle
 
