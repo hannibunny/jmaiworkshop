@@ -233,14 +233,18 @@ If the computational budget is reached MCTS returns with the best action a for t
 
 ### Problem Specification
 * Set of <font color="red">variables</font>:
+
 $$
 \mathcal{X}=\lbrace X_1, X_2, \ldots,X_n \rbrace
 $$
+
 * <font color="red">Domain $D_i$</font> of a variable $X_i$ is the set of possible values for $X_i$. 
 * Set of <font color="red">constraints</font>:
+
 $$
 \mathcal{C}=\lbrace C_1, C_2,, \ldots,C_m \rbrace
 $$
+
 * Each constraint refers to a set of variables from $\mathcal{X}$
 
 **Problem Specification** (continued):

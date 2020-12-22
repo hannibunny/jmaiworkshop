@@ -1,26 +1,15 @@
 # Artificial Intelligence and Machine Learning
 * Author: Johannes Maucher
-* Date: October, 28th, 2020
+* Date: December, 4th, 2020
 
 
 * Homepage Maucher: [http://maucher.pages.mi.hdm-stuttgart.de/ai/](http://maucher.pages.mi.hdm-stuttgart.de/ai/)
 * Institute for Applied Artificial Intelligence (IAAI): [https://ai.hdm-stuttgart.de/](https://ai.hdm-stuttgart.de/)
 * This lecture: [https://maucher.home.hdm-stuttgart.de/jmaiworkshop/html/](https://maucher.home.hdm-stuttgart.de/jmaiworkshop/html/)
 
-## AI Lectures @Mahle
-
-1. Introduction Artificial Intelligence and Machine Learning
-    * Basic categories, concepts and applications
-    * October 28th, 2020
-2. Neural Networks and Deep Neural Networks
-    * Deep Neural Network Architectures
-    * Implementation of Neural Networks in Python, Tensorflow and Keras
-    * November 18th, 2020
-
 ## Goals of this seminar
 
-* Artificial Intelligence (AI) is not about creating super-human-science-fiction-creatures. AI, instead provides an **extremely flexible and comprehensive toolbox**, which can be applied for an almost infinite field of applications. The main goal of this seminar is to provide you a glimpse into the immense AI potential. In the best case you will find out, that some of your daily work or projects can be better solved by applying AI-tools.
-
+* Artificial Intelligence (AI) is not about creating super-human-science-fiction-creatures. AI, instead provides an **extremely flexible and comprehensive toolbox**, which can be applied for an almost infinite field of applications (See also [Handelsblatt Interview Dr. Steven Peters (Daimler)](https://veranstaltungen.handelsblatt.com/autogipfel/interview-mit-dr-ing-steven-peters-zwischen-realitaet-und-kuenstlicher-intelligenz/)). The main goal of this seminar is to provide you a glimpse into the immense AI potential. In the best case you will find out, that some of your daily work or projects can be better solved by applying AI-tools. 
 * This seminar should provide a structured introduction to AI. **The wide range of AI is subdivided into 4 categories**. For each of these categories the main concepts and application-areas are presented. Knowing the fundamentals of these categories is the **perfect starting point to deepen knowledge in specific subcategories**, e.g. Deeplearning. Moreover it provides the capability to **assign, classify and assess any statement, idea or application on AI** (on a high level).
 
 ## Contents

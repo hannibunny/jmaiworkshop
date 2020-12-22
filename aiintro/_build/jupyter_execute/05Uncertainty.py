@@ -105,7 +105,7 @@ Given the observation *Mammography positiv*, the probability for *Cancer* is 7.7
 
 <img src="https://maucher.home.hdm-stuttgart.de/Pics/bayesNetAsiaInfer.PNG" style="width:600px" align="center">
 
-Given the observation $Smoker positiv$ and *X-Ray positive* the probability for e.g. *Dyspnoea* is 73.19% and the probability for *lung-cancer* is 64.60%.
+Given the observation *Smoker positiv* and *X-Ray positive* the probability for e.g. *Dyspnoea* is 73.19% and the probability for *lung-cancer* is 64.60%.
 
 ## Modelling of Risks in Project Management
 <img src="https://maucher.home.hdm-stuttgart.de/Pics/bayesNetProjectMgmt.PNG">

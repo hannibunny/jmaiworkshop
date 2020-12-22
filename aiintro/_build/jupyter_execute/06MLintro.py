@@ -77,7 +77,19 @@ As shown in the picture above, usually the available data can not be passed dire
 
 
 ### Data Structure
-<img src="http://maucher.home.hdm-stuttgart.de/Pics/dataMatrix.png" style="width:700px" align="center">
+
+Each ML algorithm requires numeric vectors of unique length at it's input. Each vector represents an **instance**, which itself is described by a set of $K$ **features**. Usually we have many such vectors for training and testing and by stacking these vectors together we end up at the following two-dimensional data array. This is the standard data-structure for ML.
+
+<img src="http://maucher.home.hdm-stuttgart.de/Pics/dataMatrix.png" style="width:500px" align="center">
+
+It can be challenging to transform the given data into this format. Some examples are given below. 
+
+<img src="http://maucher.home.hdm-stuttgart.de/Pics/mlDataExamples.png" style="width:700px" align="center">
+
+* In object recognition the instances are images and the features are all pixel-values of the image. An image of size $r \times c$ with $z$ channels is then described by $K=r \cdot c \cdot z$ features.
+* In document classification a common form of representation (the *Bag-of-Word (BoW)* model) is to descrive each document (row in the matrix) by the words it contains, i.e. the columns of the 2-dimensional data-structure are the words of the entire vocabulary and the entries in this 2-dimensional indicate how often a word appears in the corresponding document
+* for a recommender-system of the online-shop the instances are the customers and each customer is described by the products he or she already purchased. 
+* ...
 
 ## Machine Learning in the context of Data Mining
 ![Crisp](http://maucher.home.hdm-stuttgart.de/Pics/crispIndall.png)

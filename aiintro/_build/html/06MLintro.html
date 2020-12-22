@@ -383,7 +383,16 @@
 </div>
 <div class="section" id="data-structure">
 <h3>Data Structure<a class="headerlink" href="#data-structure" title="Permalink to this headline">¶</a></h3>
+<p>Each ML algorithm requires numeric vectors of unique length at it’s input. Each vector represents an <strong>instance</strong>, which itself is described by a set of <span class="math notranslate nohighlight">\(K\)</span> <strong>features</strong>. Usually we have many such vectors for training and testing and by stacking these vectors together we end up at the following two-dimensional data array. This is the standard data-structure for ML.</p>
 <img alt="http://maucher.home.hdm-stuttgart.de/Pics/dataMatrix.png" class="align-center" src="http://maucher.home.hdm-stuttgart.de/Pics/dataMatrix.png" />
+<p>It can be challenging to transform the given data into this format. Some examples are given below.</p>
+<img alt="http://maucher.home.hdm-stuttgart.de/Pics/mlDataExamples.png" class="align-center" src="http://maucher.home.hdm-stuttgart.de/Pics/mlDataExamples.png" />
+<ul class="simple">
+<li><p>In object recognition the instances are images and the features are all pixel-values of the image. An image of size <span class="math notranslate nohighlight">\(r \times c\)</span> with <span class="math notranslate nohighlight">\(z\)</span> channels is then described by <span class="math notranslate nohighlight">\(K=r \cdot c \cdot z\)</span> features.</p></li>
+<li><p>In document classification a common form of representation (the <em>Bag-of-Word (BoW)</em> model) is to descrive each document (row in the matrix) by the words it contains, i.e. the columns of the 2-dimensional data-structure are the words of the entire vocabulary and the entries in this 2-dimensional indicate how often a word appears in the corresponding document</p></li>
+<li><p>for a recommender-system of the online-shop the instances are the customers and each customer is described by the products he or she already purchased.</p></li>
+<li><p>…</p></li>
+</ul>
 </div>
 </div>
 <div class="section" id="machine-learning-in-the-context-of-data-mining">

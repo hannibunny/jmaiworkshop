@@ -103,9 +103,9 @@ Rational means, that the agent acts in a way that is expected to maximize its pe
 
 <div>
     <img src="https://maucher.home.hdm-stuttgart.de/Pics/retinopathie-app.png" width="200" align="left">
-    <img src="https://maucher.home.hdm-stuttgart.de/Pics/retinopathie-beispiel.png" width="550" align="right">
+    <img src="https://maucher.home.hdm-stuttgart.de/Pics/retinopathie-beispiel.png" width="500" align="right">
 </div>
----------------------------------------------------------------------------------------------------------------
+
 
 
 ### Cancer Detection
