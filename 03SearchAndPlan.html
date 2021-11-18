@@ -1,51 +1,68 @@
 
-
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Search and Planning &#8212; Artificial Intelligence Introduction</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
-    <link href="_static/css/index.css" rel="stylesheet">
-    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-dropdown.css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
-    <script type="text/javascript" src="_static/togglebutton.js"></script>
-    <script type="text/javascript" src="_static/clipboard.min.js"></script>
-    <script type="text/javascript" src="_static/copybutton.js"></script>
-    <script type="text/javascript" src="_static/sphinx-book-theme.js"></script>
-    <script type="text/javascript">var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <script async="async" type="text/javascript" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script type="text/javascript">
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
-    <script async="async" type="text/javascript" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Knowledge-based Systems" href="04Inference.html" />
     <link rel="prev" title="Rational Agents" href="01aWhatsAI.html" />
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="docsearch:language" content="en">
-
-
-
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -54,30 +71,27 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="index.html">
-  
-  <img src="_static/hdmlogomed.jpg" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">Artificial Intelligence Introduction</h1>
-  
-</a>
-</div>
-
-<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      <img src="_static/hdmlogomed.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Artificial Intelligence Introduction</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <ul class="nav sidenav_l1">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="00Overview.html">
    Artificial Intelligence and Machine Learning
   </a>
  </li>
 </ul>
-<ul class="current nav sidenav_l1">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="01Introduction.html">
    Introduction: What’s Artificial Intelligence (AI)
@@ -120,9 +134,8 @@
  </li>
 </ul>
 
-</nav>
-
- <!-- To handle the deprecated key -->
+    </div>
+</nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
   Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
@@ -137,25 +150,25 @@
           
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="row topbar fixed-top container-xl">
-    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
-    </div>
-    <div class="col pl-2 topbar-main">
-        
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-arrow-left"></i>
-            <i class="fas fa-arrow-up"></i>
-        </button>
-        
-        <div class="dropdown-buttons-trigger">
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
 
-    
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         
@@ -167,17 +180,18 @@
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
-    
 </div>
-        <!-- Source interaction buttons -->
 
+            <!-- Source interaction buttons -->
 
-        <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
-                    class="fas fa-expand"></i></button></a>
+            <!-- Full screen (wrap in <a> to have style consistency -->
 
-        <!-- Launch buttons -->
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
 
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
@@ -192,24 +206,20 @@
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/03SearchAndPlan.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
         
     </div>
 </div>
 
-    </div>
-
-    <!-- Table of contents -->
-    <div class="d-none d-md-block col-md-2 bd-toc show">
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
         </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#goal-based-agent">
    Goal-based Agent
@@ -342,7 +352,8 @@
  </li>
 </ul>
 
-        </nav>
+            </nav>
+        </div>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -509,8 +520,7 @@
 </table>
 <div class="section" id="breadth-first">
 <h3>Breadth-First<a class="headerlink" href="#breadth-first" title="Permalink to this headline">¶</a></h3>
-<img alt="https://maucher.home.hdm-stuttgart.de/Pics/breadthfirst.png" class="align-center" src="https://maucher.home.hdm-stuttgart.de/Pics/breadthfirst.png" />
-<ol>
+<img src="https://maucher.home.hdm-stuttgart.de/Pics/breadthfirst.png" style="width:900px" align="center"><ol>
 <li><p>Start from the initial node</p></li>
 <li><p>Expand node by applying all available actions of this state and obtain the corresponding sucessor states.</p></li>
 <li><p>Select next state to expand, which is <font color="red">the topmost not yet expanded node</font>.</p></li>
@@ -522,8 +532,7 @@ Terminate and return path from initial- to goal-state</p>
 </div>
 <div class="section" id="depth-first">
 <h3>Depth-First<a class="headerlink" href="#depth-first" title="Permalink to this headline">¶</a></h3>
-<a class="reference internal image-reference" href="https://maucher.home.hdm-stuttgart.de/Pics/depthfirst.png"><img alt="https://maucher.home.hdm-stuttgart.de/Pics/depthfirst.png" class="align-center" src="https://maucher.home.hdm-stuttgart.de/Pics/depthfirst.png" style="width: 500px;" /></a>
-<ol>
+<img src="https://maucher.home.hdm-stuttgart.de/Pics/depthfirst.png"  width="500" align="center"><ol>
 <li><p>Start from the initial node</p></li>
 <li><p>Expand node by applying all available actions of this state and obtain the corresponding sucessor states.</p></li>
 <li><p>Select next state to expand, which is <font color="red">the deepest not yet expanded node</font>.</p></li>
@@ -555,8 +564,7 @@ Terminate and return path from initial- to goal-state</p>
 </ul>
 <div class="section" id="a-algorithm">
 <h3>A*-Algorithm<a class="headerlink" href="#a-algorithm" title="Permalink to this headline">¶</a></h3>
-<img alt="https://maucher.home.hdm-stuttgart.de/Pics/8puzzleAstern.png" class="align-center" src="https://maucher.home.hdm-stuttgart.de/Pics/8puzzleAstern.png" />
-<ol>
+<img src="https://maucher.home.hdm-stuttgart.de/Pics/8puzzleAstern.png" style="width:700px" align="center"><ol>
 <li><p>Start from the initial node</p></li>
 <li><p>Expand node by applying all available actions of this state and obtain the corresponding sucessor states.</p></li>
 <li><p>Select next state to expand, which is <font color="red">the not yet expanded node, with the lowest value of <em>costs + heuristic</em></font>.</p></li>
@@ -600,8 +608,7 @@ Terminate and return path from initial- to goal-state</p>
 <img src="https://maucher.home.hdm-stuttgart.de/Pics/tree-3.png" style="width:900px" align="center"></p>
 <p><strong>Player Max selects actions to nodes with maximum utility:</strong>
 <img src="https://maucher.home.hdm-stuttgart.de/Pics/tree-4.png" style="width:900px" align="center"></p>
-<img alt="https://maucher.home.hdm-stuttgart.de/Pics/tttBewertet2.PNG" class="align-center" src="https://maucher.home.hdm-stuttgart.de/Pics/tttBewertet2.PNG" />
-</div>
+<img src="https://maucher.home.hdm-stuttgart.de/Pics/tttBewertet2.PNG" style="width:800px" align="center"></div>
 </div>
 <div class="section" id="monte-carlo-tree-search">
 <h2>Monte-Carlo Tree Search<a class="headerlink" href="#monte-carlo-tree-search" title="Permalink to this headline">¶</a></h2>
@@ -610,8 +617,7 @@ Terminate and return path from initial- to goal-state</p>
 <li><p>Another concept is to construct a tree until a final state in such a way that in each state only <font color="red"> promising actions </font> and corresponding successors are generated. This concept is applied by <font color="red"> Monte Carlo Tree Search </font>.</p></li>
 </ul>
 <p><strong>Monte-Carlo Tree Search:</strong></p>
-<img alt="https://maucher.home.hdm-stuttgart.de/Pics/mcts.png" class="align-center" src="https://maucher.home.hdm-stuttgart.de/Pics/mcts.png" />
-<p><strong>Monte Carlo Tree Search:</strong></p>
+<img src="https://maucher.home.hdm-stuttgart.de/Pics/mcts.png" style="width:800px" align="center"><p><strong>Monte Carlo Tree Search:</strong></p>
 <ul class="simple">
 <li><p><strong>Selection:</strong> Starting from the root node, apply <em>Tree Policy</em> in order to select next action. Tree Policy exploits node-statistics</p></li>
 <li><p><strong>Expansion:</strong> In a leaf-node select an arbitrary action and generate the corresponding new child-node.</p></li>
@@ -653,15 +659,21 @@ Terminate and return path from initial- to goal-state</p>
 <div class="section" id="id1">
 <h3>Problem Specification<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>Set of <font color="red">variables</font>:
-$<span class="math notranslate nohighlight">\(
+<li><p>Set of <font color="red">variables</font>:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
 \mathcal{X}=\lbrace X_1, X_2, \ldots,X_n \rbrace
-\)</span>$</p></li>
+\]</div>
+<ul class="simple">
 <li><p><font color="red">Domain <span class="math notranslate nohighlight">\(D_i\)</span></font> of a variable <span class="math notranslate nohighlight">\(X_i\)</span> is the set of possible values for <span class="math notranslate nohighlight">\(X_i\)</span>.</p></li>
-<li><p>Set of <font color="red">constraints</font>:
-$<span class="math notranslate nohighlight">\(
+<li><p>Set of <font color="red">constraints</font>:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
 \mathcal{C}=\lbrace C_1, C_2,, \ldots,C_m \rbrace
-\)</span>$</p></li>
+\]</div>
+<ul class="simple">
 <li><p>Each constraint refers to a set of variables from <span class="math notranslate nohighlight">\(\mathcal{X}\)</span></p></li>
 </ul>
 <p><strong>Problem Specification</strong> (continued):</p>
@@ -700,8 +712,8 @@ $<span class="math notranslate nohighlight">\(
 </ul>
 </li>
 </ul>
-<img alt="https://maucher.home.hdm-stuttgart.de/Pics/AblaufGenAlgEng.png" class="align-center" src="https://maucher.home.hdm-stuttgart.de/Pics/AblaufGenAlgEng.png" />
-<img alt="https://maucher.home.hdm-stuttgart.de/Pics/GeneticAlg.png" class="align-center" src="https://maucher.home.hdm-stuttgart.de/Pics/GeneticAlg.png" />
+<img src="https://maucher.home.hdm-stuttgart.de/Pics/AblaufGenAlgEng.png" style="width:200px" align="center">
+<img src="https://maucher.home.hdm-stuttgart.de/Pics/GeneticAlg.png" style="width:800px" align="center">
 </div>
 <div class="section" id="id2">
 <h3>Problem Specification:<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
@@ -761,15 +773,15 @@ $<span class="math notranslate nohighlight">\(
 
               </div>
               
-        </div>
-    </div>
-    
-    
-    <div class='prev-next-bottom'>
         
+        <div class='prev-next-bottom'>
+            
     <a class='left-prev' id="prev-link" href="01aWhatsAI.html" title="previous page">Rational Agents</a>
     <a class='right-next' id="next-link" href="04Inference.html" title="next page">Knowledge-based Systems</a>
 
+        </div>
+        
+        </div>
     </div>
     <footer class="footer mt-5 mt-md-0">
     <div class="container">
@@ -777,7 +789,7 @@ $<span class="math notranslate nohighlight">\(
         
           By Prof. Dr. Johannes Maucher<br/>
         
-            &copy; Copyright 2020.<br/>
+            &copy; Copyright 2021.<br/>
       </p>
     </div>
   </footer>
@@ -786,8 +798,9 @@ $<span class="math notranslate nohighlight">\(
 
       </div>
     </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-    <script src="_static/js/index.js"></script>
-    
+  
   </body>
 </html>
