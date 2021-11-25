@@ -341,7 +341,7 @@ One of the central questions before starting a Machine Learning project is</p>
 <h2>Type of Data<a class="headerlink" href="#type-of-data" title="Permalink to this headline">¶</a></h2>
 <p><strong>numeric vs categorical type; nominal vs ordinal</strong></p>
 <img src="https://maucher.home.hdm-stuttgart.de/Pics/dataTypes.png" width="300" align="center">
-<p><strong>Type of Data:</strong> i.i.d.</p>
+<p><strong>Type of Data:</strong> i.i.d. (independent and identical distributed)</p>
 <img src="https://maucher.home.hdm-stuttgart.de/Pics/creditWorthiness.png" width="500" align="center">
 <p><strong>Type of Data:</strong> sequential and dependent</p>
 <img src="https://maucher.home.hdm-stuttgart.de/Pics/stockData.png" width="500" align="center">
@@ -472,7 +472,7 @@ One of the central questions before starting a Machine Learning project is</p>
 <li><p>What you actually should verify is</p></li>
 </ul>
 <center><font color="red">Does the sample reliably represent the distribution of the entire data-population?</font></center>
-* A crucial challenge in this respect is <center><font color="red">Which outliers can be disregarded?</font></center>
+* A crucial challenge in this respect is <center><font color="red">The long tail and *are rare values just very specific cases or outliers?*</font></center>
 * Advice:
 <center><font color="red"><i>Consult problem-domain experts</i></font></center><p><strong>How to determine outliers?</strong></p>
 <ul class="simple">
@@ -520,7 +520,7 @@ One of the central questions before starting a Machine Learning project is</p>
 <li><p>Apply (automatic) data <strong>augmentation</strong> methods</p></li>
 <li><p>Reduce the number of features by <strong>feature selection</strong> or <strong>feature extraction</strong></p></li>
 <li><p>Apply pretraining with unsupervised data (Deep Learning)</p></li>
-<li><p>Use pretrained models from elsewhere</p></li>
+<li><p>Use pretrained models from elsewhere (and include domain adaptation): E.g. train a model on synthetic data and apply it, after domain adaptation, to real world data.</p></li>
 </ul>
 <p><strong>Active Learning:</strong></p>
 <img src="https://maucher.home.hdm-stuttgart.de/Pics/activeLearning.png" style="width:600px" align="center">
