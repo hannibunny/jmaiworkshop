@@ -1,0 +1,11 @@
+format: jb-article
+root: 00Overview.ipynb
+sections:
+- file: 01Introduction.ipynb
+- file: 01aWhatsAI.ipynb
+- file: 03SearchAndPlan.ipynb
+- file: 04Inference.ipynb
+- file: 05Uncertainty.ipynb
+- file: 06MLintro.ipynb
+- file: 06Data.ipynb
+- file: 07NeuralNets.ipynb

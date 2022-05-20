@@ -1,0 +1,665 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data &#8212; Artificial Intelligence Introduction</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Neural Networks Introduction" href="07NeuralNets.html" />
+    <link rel="prev" title="Machine Learning: Introduction" href="06MLintro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      <img src="_static/hdmlogomed.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Artificial Intelligence Introduction</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="00Overview.html">
+   Artificial Intelligence and Machine Learning
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01Introduction.html">
+   Introduction: What’s Artificial Intelligence (AI)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01aWhatsAI.html">
+   Rational Agents
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03SearchAndPlan.html">
+   Search and Planning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04Inference.html">
+   Knowledge-based Systems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05Uncertainty.html">
+   Modelling of Uncertainty
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06MLintro.html">
+   Machine Learning: Introduction
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07NeuralNets.html">
+   Neural Networks Introduction
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/06Data.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/06Data.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#general-considerations">
+   General Considerations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#type-of-data">
+   Type of Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#variance-and-complexity-of-data">
+   Variance and Complexity of Data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#variance-of-data">
+     Variance of Data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#estimated-complexity-of-model-that-shall-be-learned">
+     Estimated complexity of model, that shall be learned
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-to-check-if-you-have-enough-training-data">
+   How to check if you have enough training data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#if-you-do-not-have-enough-data">
+   If you do not have enough data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#in-the-case-of-unbalanced-data">
+   In the case of Unbalanced Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-and-deep-learning">
+   Data and Deep Learning
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deep-learning-doesn-t-require-preprocessing">
+     Deep Learning doesn’t require preprocessing …
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deep-learning-is-superior-in-the-case-of-large-amounts-of-data">
+     Deep Learning is superior in the case of large amounts of data (?)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deep-neural-networks-consist-of-many-layers-and-neurons">
+     Deep Neural Networks consist of many layers and neurons …
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deep-neural-networks-can-be-pretrained-with-unlabeled-data">
+     Deep Neural Networks can be pretrained with unlabeled data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pretrained-neural-networks-can-be-downloaded-and-finetuned">
+     Pretrained Neural Networks can be downloaded and finetuned
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#concluding-remark">
+     Concluding Remark
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="data">
+<h1>Data<a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Author: Johannes Maucher</p></li>
+<li><p>Last Update: 27.10.2020</p></li>
+</ul>
+<p><strong>Motivation:</strong><br />
+One of the central questions before starting a Machine Learning project is</p>
+<center><i>How much data is required?</i></center><p>The answer is:</p>
+<center><i>It depends!</i></center><p><strong>Subject of this notebook</strong></p>
+<ul class="simple">
+<li><p>Describe the main factors, which influence the amount of required data</p></li>
+<li><p>Propose guidelines to check if enough data is available</p></li>
+<li><p>Sketch methods to reduce the required amount of data</p></li>
+</ul>
+<div class="section" id="general-considerations">
+<h2>General Considerations<a class="headerlink" href="#general-considerations" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>What is T, E, and P?</p></li>
+<li><p><strong>E</strong>xperience is derived from data</p></li>
+<li><p>Is labeled data available?</p></li>
+<li><p><strong>How much?</strong> How much instances? How much features?</p></li>
+<li><p>How about data distribution?</p></li>
+<li><p>Estimate complexity of required model</p></li>
+<li><p>What is the quality of the data?</p></li>
+</ul>
+</div>
+<div class="section" id="type-of-data">
+<h2>Type of Data<a class="headerlink" href="#type-of-data" title="Permalink to this headline">¶</a></h2>
+<p><strong>numeric vs categorical type; nominal vs ordinal</strong></p>
+<img src="https://maucher.home.hdm-stuttgart.de/Pics/dataTypes.png" width="300" align="center">
+<p><strong>Type of Data:</strong> i.i.d. (independent and identical distributed)</p>
+<img src="https://maucher.home.hdm-stuttgart.de/Pics/creditWorthiness.png" width="500" align="center">
+<p><strong>Type of Data:</strong> sequential and dependent</p>
+<img src="https://maucher.home.hdm-stuttgart.de/Pics/stockData.png" width="500" align="center">
+<p><strong>Type of Data:</strong> Even more challenging dependent data:</p>
+<img src="https://maucher.home.hdm-stuttgart.de/Pics/dependantDatatext.png" style="width:600px" align="center"></div>
+<div class="section" id="variance-and-complexity-of-data">
+<h2>Variance and Complexity of Data<a class="headerlink" href="#variance-and-complexity-of-data" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="n">Numpoints</span><span class="o">=</span><span class="mi">200</span>
+<span class="n">s11</span><span class="o">=</span><span class="mi">1</span> <span class="c1">#standard deviation of x1</span>
+<span class="n">s22</span><span class="o">=</span><span class="mf">1.4</span> <span class="c1">#standard deviation of x2 </span>
+<span class="n">rho</span><span class="o">=</span><span class="mf">0.99</span> <span class="c1">#correlation coefficient between s11 and s22</span>
+<span class="c1">#Determine covariance matrix from standard deviations</span>
+<span class="n">var11</span><span class="o">=</span><span class="n">s11</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">var22</span><span class="o">=</span><span class="n">s22</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">var12</span><span class="o">=</span><span class="n">rho</span><span class="o">*</span><span class="n">s11</span><span class="o">*</span><span class="n">s22</span>
+<span class="n">var21</span><span class="o">=</span><span class="n">var12</span>
+<span class="n">cov1</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(([</span><span class="n">var11</span><span class="p">,</span><span class="n">var12</span><span class="p">],[</span><span class="n">var21</span><span class="p">,</span><span class="n">var22</span><span class="p">]))</span>
+<span class="n">mean1</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">population1</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">multivariate_normal</span><span class="p">(</span><span class="n">mean1</span><span class="p">,</span><span class="n">cov1</span><span class="p">,</span><span class="n">Numpoints</span><span class="p">)</span>
+
+<span class="n">rho2</span><span class="o">=</span><span class="mf">0.5</span>
+<span class="n">var12</span><span class="o">=</span><span class="n">rho2</span><span class="o">*</span><span class="n">s11</span><span class="o">*</span><span class="n">s22</span>
+<span class="n">var21</span><span class="o">=</span><span class="n">var12</span>
+<span class="n">cov2</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(([</span><span class="n">var11</span><span class="p">,</span><span class="n">var12</span><span class="p">],[</span><span class="n">var21</span><span class="p">,</span><span class="n">var22</span><span class="p">]))</span>
+<span class="n">population2</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">multivariate_normal</span><span class="p">(</span><span class="n">mean1</span><span class="p">,</span><span class="n">cov2</span><span class="p">,</span><span class="n">Numpoints</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="variance-of-data">
+<h3>Variance of Data<a class="headerlink" href="#variance-of-data" title="Permalink to this headline">¶</a></h3>
+<p><strong>Linear Regression Example:</strong></p>
+<ul class="simple">
+<li><p>Assume that a linear model $<span class="math notranslate nohighlight">\(y=f(x)=m*x+b\)</span><span class="math notranslate nohighlight">\( shall be learned from data (parameters \)</span>m<span class="math notranslate nohighlight">\( and \)</span>b$ must be learned)</p></li>
+<li><p>From the entire data population <strong>only a small subset is available for training</strong></p></li>
+<li><p><strong>Question:</strong> How much training data is required, if data is distributed as in</p>
+<ul>
+<li><p>Population 1 (see next cell)</p></li>
+<li><p>Population 2 ?</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">population1</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">population1</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">ms</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Population P1&quot;</span><span class="p">),</span><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">),</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">population2</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">population2</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="s1">&#39;rs&#39;</span><span class="p">,</span><span class="n">ms</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Population P2&quot;</span><span class="p">),</span><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">),</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/06Data_12_0.png" src="_images/06Data_12_0.png" />
+</div>
+</div>
+<ul class="simple">
+<li><p>In the plot on the left variance of data is low <span class="math notranslate nohighlight">\(\Rightarrow\)</span> Small number of samples sufficient</p></li>
+<li><p>On the right hand side variance is high <span class="math notranslate nohighlight">\(\Rightarrow\)</span> Larger number of samples required</p></li>
+</ul>
+</div>
+<div class="section" id="estimated-complexity-of-model-that-shall-be-learned">
+<h3>Estimated complexity of model, that shall be learned<a class="headerlink" href="#estimated-complexity-of-model-that-shall-be-learned" title="Permalink to this headline">¶</a></h3>
+<p>How much data is required for training, in case of</p>
+<ul class="simple">
+<li><p>data set 1 (left side of the follwing cell)</p></li>
+<li><p>data set 2 (right side of the follwing cell)?</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Numpoints</span><span class="o">=</span><span class="mi">10</span>
+<span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">Numpoints</span><span class="p">)</span>
+<span class="n">f1</span><span class="o">=</span><span class="mf">1.4</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mf">0.5</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">Numpoints</span><span class="p">)</span>
+<span class="n">f2</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mf">0.2</span><span class="p">)</span><span class="o">+</span><span class="mf">0.2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">Numpoints</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">f1</span><span class="p">,</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">ms</span><span class="o">=</span><span class="mi">6</span><span class="p">),</span><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">),</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Training data 1&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">f2</span><span class="p">,</span><span class="s1">&#39;rs&#39;</span><span class="p">,</span><span class="n">ms</span><span class="o">=</span><span class="mi">6</span><span class="p">),</span><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">),</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Training data 2&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/06Data_15_0.png" src="_images/06Data_15_0.png" />
+</div>
+</div>
+<p><strong>Can we learn a good model from this training data?</strong></p>
+<ul class="simple">
+<li><p>In the plot on the left a simple linear model seems to be sufficient <span class="math notranslate nohighlight">\(\Rightarrow\)</span> Small number of samples</p></li>
+<li><p>On the right hand side a more complex model must be learned <span class="math notranslate nohighlight">\(\Rightarrow\)</span> Larger number of samples</p></li>
+</ul>
+<p><strong>Amount of required data depends on …</strong></p>
+<img src="https://maucher.home.hdm-stuttgart.de/Pics/amountDataNew.png"  width="500" align="center">
+<ul class="simple">
+<li><p>Complexity of Model:</p></li>
+</ul>
+<ul class="simple">
+<li><p>in regression: linear function? polynomial function of what degree, radial function…?</p></li>
+<li><p>classification: linear discriminant? polynomial discriminant? … ? How much classes?</p></li>
+</ul>
+<ul class="simple">
+<li><p>Variance of data:</p></li>
+</ul>
+<ul class="simple">
+<li><p>in regression: data is assumed to be composed of a determinisitic function plus noise. How is the noise-term distributed?</p></li>
+<li><p>in classification:</p>
+<ul>
+<li><p>intra-class variance</p></li>
+<li><p>inter-class variance</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="how-to-check-if-you-have-enough-training-data">
+<h2>How to check if you have enough training data<a class="headerlink" href="#how-to-check-if-you-have-enough-training-data" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>What you actually should verify is</p></li>
+</ul>
+<center><font color="red">Does the sample reliably represent the distribution of the entire data-population?</font></center>
+* A crucial challenge in this respect is <center><font color="red">The long tail and *are rare values just very specific cases or outliers?*</font></center>
+* Advice:
+<center><font color="red"><i>Consult problem-domain experts</i></font></center><p><strong>How to determine outliers?</strong></p>
+<ul class="simple">
+<li><p>Visualize data: Scatter-Plots, Box-Plots, …</p></li>
+<li><p>Statistics, e.g. compare 98%-percentil and max()</p></li>
+<li><p>Both methods are applicable for 1-or 2-dimensional data (projections)</p></li>
+<li><p>For higher-dimensional data: RANSAC, Autoencoder, …</p></li>
+</ul>
+<p><strong>Outliers vs specific cases:</strong></p>
+<ul class="simple">
+<li><p><strong>True outliers:</strong> Erroneous samples, which shall be removed.</p></li>
+<li><p><strong>Specific cases:</strong> Not erroneous, but far apart from majority of data.</p>
+<ul>
+<li><p>Remove them from the training data in order to prevent modelling-distortion</p></li>
+<li><p>Include them and apply a <em>robust</em> learning-procedure</p></li>
+<li><p>Apply cascaded approach: First distinguish specific from normal cases, then model them separately</p></li>
+</ul>
+</li>
+<li><p><font color="red">The less data you have, the harder to detect outlier/specific cases</font></p></li>
+</ul>
+<p><strong>Means to determine whether the amount of training is sufficient</strong></p>
+<ul class="simple">
+<li><p>Determine <strong>Learningcurve</strong></p>
+<ul>
+<li><p>incrementally increase training data</p></li>
+<li><p>calculate in each step performance on training- and testdata</p></li>
+</ul>
+</li>
+<li><p>Learn model from different training-sample subsets and determine performance variance</p></li>
+<li><p>This is actually cross-validation</p></li>
+</ul>
+<p><strong>Learning Curve for increasing amount of training data:</strong>
+<img src="https://maucher.home.hdm-stuttgart.de/Pics/learningcurve.png" style="width:800px" align="center"></p>
+<p>As long as the validation accuracy increases with increasing training data, one should go for more training data.</p>
+<p><strong>Cross Validation:</strong></p>
+<img src="https://maucher.home.hdm-stuttgart.de/Pics/CrossValidation.jpg" style="width:800px" align="center">
+<img src="https://maucher.home.hdm-stuttgart.de/Pics/crossValidation.png" style="width:800px" align="center"><p>If the accuracy in the individual iterations of cross validation varies strongly, the amount of labeled data is probably too low.</p>
+</div>
+<div class="section" id="if-you-do-not-have-enough-data">
+<h2>If you do not have enough data<a class="headerlink" href="#if-you-do-not-have-enough-data" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Try to learn a simple modell</p></li>
+<li><p>Improve data quality</p></li>
+<li><p>Enhance your dataset with <strong>good training samples</strong> <span class="math notranslate nohighlight">\(\Rightarrow\)</span> <strong>Active Learning</strong></p></li>
+<li><p>Apply (automatic) data <strong>augmentation</strong> methods</p></li>
+<li><p>Reduce the number of features by <strong>feature selection</strong> or <strong>feature extraction</strong></p></li>
+<li><p>Apply pretraining with unsupervised data (Deep Learning)</p></li>
+<li><p>Use pretrained models from elsewhere (and include domain adaptation): E.g. train a model on synthetic data and apply it, after domain adaptation, to real world data.</p></li>
+</ul>
+<p><strong>Active Learning:</strong></p>
+<img src="https://maucher.home.hdm-stuttgart.de/Pics/activeLearning.png" style="width:600px" align="center">
+Source: [B. Settles, Active Learning Survey](http://www.cs.cmu.edu/~10701/slides/Settles_notes.pdf)</div>
+<div class="section" id="in-the-case-of-unbalanced-data">
+<h2>In the case of Unbalanced Data<a class="headerlink" href="#in-the-case-of-unbalanced-data" title="Permalink to this headline">¶</a></h2>
+<img src="https://maucher.home.hdm-stuttgart.de/Pics/churnClassDistribution.png" style="width:600px" align="center"><p><strong>Unbalanced Data:</strong></p>
+<ul class="simple">
+<li><p>Serious (and often underestimated) problem in ML</p></li>
+<li><p>How to cope with this problem?</p>
+<ul>
+<li><p>undersampling or oversampling data</p></li>
+<li><p>oversampling: Augmentation, e.g. by just duplicating data</p></li>
+<li><p>Consider to train a one-class model for outlier Detection?</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="data-and-deep-learning">
+<h2>Data and Deep Learning<a class="headerlink" href="#data-and-deep-learning" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="deep-learning-doesn-t-require-preprocessing">
+<h3>Deep Learning doesn’t require preprocessing …<a class="headerlink" href="#deep-learning-doesn-t-require-preprocessing" title="Permalink to this headline">¶</a></h3>
+<p><font color="red">… because it automatically learns meaningful features</font></p>
+<img src="https://maucher.home.hdm-stuttgart.de/Pics/DLfeatureExtraction.png" style="width:800px" align="center"><p>On an abstract level the architecture of a Deep Neural Network looks like this:</p>
+<img src="https://maucher.home.hdm-stuttgart.de/Pics/dnnExtractorClassifier.png" alt="Drawing" style="width: 800px;"/>
+<p>The goal of deep learning is to extract meaningful features. The <em>Extractor-Part</em> of the network learns from low-level features (e.g. pixel values) at the input of the network a hierarchy of increasingly meaningful features.</p>
+<img src="https://maucher.home.hdm-stuttgart.de/Pics/cnnConceptCat.png" alt="Drawing"  width="500">
+<p>Image source: <a class="reference external" href="https://www.manning.com/books/deep-learning-with-python">F. Chollet, Deep Learning with Python</a></p>
+</div>
+<div class="section" id="deep-learning-is-superior-in-the-case-of-large-amounts-of-data">
+<h3>Deep Learning is superior in the case of large amounts of data (?)<a class="headerlink" href="#deep-learning-is-superior-in-the-case-of-large-amounts-of-data" title="Permalink to this headline">¶</a></h3>
+<img src="https://maucher.home.hdm-stuttgart.de/Pics/deepLearningDataAmount.png"  width="500" align="center"><p><strong>Some comments on the previous slide:</strong></p>
+<ul class="simple">
+<li><p>Deep Learning is suitable for learning <strong>complex models</strong></p></li>
+<li><p>In order to learn complex models large amounts of data are required</p></li>
+<li><p>Deep Learning is suitable for very high-dimensional data (e.g. images with millions of pixels)</p></li>
+<li><p>In this case DL architectures are able to extract layer-by-layer more informative features</p></li>
+<li><p>It’s not true, that</p>
+<ul>
+<li><p>larger amount of data always increases performance</p></li>
+<li><p>Deep Learning is always better in the case of large amount of data</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="deep-neural-networks-consist-of-many-layers-and-neurons">
+<h3>Deep Neural Networks consist of many layers and neurons …<a class="headerlink" href="#deep-neural-networks-consist-of-many-layers-and-neurons" title="Permalink to this headline">¶</a></h3>
+<p>… therefore many weights must be learned, what increases the number of training-data exponentially.</p>
+<p><font color="red"><strong>But:</strong></font></p>
+<ul class="simple">
+<li><p>in contrast to MLPs not all neurons of one layer are connected with all neurons of the neighbouring layer</p></li>
+<li><p>Many connections share the same weight-sets</p></li>
+<li><p>…</p></li>
+</ul>
+</div>
+<div class="section" id="deep-neural-networks-can-be-pretrained-with-unlabeled-data">
+<h3>Deep Neural Networks can be pretrained with unlabeled data<a class="headerlink" href="#deep-neural-networks-can-be-pretrained-with-unlabeled-data" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Some Neural Networks can be pretrained with unlabeled data, e.g.</p></li>
+</ul>
+<ul class="simple">
+<li><p>(Stacked) Autoencoder</p></li>
+<li><p>Deep Belief Networks</p></li>
+</ul>
+<ul class="simple">
+<li><p>After pretraining these networks are able to extract meaningful features</p></li>
+<li><p>On top of the pretrained stack a classifier can be trained with a low number of application specific labeled data</p></li>
+</ul>
+<p><strong>Autoencoders</strong> are trained such that they can reconstruct their input <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> from the latent representation <span class="math notranslate nohighlight">\(\mathbf{y}\)</span>.<br />
+<img src="https://maucher.home.hdm-stuttgart.de/Pics/autoencoder.png" style="width:800px" align="center"></p>
+</div>
+<div class="section" id="pretrained-neural-networks-can-be-downloaded-and-finetuned">
+<h3>Pretrained Neural Networks can be downloaded and finetuned<a class="headerlink" href="#pretrained-neural-networks-can-be-downloaded-and-finetuned" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Many pretrained Deep Neural nets can be downloaded, e.g. from
+<a class="reference external" href="https://keras.io/api/applications/">Keras</a> and <a class="reference external" href="https://pytorch.org/docs/stable/torchvision/models.html">Pytorch</a>.</p></li>
+<li><p>These nets are proven to <strong>extract meaningful features</strong> in the domain of their training-data</p></li>
+<li><p>Usually the <strong>topmost layers (classifiers) are removed</strong> and replaced with an untrained classifier network</p></li>
+<li><p>Then only a <strong>small amount of domain-specific labeled training data</strong> is required to train these classifier layers</p></li>
+<li><p>Optionally also fine-tuning of other layers</p></li>
+</ul>
+</div>
+<div class="section" id="concluding-remark">
+<h3>Concluding Remark<a class="headerlink" href="#concluding-remark" title="Permalink to this headline">¶</a></h3>
+<p><span class="math notranslate nohighlight">\(\Rightarrow\)</span> <center><font color="red"><i>Before applying Deep Learning you should understand your data and your task. In order to do so application of simple conventional approaches may help</i></font></center></p>
+<img src="https://maucher.home.hdm-stuttgart.de/Pics/kanonenaufspatzen.jpg" style="width:600px" align="center"></div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="06MLintro.html" title="previous page">Machine Learning: Introduction</a>
+    <a class='right-next' id="next-link" href="07NeuralNets.html" title="next page">Neural Networks Introduction</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Prof. Dr. Johannes Maucher<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

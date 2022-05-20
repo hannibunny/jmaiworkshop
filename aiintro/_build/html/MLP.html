@@ -1,0 +1,1842 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Multi Layer Perceptron &#8212; Artificial Intelligence Introduction</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-dropdown.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script type="text/javascript" src="_static/togglebutton.js"></script>
+    <script type="text/javascript" src="_static/clipboard.min.js"></script>
+    <script type="text/javascript" src="_static/copybutton.js"></script>
+    <script type="text/javascript" src="_static/sphinx-book-theme.js"></script>
+    <script type="text/javascript">var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" type="text/javascript" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script type="text/javascript">
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" type="text/javascript" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/hdmlogomed.jpg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Artificial Intelligence Introduction</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="00Overview.html">
+   Artificial Intelligence and Machine Learning
+  </a>
+ </li>
+</ul>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01Introduction.html">
+   Introduction: What’s Artificial Intelligence (AI)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01aWhatsAI.html">
+   Rational Agents
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03SearchAndPlan.html">
+   Search and Planning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04Inference.html">
+   Knowledge-based Systems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05Uncertainty.html">
+   Modelling of Uncertainty
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06MLintro.html">
+   Machine Learning: Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06Data.html">
+   Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07NeuralNets.html">
+   Neural Networks Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07NeuralNets.html#artificial-neural-networks-general-notions">
+   Artificial Neural Networks: General Notions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07NeuralNets.html#single-layer-perceptron">
+   Single Layer Perceptron
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07NeuralNets.html#multi-layer-perceptron">
+   Multi Layer Perceptron
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/MLP.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/MLP.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/MLP.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#notations-and-basic-characteristics">
+   Notations and Basic Characteristics
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#early-mlp-example-autonomos-driving">
+   Early MLP Example: Autonomos Driving
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#architecture">
+   Architecture
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#number-of-hidden-layers">
+     Number of hidden layers
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#activation-and-loss-functions">
+     Activation- and Loss-functions
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#activation-functions-in-hidden-layers">
+       Activation functions in hidden layers
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#activation-functions-in-the-output-layer-and-loss-functions">
+       Activation functions in the output layer and loss functions
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gradient-descent-learning">
+   Gradient Descent Learning
+  </a>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <h1>Table of Contents<span class="tocSkip"></span></h1>
+<div class="toc"><ul class="toc-item"><li><span><a href="#Multi-Layer-Perceptron" data-toc-modified-id="Multi-Layer-Perceptron-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Multi Layer Perceptron</a></span><ul class="toc-item"><li><span><a href="#Notations-and-Basic-Characteristics" data-toc-modified-id="Notations-and-Basic-Characteristics-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Notations and Basic Characteristics</a></span></li><li><span><a href="#Early-MLP-Example:-Autonomos-Driving" data-toc-modified-id="Early-MLP-Example:-Autonomos-Driving-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Early MLP Example: Autonomos Driving</a></span></li><li><span><a href="#Architecture" data-toc-modified-id="Architecture-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Architecture</a></span><ul class="toc-item"><li><span><a href="#Number-of-hidden-layers" data-toc-modified-id="Number-of-hidden-layers-1.3.1"><span class="toc-item-num">1.3.1&nbsp;&nbsp;</span>Number of hidden layers</a></span></li><li><span><a href="#Activation--and-Loss-functions" data-toc-modified-id="Activation--and-Loss-functions-1.3.2"><span class="toc-item-num">1.3.2&nbsp;&nbsp;</span>Activation- and Loss-functions</a></span><ul class="toc-item"><li><span><a href="#Activation-functions-in-hidden-layers" data-toc-modified-id="Activation-functions-in-hidden-layers-1.3.2.1"><span class="toc-item-num">1.3.2.1&nbsp;&nbsp;</span>Activation functions in hidden layers</a></span></li><li><span><a href="#Activation-functions-in-the-output-layer-and-loss-functions" data-toc-modified-id="Activation-functions-in-the-output-layer-and-loss-functions-1.3.2.2"><span class="toc-item-num">1.3.2.2&nbsp;&nbsp;</span>Activation functions in the output layer and loss functions</a></span></li></ul></li></ul></li><li><span><a href="#Gradient-Descent-Learning" data-toc-modified-id="Gradient-Descent-Learning-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>Gradient Descent Learning</a></span></li></ul></li><li><span><a href="#MLP-Implementation-and-Demonstration" data-toc-modified-id="MLP-Implementation-and-Demonstration-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>MLP Implementation and Demonstration</a></span><ul class="toc-item"><li><span><a href="#Definition-of-helper-functions" data-toc-modified-id="Definition-of-helper-functions-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Definition of helper functions</a></span></li><li><span><a href="#Implementation-of-Single-Forward--and-Backward-Pass-in-MLP" data-toc-modified-id="Implementation-of-Single-Forward--and-Backward-Pass-in-MLP-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>Implementation of Single Forward- and Backward Pass in MLP</a></span><ul class="toc-item"><li><span><a href="#Classification-into-$K=3$-classes" data-toc-modified-id="Classification-into-$K=3$-classes-2.2.1"><span class="toc-item-num">2.2.1&nbsp;&nbsp;</span>Classification into $K=3$ classes</a></span><ul class="toc-item"><li><span><a href="#Forward-Pass:" data-toc-modified-id="Forward-Pass:-2.2.1.1"><span class="toc-item-num">2.2.1.1&nbsp;&nbsp;</span>Forward-Pass:</a></span></li><li><span><a href="#Contribution-to-Loss-Function" data-toc-modified-id="Contribution-to-Loss-Function-2.2.1.2"><span class="toc-item-num">2.2.1.2&nbsp;&nbsp;</span>Contribution to Loss Function</a></span></li><li><span><a href="#Backward-Pass" data-toc-modified-id="Backward-Pass-2.2.1.3"><span class="toc-item-num">2.2.1.3&nbsp;&nbsp;</span>Backward Pass</a></span></li><li><span><a href="#Forward-Pass-with-adapted-weights" data-toc-modified-id="Forward-Pass-with-adapted-weights-2.2.1.4"><span class="toc-item-num">2.2.1.4&nbsp;&nbsp;</span>Forward-Pass with adapted weights</a></span></li><li><span><a href="#New-Contribution-to-Loss-Function" data-toc-modified-id="New-Contribution-to-Loss-Function-2.2.1.5"><span class="toc-item-num">2.2.1.5&nbsp;&nbsp;</span>New Contribution to Loss Function</a></span></li></ul></li></ul></li></ul></li><li><span><a href="#Multilayer-Perceptron-(MLP)-for-handwritten-digit-recognition" data-toc-modified-id="Multilayer-Perceptron-(MLP)-for-handwritten-digit-recognition-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Multilayer Perceptron (MLP) for handwritten digit recognition</a></span><ul class="toc-item"><li><span><a href="#Class-MLP" data-toc-modified-id="Class-MLP-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>Class MLP</a></span></li><li><span><a href="#Load-labeled-data" data-toc-modified-id="Load-labeled-data-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>Load labeled data</a></span></li><li><span><a href="#Split-labeled-dataset-into-training--and-test-partition" data-toc-modified-id="Split-labeled-dataset-into-training--and-test-partition-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>Split labeled dataset into training- and test-partition</a></span></li><li><span><a href="#Generate,-configure,-train-and-test-MLP" data-toc-modified-id="Generate,-configure,-train-and-test-MLP-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>Generate, configure, train and test MLP</a></span></li></ul></li></ul></div><div class="section" id="multi-layer-perceptron">
+<h1>Multi Layer Perceptron<a class="headerlink" href="#multi-layer-perceptron" title="Permalink to this headline">¶</a></h1>
+<p>This notebook is based on the theory on Neural Networks as described in <span class="xref myst">notebook SLP</span>. Since Multi Layer Perceptrons (MLPs) are an extension of SLPs, it is strongly recommended to first read <span class="xref myst">notebook SLP</span>.</p>
+<div class="section" id="notations-and-basic-characteristics">
+<h2>Notations and Basic Characteristics<a class="headerlink" href="#notations-and-basic-characteristics" title="Permalink to this headline">¶</a></h2>
+<p>A Multi Layer Perceptron (MLP) with <span class="math notranslate nohighlight">\(L\geq 2\)</span> layers is a Feedforward Neural Network (FNN), which consists of</p>
+<ul class="simple">
+<li><p>an input-layer (which is actually not counted as <em>layer</em>)</p></li>
+<li><p>an output layer</p></li>
+<li><p>a sequence of <span class="math notranslate nohighlight">\(L-1\)</span> hidden layers inbetween the input- and output-layer</p></li>
+</ul>
+<p>Usually the number of hidden layers is 1,2 or 3. All neurons of a layer are connected to all neurons of the successive layer. A layer with this property is also called a <strong>fully-connected layer</strong> or a <strong>dense layer</strong>.</p>
+<p>An example of a <span class="math notranslate nohighlight">\(L=3\)</span> layer MLP is shown in the following picture.</p>
+<img alt="Drawing" src="https://maucher.home.hdm-stuttgart.de/Pics/mlpL3.png" />
+<p>As in the case of SLPs, the biases in MLP can be modelled implicitily by including to all non-output-layers a constant neuron <span class="math notranslate nohighlight">\(x_0=1\)</span>, or by the explicit bias-vector <span class="math notranslate nohighlight">\(\mathbf{b^l}\)</span> in layer <span class="math notranslate nohighlight">\(l\)</span>. In the picture above, the latter option is applied.</p>
+<p>In order to provide a unified description the following notation is used:</p>
+<ul class="simple">
+<li><p>the number of neurons in layer <span class="math notranslate nohighlight">\(l\)</span> is denoted by <span class="math notranslate nohighlight">\(z_l\)</span>.</p></li>
+<li><p>the output of the layer in depth <span class="math notranslate nohighlight">\(l\)</span> is denoted by the vector <span class="math notranslate nohighlight">\(\mathbf{h^l}=(h_1^l,h_2^l,\ldots,h_{z_l}^l)\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{x}=\mathbf{h^0}\)</span> is the input to the network,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{y}=\mathbf{h^L}\)</span> is the network’s output,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{b^l}\)</span> is the bias-vector of layer <span class="math notranslate nohighlight">\(l\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(W^l\)</span> is the weight-matrix of layer <span class="math notranslate nohighlight">\(l\)</span>. It’s entry <span class="math notranslate nohighlight">\(W_{ij}^l\)</span> is the weight from the j.th neuron in layer <span class="math notranslate nohighlight">\(l-1\)</span> to the i.th neuron in layer <span class="math notranslate nohighlight">\(l\)</span>. Hence, the weight-matrix <span class="math notranslate nohighlight">\(W^l\)</span> has <span class="math notranslate nohighlight">\(z_l\)</span> rows and <span class="math notranslate nohighlight">\(z_{l-1}\)</span> columns.</p></li>
+</ul>
+<p>With this notation the <strong>Forward-Pass</strong> of the MLP in the picture above can be calculated as follows:</p>
+<p><strong>Output of first hidden-layer:</strong>
+$<span class="math notranslate nohighlight">\(\left( \begin{array}{c} h_1^1 \\ h_2^1 \\ h_3^1 \\ h_4^1 \end{array} \right) = g\left( \left( \begin{array}{ccc} W_{11}^1 &amp; W_{12}^1 &amp; W_{13}^1 \\ W_{21}^1 &amp; W_{22}^1 &amp; W_{23}^1 \\ W_{31}^1 &amp; W_{32}^1 &amp; W_{33}^1 \\ W_{41}^1 &amp; W_{42}^1 &amp; W_{43}^1 \end{array} \right) \left( \begin{array}{c} x_1 \\ x_2 \\ x_3 \end{array} \right) + \left( \begin{array}{c} b_1^1 \\ b_2^1 \\ b_3^1 \\ b_4^1 \end{array} \right) \right)\)</span>$</p>
+<p><strong>Output of second hidden-layer:</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left( \begin{array}{c} h_1^2 \\ h_2^2 \\ h_3^2 \end{array} \right) = g\left( \left( \begin{array}{cccc} W_{11}^2 &amp; W_{12}^2 &amp; W_{13}^2 &amp; W_{14}^2\\ W_{21}^2 &amp; W_{22}^2 &amp; W_{23}^2 &amp; W_{24}^2\\ W_{31}^2 &amp; W_{32}^2 &amp; W_{33}^2 &amp; W_{34}^2 \end{array} \right) \left( \begin{array}{c} h^1_1 \\ h^1_2 \\ h^1_3 \\ h^1_4 \end{array} \right) + \left( \begin{array}{c} b_1^2 \\ b_2^2 \\ b_3^2 \end{array} \right) \right)\end{split}\]</div>
+<p><strong>Output of the network:</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}y = \left( \begin{array}{c} h_1^3 \\ \end{array} \right) = g\left( \left( \begin{array}{ccc} W_{11}^3 &amp; W_{12}^3 &amp; W_{13}^3 \end{array} \right) \left( \begin{array}{c} h^2_1 \\ h^2_2 \\ h^2_3 \end{array} \right) + \left( \begin{array}{c} b_1^3 \end{array} \right) \right)\end{split}\]</div>
+<p>As in the case of <span class="xref myst">Single Layer Perceptrons</span> the three categories regression, binary- and <span class="math notranslate nohighlight">\(K\)</span>-ary classification are distinguished. In contrast to SLPs, MLPs are able to <strong>learn non-linear</strong> models. This difference is depicted below: The left hand side shows the linear classification-boundary, as learned by a SLP, whereas on the right-hand side the non-linear boundary, as learned by a MLP from the same training data, is plotted.</p>
+<img alt="Drawing" src="https://maucher.home.hdm-stuttgart.de/Pics/nonlinearClassification.png" />
+</div>
+<div class="section" id="early-mlp-example-autonomos-driving">
+<h2>Early MLP Example: Autonomos Driving<a class="headerlink" href="#early-mlp-example-autonomos-driving" title="Permalink to this headline">¶</a></h2>
+<p>The ALVINN net is a MLP with one hidden layer. It has been designed and trained for <em>road following</em> in autonomous driving. The input has been provided by a simple <span class="math notranslate nohighlight">\(30 \times 32\)</span> greyscale camera. As shown in the picture below, the hidden layer contains only 4 neurons. In the output-layer each of the 30 neurons belongs to one “steering-wheel-direction”. The training data has been collected by recording videos while an expert driver steers the car. For each frame (input) the steering-wheel-direction (label) has been tracked.</p>
+<img alt="https://maucher.home.hdm-stuttgart.de/Pics/alvinnNN.jpg" src="https://maucher.home.hdm-stuttgart.de/Pics/alvinnNN.jpg" />
+<p>After training the vehicle cruised autonomously for 90 miles on a highway at a speed of up to 70mph. The test-highway has not been included in the training cruises.</p>
+</div>
+<div class="section" id="architecture">
+<h2>Architecture<a class="headerlink" href="#architecture" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="number-of-hidden-layers">
+<h3>Number of hidden layers<a class="headerlink" href="#number-of-hidden-layers" title="Permalink to this headline">¶</a></h3>
+<p>In the design of MLPs, the number of required hidden layers and the number of neurons per hidden layer are crucial hyperparameters, which strongly influence the network’s performance. Appropriate values for these parameters strongly depend on the application and data at hand. They can not be calculated analytically, but have to be determined in corresponding evaluation- and optimization experiments.</p>
+<p>In order to roughly determine ranges for a suitable number of hidden neurons, one should consider, that an increasing number of hidden neurons</p>
+<ul class="simple">
+<li><p>requires more training data to learn a robust model, since more parameters must be learned,</p></li>
+<li><p>allows to learn more complex models,</p></li>
+<li><p>increases the risk of overfitting.</p></li>
+</ul>
+</div>
+<div class="section" id="activation-and-loss-functions">
+<h3>Activation- and Loss-functions<a class="headerlink" href="#activation-and-loss-functions" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="activation-functions-in-hidden-layers">
+<h4>Activation functions in hidden layers<a class="headerlink" href="#activation-functions-in-hidden-layers" title="Permalink to this headline">¶</a></h4>
+<p>The type of activation function to be used in the hidden-layers of a MLP is an hyperparameter, which must be configured by the user, i.e. it is not determined by e.g. the application category. Typical activations for the hidden-layers are:</p>
+<ul class="simple">
+<li><p>sigmoid</p></li>
+<li><p>tanh</p></li>
+<li><p>relu</p></li>
+<li><p>leaky relu</p></li>
+</ul>
+<p>Finding the best, or at least an appropriate, activation function for the application and data at hand requires empirical analysis.</p>
+</div>
+<div class="section" id="activation-functions-in-the-output-layer-and-loss-functions">
+<h4>Activation functions in the output layer and loss functions<a class="headerlink" href="#activation-functions-in-the-output-layer-and-loss-functions" title="Permalink to this headline">¶</a></h4>
+<p>The configuration of the activation function in the output-layer and the loss function, which is minimized in the training-stage, depend on the application-category in the same way as in the <span class="xref myst">SLP</span>:</p>
+<p><strong>Regression:</strong></p>
+<ul class="simple">
+<li><p>Number of neurons in the output-layer: 1</p></li>
+<li><p>Activation function in the output-layer: identity</p></li>
+<li><p>Loss Function: Sum of Squared Errors (SSE)</p></li>
+</ul>
+<p><strong>Binary Classification:</strong></p>
+<ul class="simple">
+<li><p>Number of neurons in the output-layer: 1</p></li>
+<li><p>Activation function in the output-layer: sigmoid</p></li>
+<li><p>Loss Function: binary Cross-Entropy</p></li>
+</ul>
+<p><strong><span class="math notranslate nohighlight">\(K\)</span>-ary Classification:</strong></p>
+<ul class="simple">
+<li><p>Number of neurons in the output-layer: K</p></li>
+<li><p>Activation function in the output-layer: softmax</p></li>
+<li><p>Loss Function: Cross-Entropy</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="gradient-descent-learning">
+<h2>Gradient Descent Learning<a class="headerlink" href="#gradient-descent-learning" title="Permalink to this headline">¶</a></h2>
+<p>For training, MLPs apply the same approach as SLPs: Gradient Descent. The general consept of Gradient Descent learning is:</p>
+<ol class="simple">
+<li><p>Define a <strong>Loss Function</strong> <span class="math notranslate nohighlight">\(E(T,\Theta)\)</span>, which somehow measures the deviation between the current network <span class="math notranslate nohighlight">\(\mathbf{y}\)</span> output and the target output <span class="math notranslate nohighlight">\(\mathbf{r}\)</span>.</p></li>
+<li><p>Calculate the gradient of the Loss Function: $<span class="math notranslate nohighlight">\(\nabla E(T,\Theta) = \left( \begin{array}{c}  \frac{\partial E}{\partial W^l_{1,0}} \\ \frac{\partial E}{\partial W_{1,1}^l} \\ \vdots \\  \frac{\partial E}{\partial W^l_{K,d+1}} \end{array} \right). \)</span>$</p></li>
+<li><p>Adapt all parameters into the direction of the negative gradient. This weight adaptation guarantees that the Loss Function is iteratively minimized.: $<span class="math notranslate nohighlight">\(W^l_{i,j}=W^l_{i,j}+\Delta W^l_{i,j} = W^l_{i,j}+\eta \cdot -\frac{\partial E}{\partial W^l_{i,j}},\)</span><span class="math notranslate nohighlight">\( where \)</span>\eta$ is the important hyperparameter <strong>learning rate</strong>.</p></li>
+</ol>
+<p>This approach is described in detail in <span class="xref myst">notebook SLP</span>. For the MLP, here we just present the <em>Backward Pass</em> weight adaptation-rule, resulting from the aforementioned Gradient Descent approach. The algorithm is denoted <strong>Backpropagation Algorithm</strong>.</p>
+<p>The weight-matrix <span class="math notranslate nohighlight">\(W^l\)</span> in layer <span class="math notranslate nohighlight">\(l\)</span>, with <span class="math notranslate nohighlight">\(l \in \lbrace 1,\ldots,L\rbrace\)</span>, is adapted in each iteration by
+$<span class="math notranslate nohighlight">\(W^l=W^l+ \Delta W^l,\)</span><span class="math notranslate nohighlight">\(
+where
+\)</span><span class="math notranslate nohighlight">\(
+\Delta W^l = \eta \sum\limits_{t=1}^N \boldsymbol{D}_t^l * (\mathbf{h}_t^{l-1})^T
+\)</span><span class="math notranslate nohighlight">\(
+for Gradient Descent Batch-Learning, and
+\)</span><span class="math notranslate nohighlight">\(
+\Delta W^l = \eta \boldsymbol{D}_t^l * (\mathbf{h}_t^{l-1})^T
+\)</span>$
+for Stochastic Gradient Descent (SGD) Online-Learning. In this adaptation formulas</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathbf{h}_t^{l-1}\)</span> is the output-vector at layer <span class="math notranslate nohighlight">\(l-1\)</span>, if the t.th training-element <span class="math notranslate nohighlight">\(\mathbf{x}_t\)</span> is at the input of the MLP,</p></li>
+<li><p>the matrix <span class="math notranslate nohighlight">\(\boldsymbol{D}_t^l\)</span> is calculated recursively as follows:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{|c|c|}
+		\hline
+		layer \; l &amp; \boldsymbol{D}_t^l \\
+		\hline
+		L &amp; \boldsymbol{\Delta}_t \\
+		L-1 &amp; \left( (W^{L})^T * \boldsymbol{\Delta}_t \right) \cdot g'(W^{L-1}\mathbf{h}_t^{L-2}) \\
+		L-2 &amp; \left((W^{L-1})^T * \boldsymbol{D}_t^{L-1} \right) \cdot g'(W^{L-2}\mathbf{h}_t^{L-3}) \\
+		\vdots &amp; \vdots \\
+		l &amp; \left((W^{l+1})^T * \boldsymbol{D}_t^{l+1} \right) \cdot g'(W^{l}\mathbf{h}_t^{l-1}) \\
+        \hline
+\end{array}
+\end{split}\]</div>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(*\)</span> denotes matrix-multiplication</p></li>
+<li><p><span class="math notranslate nohighlight">\(\cdot\)</span> denotes elementwise-multiplication</p></li>
+<li><p><span class="math notranslate nohighlight">\(g'()\)</span> is the first derivation of the activation function applied in layer <span class="math notranslate nohighlight">\(l\)</span>.</p></li>
+<li><p>the error-vector <span class="math notranslate nohighlight">\(\Delta_t\)</span> is as defined in <span class="xref myst">notebook SLP</span>:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\boldsymbol{\Delta}_t=\left( \begin{array}{c} \Delta_{t,1} \\ \Delta_{t,2} \\ \vdots \\ \Delta_{t,z_L} \end{array} \right) = \left( \begin{array}{c} r_{t,1} - h^L_{t,1} \\ r_{t,2} - h^L_{t,2} \\ \vdots \\ r_{t,z_L} - h^L_{t,z_L} \end{array} \right)\end{split}\]</div>
+<p>Note that in the calculation of <span class="math notranslate nohighlight">\(\boldsymbol{D}_t^l\)</span> depends on the weight-matrices <span class="math notranslate nohighlight">\(W^{l+1},\ldots W^{L}\)</span>. It is important that for this the old weight-matrices (before the update in the current iteration) are used.</p>
+</div>
+</div>
+<div class="section" id="mlp-implementation-and-demonstration">
+<h1>MLP Implementation and Demonstration<a class="headerlink" href="#mlp-implementation-and-demonstration" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">np</span><span class="o">.</span><span class="n">set_printoptions</span><span class="p">(</span><span class="n">precision</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span><span class="n">suppress</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="definition-of-helper-functions">
+<h2>Definition of helper functions<a class="headerlink" href="#definition-of-helper-functions" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Activation functions</span>
+<span class="k">def</span> <span class="nf">sigmoid</span><span class="p">(</span><span class="n">z</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Sigmoid activation function.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="mf">1.0</span><span class="o">/</span><span class="p">(</span><span class="mf">1.0</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">z</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">softmax</span><span class="p">(</span><span class="n">z</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Softmax activation function.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">z</span><span class="p">),</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">identity</span><span class="p">(</span><span class="n">z</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Identity activation function.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">z</span>
+
+<span class="c1">#Derivative of sigmoid function</span>
+<span class="k">def</span> <span class="nf">sigmoid_prime</span><span class="p">(</span><span class="n">z</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Derivative of the sigmoid function.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">sigmoid</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">sigmoid</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">oneToMany</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">d</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Return a d-dimensional unit vector with a 1.0 in the jth</span>
+<span class="sd">    position and zeroes elsewhere.  This is used to convert a digit</span>
+<span class="sd">    (0...9) into a corresponding desired output from the neural</span>
+<span class="sd">    network.&quot;&quot;&quot;</span>
+    <span class="n">e</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">d</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="n">e</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span>
+    <span class="k">return</span> <span class="n">e</span>
+
+<span class="c1">#Loss functions and performance metrics</span>
+<span class="k">def</span> <span class="nf">mse</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mf">1.0</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">r</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">r</span><span class="o">-</span><span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">accuracy</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">count_nonzero</span><span class="p">(</span><span class="n">r</span><span class="o">==</span><span class="n">y</span><span class="p">)</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">r</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">crossEntropy</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">r</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">y</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="implementation-of-single-forward-and-backward-pass-in-mlp">
+<h2>Implementation of Single Forward- and Backward Pass in MLP<a class="headerlink" href="#implementation-of-single-forward-and-backward-pass-in-mlp" title="Permalink to this headline">¶</a></h2>
+<p>As in the corresponding section of the <span class="xref myst">SLP notebook</span>, this subsection demonstrates</p>
+<ul class="simple">
+<li><p>the forward-pass, i.e. the calculation of the MLP-output from a given input and given weight-matrices</p></li>
+<li><p>the backward-pass, i.e the adaptation of the weight-matrices in dependence of the current error-vector at the output of the MLP.</p></li>
+</ul>
+<p>In order to keep this demo as simple as possible only one training element is applied.</p>
+<div class="section" id="classification-into-k-3-classes">
+<h3>Classification into <span class="math notranslate nohighlight">\(K=3\)</span> classes<a class="headerlink" href="#classification-into-k-3-classes" title="Permalink to this headline">¶</a></h3>
+<p>For this demonstration the MLP architecture of the following picture is applied. The task of this network is to classify input observations with <span class="math notranslate nohighlight">\(d=3\)</span> features into one of <span class="math notranslate nohighlight">\(K=3\)</span> classes.</p>
+<img alt="Drawing" src="https://maucher.home.hdm-stuttgart.de/Pics/mlpL2K3.png" />
+<p>The single hidden layer applies a sigmoid- and the output-layer a softmax-activation. In the picture above explicit biases are drawn. In the following demonstrations, the biases are implemented by the constant <span class="math notranslate nohighlight">\(x_0=1\)</span> and the first column of the weight-matrices.</p>
+<p>Define an input-vector with 4 elements (the first element is the constant bias <span class="math notranslate nohighlight">\(x_0=1\)</span>). The target of this input shall be class 3, i.e. <span class="math notranslate nohighlight">\(r=(0,0,1)\)</span>. Moreover, an arbitrary</p>
+<ul class="simple">
+<li><p>weight-matrix W1 of size <span class="math notranslate nohighlight">\((4\times4)\)</span> is generated. These are the weight of the first hidden layer, including the biases (first column)</p></li>
+<li><p>weight-matrix W2 of size <span class="math notranslate nohighlight">\((3\times5)\)</span> is generated. These are the weight of the output-layer, including the biases (first column)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">1234</span><span class="p">)</span>
+<span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span> <span class="c1"># Training-Element with d=3 features plus the bias x_0=1 (first element in this vector)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Current input x=&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">r</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="c1">#Current class is 3. </span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Current target r=&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+<span class="n">W1</span><span class="o">=</span><span class="mf">0.1</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span> <span class="c1">#Assumed current weight-matrix W1. First column refers to biases in layer 1</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Current matrix W1=&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">W1</span><span class="p">)</span>
+<span class="n">W2</span><span class="o">=</span><span class="mf">0.1</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,(</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span> <span class="c1">#Assumed current weight-matrix W2. first column referst to biases in output layer</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Current matrix W2=&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">W2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Current input x=
+[1 1 2 3]
+Current target r=
+[0, 0, 1]
+Current matrix W1=
+[[-0.2  0.1  0.  -0.1]
+ [ 0.3  0.4 -0.4  0.2]
+ [ 0.4  0.1  0.3 -0.5]
+ [ 0.  -0.5  0.4  0.1]]
+Current matrix W2=
+[[-0.3 -0.5  0.  -0.3  0.1]
+ [-0.2  0.2 -0.5  0.4 -0.5]
+ [-0.2 -0.3 -0.2 -0.4 -0.2]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="forward-pass">
+<h4>Forward-Pass:<a class="headerlink" href="#forward-pass" title="Permalink to this headline">¶</a></h4>
+<p>Calculate for the given input the current output of the MLP:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">in1</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">W1</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+<span class="n">h1</span><span class="o">=</span><span class="n">sigmoid</span><span class="p">(</span><span class="n">in1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Current output at layer 1 h1=&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">h1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Current output at layer 1 h1=
+[0.4013 0.6225 0.4013 0.6457]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h1ext</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="mi">1</span><span class="p">],</span><span class="n">h1</span><span class="p">)</span> <span class="c1"># input to layer 2 is output of layer 1 + the constant 1 for the bias</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">h1ext</span><span class="p">)</span>
+<span class="n">in2</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">W2</span><span class="p">,</span><span class="n">h1ext</span><span class="p">)</span>
+<span class="n">y</span><span class="o">=</span><span class="n">h2</span><span class="o">=</span><span class="n">softmax</span><span class="p">(</span><span class="n">in2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Current output at otuput layer:</span><span class="se">\n</span><span class="s2">y = h2=&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1.     0.4013 0.6225 0.4013 0.6457]
+Current output at otuput layer:
+y = h2=
+[0.357  0.3441 0.2988]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="contribution-to-loss-function">
+<h4>Contribution to Loss Function<a class="headerlink" href="#contribution-to-loss-function" title="Permalink to this headline">¶</a></h4>
+<p>The current contribution of this training-element to the cross-entropy error-function is:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">crossEntropy</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">y</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1.74270956764372
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="backward-pass">
+<h4>Backward Pass<a class="headerlink" href="#backward-pass" title="Permalink to this headline">¶</a></h4>
+<p>Next, the weight-matrices are adapted according to Stochastic Gradient Descent and the Backpropagation algorithm.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">learnrate</span><span class="o">=</span><span class="mf">0.1</span>
+<span class="n">Delta</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">atleast_2d</span><span class="p">(</span><span class="n">r</span><span class="o">-</span><span class="n">y</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Current error vector at output:</span><span class="se">\n</span><span class="s2"> Delta=&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Delta</span><span class="p">)</span>
+<span class="n">dW2</span><span class="o">=</span><span class="n">learnrate</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Delta</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">atleast_2d</span><span class="p">(</span><span class="n">h1ext</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Weight adaptation for otuput layer:</span><span class="se">\n</span><span class="s2"> dW2=&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dW2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Current error vector at output:
+ Delta=
+[[-0.357 ]
+ [-0.3441]
+ [ 0.7012]]
+Weight adaptation for otuput layer:
+ dW2=
+[[-0.0357 -0.0143 -0.0222 -0.0143 -0.0231]
+ [-0.0344 -0.0138 -0.0214 -0.0138 -0.0222]
+ [ 0.0701  0.0281  0.0436  0.0281  0.0453]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">atleast_2d</span><span class="p">(</span><span class="n">sigmoid_prime</span><span class="p">(</span><span class="n">in1</span><span class="p">))))</span>
+<span class="n">D1</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">W2</span><span class="p">[:,</span><span class="mi">1</span><span class="p">:]),</span><span class="n">Delta</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">atleast_2d</span><span class="p">(</span><span class="n">sigmoid_prime</span><span class="p">(</span><span class="n">in1</span><span class="p">)))</span><span class="c1">#Note that the first column from W2 (biases) have to be excluded!</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Current matrix D1:</span><span class="se">\n</span><span class="s2"> D1=&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">D1</span><span class="p">)</span>
+<span class="n">dW1</span><span class="o">=</span><span class="n">learnrate</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">D1</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">atleast_2d</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Weight adaptation for hidden layer 1:</span><span class="se">\n</span><span class="s2"> dW1=&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dW1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.2403]
+ [0.235 ]
+ [0.2403]
+ [0.2288]]
+Current matrix D1:
+ D1=
+[[-0.0242]
+ [ 0.0075]
+ [-0.0747]
+ [-0.0009]]
+Weight adaptation for hidden layer 1:
+ dW1=
+[[-0.0024 -0.0024 -0.0048 -0.0073]
+ [ 0.0007  0.0007  0.0015  0.0022]
+ [-0.0075 -0.0075 -0.0149 -0.0224]
+ [-0.0001 -0.0001 -0.0002 -0.0003]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">newW1</span><span class="o">=</span><span class="n">W1</span><span class="o">+</span><span class="n">dW1</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;New weight matrix in hidden layer:</span><span class="se">\n</span><span class="s2"> W1=&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">newW1</span><span class="p">)</span>
+<span class="n">newW2</span><span class="o">=</span><span class="n">W2</span><span class="o">+</span><span class="n">dW2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;New weight matrix in output layer:</span><span class="se">\n</span><span class="s2"> W2=&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">newW2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>New weight matrix in hidden layer:
+ W1=
+[[-0.2024  0.0976 -0.0048 -0.1073]
+ [ 0.3007  0.4007 -0.3985  0.2022]
+ [ 0.3925  0.0925  0.2851 -0.5224]
+ [-0.0001 -0.5001  0.3998  0.0997]]
+New weight matrix in output layer:
+ W2=
+[[-0.3357 -0.5143 -0.0222 -0.3143  0.0769]
+ [-0.2344  0.1862 -0.5214  0.3862 -0.5222]
+ [-0.1299 -0.2719 -0.1564 -0.3719 -0.1547]]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="forward-pass-with-adapted-weights">
+<h4>Forward-Pass with adapted weights<a class="headerlink" href="#forward-pass-with-adapted-weights" title="Permalink to this headline">¶</a></h4>
+<p>Now, the adapted MLP’s output for the same input vector is calculated:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">in1</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">newW1</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+<span class="n">h1</span><span class="o">=</span><span class="n">sigmoid</span><span class="p">(</span><span class="n">in1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Current output at layer 1 after weight adaptation h1=&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">h1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Current output at layer 1 after weight adaptation h1=
+[0.3926 0.6251 0.3747 0.6454]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h1ext</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="mi">1</span><span class="p">],</span><span class="n">h1</span><span class="p">)</span>
+<span class="n">in2</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">newW2</span><span class="p">,</span><span class="n">h1ext</span><span class="p">)</span>
+<span class="n">y</span><span class="o">=</span><span class="n">h2</span><span class="o">=</span><span class="n">softmax</span><span class="p">(</span><span class="n">in2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Current output of output layer after weight adaptation:</span><span class="se">\n</span><span class="s2">y = h2=&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Current output of output layer after weight adaptation:
+y = h2=
+[0.3346 0.3151 0.3503]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="new-contribution-to-loss-function">
+<h4>New Contribution to Loss Function<a class="headerlink" href="#new-contribution-to-loss-function" title="Permalink to this headline">¶</a></h4>
+<p>As can be seen, the new output has a lower contribution to the cross-entropy error-function, than before the weight-adaptation:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">crossEntropy</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">y</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1.513162303907582
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="multilayer-perceptron-mlp-for-handwritten-digit-recognition">
+<h1>Multilayer Perceptron (MLP) for handwritten digit recognition<a class="headerlink" href="#multilayer-perceptron-mlp-for-handwritten-digit-recognition" title="Permalink to this headline">¶</a></h1>
+<p>This example demonstrates the application of a MLP classifier to recognize handwritten digits between 0 and 9. Each handwritten digit is represented as a <span class="math notranslate nohighlight">\(8 \times 8\)</span>-greyscale image of 4 Bit depth. An image displaying digit <span class="math notranslate nohighlight">\(i\)</span> is labeled by the class index <span class="math notranslate nohighlight">\(i\)</span> with <span class="math notranslate nohighlight">\(i \in \lbrace 0,1,2,\ldots,9\rbrace\)</span>. The entire dataset contains 1797 labeled images. This dataset is often applied as a benchmark for evaluating and comparing machine learning algorithms. The dataset is available from different sources. E.g. it is contained in the <em>scikits-learn</em> datasets directory.</p>
+<div class="section" id="class-mlp">
+<h2>Class MLP<a class="headerlink" href="#class-mlp" title="Permalink to this headline">¶</a></h2>
+<p>This class implements a Multilayer Perceptron (MLP) with Stochastic Gradient Descent (SGD) learning.
+Gradients are calculated using backpropagation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MLP</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">layerlist</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;The list ``layerlist`` contains the number of neurons in the</span>
+<span class="sd">        respective layers of the network.  For example, if the list</span>
+<span class="sd">        was [2, 3, 1] then it would be a three-layer network, with the</span>
+<span class="sd">        first layer containing 2 neurons, the second layer 3 neurons,</span>
+<span class="sd">        and the third layer 1 neuron.  The biases and weights for the</span>
+<span class="sd">        network are initialized randomly, using a Gaussian</span>
+<span class="sd">        distribution with mean 0, and variance 1.&quot;&quot;&quot;</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">num_layers</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">layerlist</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layerlist</span> <span class="o">=</span> <span class="n">layerlist</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">biases</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">layerlist</span><span class="p">[</span><span class="mi">1</span><span class="p">:]]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weights</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+                        <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">layerlist</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">layerlist</span><span class="p">[</span><span class="mi">1</span><span class="p">:])]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">testCorrect</span><span class="o">=</span><span class="p">[]</span>
+
+    <span class="k">def</span> <span class="nf">feedforward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return the output of the network if ``a`` is input.&quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">b</span><span class="p">,</span> <span class="n">w</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">biases</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">weights</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]):</span>
+            <span class="n">a</span> <span class="o">=</span> <span class="n">sigmoid</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span><span class="o">+</span><span class="n">b</span><span class="p">)</span>
+        <span class="c1">#softmax activation in output-layer    </span>
+        <span class="n">b</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">biases</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">w</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">weights</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>    
+        <span class="n">a</span> <span class="o">=</span> <span class="n">softmax</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span><span class="o">+</span><span class="n">b</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">a</span>
+
+    <span class="k">def</span> <span class="nf">SGD</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">training_data</span><span class="p">,</span> <span class="n">epochs</span><span class="p">,</span> <span class="n">mini_batch_size</span><span class="p">,</span> <span class="n">eta</span><span class="p">,</span>
+            <span class="n">test_data</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Train the neural network using mini-batch stochastic</span>
+<span class="sd">        gradient descent.  The ``training_data`` is a list of tuples</span>
+<span class="sd">        ``(x, y)`` representing the training inputs and the desired</span>
+<span class="sd">        outputs.  The other non-optional parameters are</span>
+<span class="sd">        self-explanatory.  If ``test_data`` is provided then the</span>
+<span class="sd">        network will be evaluated against the test data after each</span>
+<span class="sd">        epoch, and partial progress printed out.  This is useful for</span>
+<span class="sd">        tracking progress, but slows things down substantially.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">test_data</span><span class="p">:</span> <span class="n">n_test</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">test_data</span><span class="p">)</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">training_data</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">epochs</span><span class="p">):</span>
+            <span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">training_data</span><span class="p">)</span>
+            <span class="n">mini_batches</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="n">training_data</span><span class="p">[</span><span class="n">k</span><span class="p">:</span><span class="n">k</span><span class="o">+</span><span class="n">mini_batch_size</span><span class="p">]</span>
+                <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">mini_batch_size</span><span class="p">)]</span>
+            <span class="k">for</span> <span class="n">mini_batch</span> <span class="ow">in</span> <span class="n">mini_batches</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">update_mini_batch</span><span class="p">(</span><span class="n">mini_batch</span><span class="p">,</span> <span class="n">eta</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">test_data</span><span class="p">:</span>
+                <span class="n">numCorrect</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">test_data</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">testCorrect</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">numCorrect</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Epoch </span><span class="si">{0}</span><span class="s2">: </span><span class="si">{1}</span><span class="s2"> / </span><span class="si">{2}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">numCorrect</span><span class="p">,</span> <span class="n">n_test</span><span class="p">))</span>     
+            <span class="k">else</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Epoch </span><span class="si">{0}</span><span class="s2"> complete&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">j</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">update_mini_batch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mini_batch</span><span class="p">,</span> <span class="n">eta</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Update the network&#39;s weights and biases by applying</span>
+<span class="sd">        gradient descent using backpropagation to a single mini batch.</span>
+<span class="sd">        The ``mini_batch`` is a list of tuples ``(x, y)``, and ``eta``</span>
+<span class="sd">        is the learning rate.&quot;&quot;&quot;</span>
+        <span class="n">nabla_b</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">biases</span><span class="p">]</span>
+        <span class="n">nabla_w</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">w</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">weights</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">mini_batch</span><span class="p">:</span>
+            <span class="n">delta_nabla_b</span><span class="p">,</span> <span class="n">delta_nabla_w</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">backprop</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+            <span class="n">nabla_b</span> <span class="o">=</span> <span class="p">[</span><span class="n">nb</span><span class="o">+</span><span class="n">dnb</span> <span class="k">for</span> <span class="n">nb</span><span class="p">,</span> <span class="n">dnb</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">nabla_b</span><span class="p">,</span> <span class="n">delta_nabla_b</span><span class="p">)]</span>
+            <span class="n">nabla_w</span> <span class="o">=</span> <span class="p">[</span><span class="n">nw</span><span class="o">+</span><span class="n">dnw</span> <span class="k">for</span> <span class="n">nw</span><span class="p">,</span> <span class="n">dnw</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">nabla_w</span><span class="p">,</span> <span class="n">delta_nabla_w</span><span class="p">)]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weights</span> <span class="o">=</span> <span class="p">[</span><span class="n">w</span><span class="o">-</span><span class="p">(</span><span class="n">eta</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">mini_batch</span><span class="p">))</span><span class="o">*</span><span class="n">nw</span>
+                        <span class="k">for</span> <span class="n">w</span><span class="p">,</span> <span class="n">nw</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">weights</span><span class="p">,</span> <span class="n">nabla_w</span><span class="p">)]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">biases</span> <span class="o">=</span> <span class="p">[</span><span class="n">b</span><span class="o">-</span><span class="p">(</span><span class="n">eta</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">mini_batch</span><span class="p">))</span><span class="o">*</span><span class="n">nb</span>
+                       <span class="k">for</span> <span class="n">b</span><span class="p">,</span> <span class="n">nb</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">biases</span><span class="p">,</span> <span class="n">nabla_b</span><span class="p">)]</span>
+
+    <span class="k">def</span> <span class="nf">backprop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return a tuple ``(nabla_b, nabla_w)`` representing the</span>
+<span class="sd">        gradient for the cost function C_x.  ``nabla_b`` and</span>
+<span class="sd">        ``nabla_w`` are layer-by-layer lists of numpy arrays, similar</span>
+<span class="sd">        to ``self.biases`` and ``self.weights``.&quot;&quot;&quot;</span>
+        <span class="n">nabla_b</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">biases</span><span class="p">]</span>
+        <span class="n">nabla_w</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">w</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">weights</span><span class="p">]</span>
+        <span class="c1"># feedforward</span>
+        <span class="n">activation</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="n">activations</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="c1"># list to store all the activations, layer by layer</span>
+        <span class="n">zs</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># list to store all the z vectors, layer by layer</span>
+        <span class="k">for</span> <span class="n">b</span><span class="p">,</span> <span class="n">w</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">biases</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">weights</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]):</span>
+            <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">activation</span><span class="p">)</span><span class="o">+</span><span class="n">b</span>
+            <span class="n">zs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+            <span class="n">activation</span> <span class="o">=</span> <span class="n">sigmoid</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+            <span class="n">activations</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">activation</span><span class="p">)</span>
+        <span class="n">b</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">biases</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">w</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">weights</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>    
+        <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">activation</span><span class="p">)</span><span class="o">+</span><span class="n">b</span>
+        <span class="n">zs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+        <span class="n">activation</span> <span class="o">=</span> <span class="n">softmax</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+        <span class="n">activations</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">activation</span><span class="p">)</span>
+        <span class="c1"># Weight adaptations in output layer</span>
+        <span class="n">delta</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cost_derivative</span><span class="p">(</span><span class="n">activations</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">y</span><span class="p">)</span>
+        <span class="n">nabla_b</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">delta</span>
+        <span class="n">nabla_w</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">delta</span><span class="p">,</span> <span class="n">activations</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">transpose</span><span class="p">())</span>
+        
+        <span class="c1"># Weight adaptations in all other layers</span>
+        <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_layers</span><span class="p">):</span>
+            <span class="n">z</span> <span class="o">=</span> <span class="n">zs</span><span class="p">[</span><span class="o">-</span><span class="n">l</span><span class="p">]</span>
+            <span class="n">sp</span> <span class="o">=</span> <span class="n">sigmoid_prime</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+            <span class="n">delta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">weights</span><span class="p">[</span><span class="o">-</span><span class="n">l</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">transpose</span><span class="p">(),</span> <span class="n">delta</span><span class="p">)</span> <span class="o">*</span> <span class="n">sp</span>
+            <span class="n">nabla_b</span><span class="p">[</span><span class="o">-</span><span class="n">l</span><span class="p">]</span> <span class="o">=</span> <span class="n">delta</span>
+            <span class="n">nabla_w</span><span class="p">[</span><span class="o">-</span><span class="n">l</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">delta</span><span class="p">,</span> <span class="n">activations</span><span class="p">[</span><span class="o">-</span><span class="n">l</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">transpose</span><span class="p">())</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">nabla_b</span><span class="p">,</span> <span class="n">nabla_w</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">evaluate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">test_data</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return the number of test inputs for which the neural</span>
+<span class="sd">        network outputs the correct result. Note that the neural</span>
+<span class="sd">        network&#39;s output is assumed to be the index of whichever</span>
+<span class="sd">        neuron in the final layer has the highest activation.&quot;&quot;&quot;</span>
+        <span class="n">test_results</span> <span class="o">=</span> <span class="p">[(</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">feedforward</span><span class="p">(</span><span class="n">x</span><span class="p">)),</span> <span class="n">y</span><span class="p">)</span>
+                        <span class="k">for</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="ow">in</span> <span class="n">test_data</span><span class="p">]</span>
+        <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">)</span> <span class="k">for</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="ow">in</span> <span class="n">test_results</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">cost_derivative</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">output_activations</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return the vector of partial derivatives \partial C_x /</span>
+<span class="sd">        \partial a for the output activations.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">output_activations</span><span class="o">-</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="load-labeled-data">
+<h2>Load labeled data<a class="headerlink" href="#load-labeled-data" title="Permalink to this headline">¶</a></h2>
+<p>The image <em>handwritten digits</em> dataset is loaded from the scikits-learn <em>datasets</em> directory. The <em>load_digits()</em> function returns a so called <em>Bunch</em>, which contains 2 numpy arrays - the images and the corresponding labeles:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span>
+<span class="n">digits</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_digits</span><span class="p">()</span>
+<span class="n">n_samples</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">digits</span><span class="o">.</span><span class="n">images</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">digits</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">digits</span><span class="o">.</span><span class="n">images</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">digits</span><span class="o">.</span><span class="n">target</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of labeled images: &quot;</span><span class="p">,</span><span class="n">n_samples</span><span class="p">)</span>
+<span class="n">training_data</span><span class="o">=</span><span class="n">digits</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">digits</span><span class="o">.</span><span class="n">images</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">digits</span><span class="o">.</span><span class="n">target</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;sklearn.utils.Bunch&#39;&gt;
+&lt;class &#39;numpy.ndarray&#39;&gt;
+&lt;class &#39;numpy.ndarray&#39;&gt;
+Number of labeled images:  1797
+[[ 0.  0.  5. 13.  9.  1.  0.  0.]
+ [ 0.  0. 13. 15. 10. 15.  5.  0.]
+ [ 0.  3. 15.  2.  0. 11.  8.  0.]
+ [ 0.  4. 12.  0.  0.  8.  8.  0.]
+ [ 0.  5.  8.  0.  0.  9.  8.  0.]
+ [ 0.  4. 11.  0.  1. 12.  7.  0.]
+ [ 0.  2. 14.  5. 10. 12.  0.  0.]
+ [ 0.  0.  6. 13. 10.  0.  0.  0.]]
+0
+</pre></div>
+</div>
+</div>
+</div>
+<p>In order to understand the representation of the digits the first 4 images are dispayed in a <em>matplotlib</em>-figure. Moreover, the contents of the first image are printed. Each image is a <span class="math notranslate nohighlight">\(8 \times 8\)</span>-numpy array with integer entries between <span class="math notranslate nohighlight">\(0\)</span> (white) and <span class="math notranslate nohighlight">\(15\)</span> (black).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">NIMAGES</span><span class="o">=</span><span class="mi">4</span>
+<span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">NIMAGES</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">NIMAGES</span><span class="p">,</span> <span class="n">index</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">digits</span><span class="o">.</span><span class="n">images</span><span class="p">[</span><span class="n">index</span><span class="p">,:],</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">gray_r</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Training sample of class: </span><span class="si">%i</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">digits</span><span class="o">.</span><span class="n">target</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/MLP_32_0.png" src="_images/MLP_32_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="split-labeled-dataset-into-training-and-test-partition">
+<h2>Split labeled dataset into training- and test-partition<a class="headerlink" href="#split-labeled-dataset-into-training-and-test-partition" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">NUMTRAIN</span><span class="o">=</span><span class="mi">1000</span>
+<span class="n">training_inputs</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">digits</span><span class="o">.</span><span class="n">images</span><span class="p">[:</span><span class="n">NUMTRAIN</span><span class="p">]]</span>
+<span class="n">training_results</span> <span class="o">=</span> <span class="p">[</span><span class="n">oneToMany</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">digits</span><span class="o">.</span><span class="n">target</span><span class="p">[:</span><span class="n">NUMTRAIN</span><span class="p">]]</span>
+<span class="n">training_data</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">training_inputs</span><span class="p">,</span> <span class="n">training_results</span><span class="p">))</span>
+<span class="c1">#test_data = zip(test_inputs, test_results)</span>
+<span class="n">test_inputs</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">digits</span><span class="o">.</span><span class="n">images</span><span class="p">[</span><span class="n">NUMTRAIN</span><span class="p">:]]</span>
+<span class="n">test_data</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">test_inputs</span><span class="p">,</span> <span class="n">digits</span><span class="o">.</span><span class="n">target</span><span class="p">[</span><span class="n">NUMTRAIN</span><span class="p">:]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">training_data</span><span class="p">))</span>
+<span class="c1">#print training_data[0]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;numpy.ndarray&#39;&gt;
+1000
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="generate-configure-train-and-test-mlp">
+<h2>Generate, configure, train and test MLP<a class="headerlink" href="#generate-configure-train-and-test-mlp" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net</span> <span class="o">=</span> <span class="n">MLP</span><span class="p">([</span><span class="mi">64</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
+<span class="n">net</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span><span class="n">training_data</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="o">.</span><span class="mi">03</span><span class="p">,</span><span class="n">test_data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 0: 117 / 797
+Epoch 1: 132 / 797
+Epoch 2: 192 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 3: 232 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 4: 193 / 797
+Epoch 5: 266 / 797
+Epoch 6: 282 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 7: 311 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 8: 316 / 797
+Epoch 9: 352 / 797
+Epoch 10: 360 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 11: 371 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 12: 361 / 797
+Epoch 13: 386 / 797
+Epoch 14: 394 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 15: 419 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 16: 420 / 797
+Epoch 17: 428 / 797
+Epoch 18: 452 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 19: 456 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 20: 447 / 797
+Epoch 21: 479 / 797
+Epoch 22: 465 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 23: 470 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 24: 493 / 797
+Epoch 25: 493 / 797
+Epoch 26: 500 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 27: 508 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 28: 515 / 797
+Epoch 29: 521 / 797
+Epoch 30: 531 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 31: 538 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 32: 527 / 797
+Epoch 33: 535 / 797
+Epoch 34: 547 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 35: 551 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 36: 540 / 797
+Epoch 37: 551 / 797
+Epoch 38: 565 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 39: 560 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 40: 557 / 797
+Epoch 41: 564 / 797
+Epoch 42: 573 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 43: 578 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 44: 574 / 797
+Epoch 45: 590 / 797
+Epoch 46: 591 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 47: 594 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 48: 602 / 797
+Epoch 49: 604 / 797
+Epoch 50: 612 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 51: 605 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 52: 612 / 797
+Epoch 53: 614 / 797
+Epoch 54: 616 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 55: 615 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 56: 619 / 797
+Epoch 57: 620 / 797
+Epoch 58: 625 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 59: 622 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 60: 627 / 797
+Epoch 61: 629 / 797
+Epoch 62: 624 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 63: 624 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 64: 627 / 797
+Epoch 65: 630 / 797
+Epoch 66: 634 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 67: 635 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 68: 638 / 797
+Epoch 69: 639 / 797
+Epoch 70: 643 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 71: 642 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 72: 642 / 797
+Epoch 73: 647 / 797
+Epoch 74: 646 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 75: 651 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 76: 653 / 797
+Epoch 77: 650 / 797
+Epoch 78: 645 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 79: 654 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 80: 647 / 797
+Epoch 81: 653 / 797
+Epoch 82: 647 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 83: 657 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 84: 656 / 797
+Epoch 85: 651 / 797
+Epoch 86: 655 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 87: 650 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 88: 652 / 797
+Epoch 89: 651 / 797
+Epoch 90: 652 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 91: 645 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 92: 653 / 797
+Epoch 93: 652 / 797
+Epoch 94: 655 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 95: 652 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 96: 655 / 797
+Epoch 97: 653 / 797
+Epoch 98: 648 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 99: 655 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 100: 655 / 797
+Epoch 101: 650 / 797
+Epoch 102: 651 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 103: 651 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 104: 657 / 797
+Epoch 105: 653 / 797
+Epoch 106: 651 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 107: 650 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 108: 655 / 797
+Epoch 109: 649 / 797
+Epoch 110: 652 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 111: 651 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 112: 651 / 797
+Epoch 113: 653 / 797
+Epoch 114: 653 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 115: 652 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 116: 651 / 797
+Epoch 117: 648 / 797
+Epoch 118: 649 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 119: 652 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 120: 653 / 797
+Epoch 121: 654 / 797
+Epoch 122: 653 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 123: 656 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 124: 656 / 797
+Epoch 125: 654 / 797
+Epoch 126: 654 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 127: 651 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 128: 653 / 797
+Epoch 129: 651 / 797
+Epoch 130: 651 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 131: 650 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 132: 650 / 797
+Epoch 133: 652 / 797
+Epoch 134: 648 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 135: 648 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 136: 653 / 797
+Epoch 137: 649 / 797
+Epoch 138: 654 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 139: 648 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 140: 655 / 797
+Epoch 141: 653 / 797
+Epoch 142: 656 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 143: 652 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 144: 658 / 797
+Epoch 145: 652 / 797
+Epoch 146: 651 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 147: 653 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 148: 654 / 797
+Epoch 149: 652 / 797
+Epoch 150: 652 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 151: 654 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 152: 657 / 797
+Epoch 153: 654 / 797
+Epoch 154: 655 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 155: 652 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 156: 655 / 797
+Epoch 157: 652 / 797
+Epoch 158: 650 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 159: 654 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 160: 655 / 797
+Epoch 161: 655 / 797
+Epoch 162: 658 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 163: 653 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 164: 653 / 797
+Epoch 165: 652 / 797
+Epoch 166: 656 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 167: 657 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 168: 655 / 797
+Epoch 169: 656 / 797
+Epoch 170: 655 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 171: 654 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 172: 655 / 797
+Epoch 173: 655 / 797
+Epoch 174: 654 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 175: 657 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 176: 654 / 797
+Epoch 177: 657 / 797
+Epoch 178: 655 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 179: 659 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 180: 655 / 797
+Epoch 181: 657 / 797
+Epoch 182: 659 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 183: 660 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 184: 659 / 797
+Epoch 185: 663 / 797
+Epoch 186: 659 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 187: 658 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 188: 656 / 797
+Epoch 189: 657 / 797
+Epoch 190: 656 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 191: 656 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 192: 659 / 797
+Epoch 193: 658 / 797
+Epoch 194: 658 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 195: 657 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 196: 658 / 797
+Epoch 197: 659 / 797
+Epoch 198: 661 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 199: 659 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 200: 661 / 797
+Epoch 201: 659 / 797
+Epoch 202: 663 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 203: 662 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 204: 660 / 797
+Epoch 205: 660 / 797
+Epoch 206: 661 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 207: 659 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 208: 664 / 797
+Epoch 209: 660 / 797
+Epoch 210: 659 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 211: 662 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 212: 661 / 797
+Epoch 213: 661 / 797
+Epoch 214: 660 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 215: 662 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 216: 658 / 797
+Epoch 217: 661 / 797
+Epoch 218: 665 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 219: 660 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 220: 661 / 797
+Epoch 221: 662 / 797
+Epoch 222: 662 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 223: 659 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 224: 661 / 797
+Epoch 225: 660 / 797
+Epoch 226: 661 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 227: 663 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 228: 661 / 797
+Epoch 229: 663 / 797
+Epoch 230: 664 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 231: 660 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 232: 661 / 797
+Epoch 233: 659 / 797
+Epoch 234: 660 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 235: 658 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 236: 659 / 797
+Epoch 237: 660 / 797
+Epoch 238: 660 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 239: 659 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 240: 656 / 797
+Epoch 241: 658 / 797
+Epoch 242: 660 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 243: 658 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 244: 657 / 797
+Epoch 245: 657 / 797
+Epoch 246: 658 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 247: 659 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 248: 657 / 797
+Epoch 249: 658 / 797
+Epoch 250: 657 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 251: 660 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 252: 663 / 797
+Epoch 253: 657 / 797
+Epoch 254: 656 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 255: 657 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 256: 656 / 797
+Epoch 257: 662 / 797
+Epoch 258: 658 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 259: 659 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 260: 662 / 797
+Epoch 261: 660 / 797
+Epoch 262: 660 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 263: 660 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 264: 658 / 797
+Epoch 265: 663 / 797
+Epoch 266: 661 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 267: 661 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 268: 661 / 797
+Epoch 269: 663 / 797
+Epoch 270: 663 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 271: 663 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 272: 663 / 797
+Epoch 273: 664 / 797
+Epoch 274: 663 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 275: 661 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 276: 664 / 797
+Epoch 277: 663 / 797
+Epoch 278: 664 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 279: 665 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 280: 664 / 797
+Epoch 281: 666 / 797
+Epoch 282: 664 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 283: 663 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 284: 666 / 797
+Epoch 285: 664 / 797
+Epoch 286: 663 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 287: 665 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 288: 667 / 797
+Epoch 289: 666 / 797
+Epoch 290: 664 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 291: 666 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 292: 666 / 797
+Epoch 293: 665 / 797
+Epoch 294: 667 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 295: 666 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 296: 666 / 797
+Epoch 297: 664 / 797
+Epoch 298: 668 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 299: 669 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 300: 665 / 797
+Epoch 301: 666 / 797
+Epoch 302: 666 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 303: 667 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 304: 667 / 797
+Epoch 305: 666 / 797
+Epoch 306: 666 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 307: 666 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 308: 668 / 797
+Epoch 309: 666 / 797
+Epoch 310: 669 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 311: 663 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 312: 669 / 797
+Epoch 313: 666 / 797
+Epoch 314: 665 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 315: 666 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 316: 669 / 797
+Epoch 317: 669 / 797
+Epoch 318: 665 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 319: 668 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 320: 667 / 797
+Epoch 321: 668 / 797
+Epoch 322: 669 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 323: 668 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 324: 669 / 797
+Epoch 325: 666 / 797
+Epoch 326: 665 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 327: 669 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 328: 668 / 797
+Epoch 329: 669 / 797
+Epoch 330: 669 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 331: 669 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 332: 667 / 797
+Epoch 333: 668 / 797
+Epoch 334: 668 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 335: 669 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 336: 670 / 797
+Epoch 337: 668 / 797
+Epoch 338: 669 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 339: 668 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 340: 669 / 797
+Epoch 341: 666 / 797
+Epoch 342: 669 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 343: 665 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 344: 668 / 797
+Epoch 345: 666 / 797
+Epoch 346: 667 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 347: 666 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 348: 668 / 797
+Epoch 349: 668 / 797
+Epoch 350: 667 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 351: 669 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 352: 669 / 797
+Epoch 353: 668 / 797
+Epoch 354: 667 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 355: 665 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 356: 664 / 797
+Epoch 357: 661 / 797
+Epoch 358: 664 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 359: 664 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 360: 667 / 797
+Epoch 361: 663 / 797
+Epoch 362: 664 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 363: 664 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 364: 666 / 797
+Epoch 365: 665 / 797
+Epoch 366: 667 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 367: 663 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 368: 664 / 797
+Epoch 369: 663 / 797
+Epoch 370: 664 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 371: 666 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 372: 664 / 797
+Epoch 373: 665 / 797
+Epoch 374: 662 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 375: 663 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 376: 666 / 797
+Epoch 377: 664 / 797
+Epoch 378: 665 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 379: 666 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 380: 667 / 797
+Epoch 381: 664 / 797
+Epoch 382: 667 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 383: 665 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 384: 666 / 797
+Epoch 385: 666 / 797
+Epoch 386: 665 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 387: 665 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 388: 666 / 797
+Epoch 389: 666 / 797
+Epoch 390: 666 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 391: 666 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 392: 663 / 797
+Epoch 393: 666 / 797
+Epoch 394: 666 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 395: 664 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 396: 666 / 797
+Epoch 397: 666 / 797
+Epoch 398: 666 / 797
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 399: 663 / 797
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">net</span><span class="o">.</span><span class="n">testCorrect</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">net</span><span class="o">.</span><span class="n">testCorrect</span><span class="p">)),</span><span class="n">net</span><span class="o">.</span><span class="n">testCorrect</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Number of correct classifications&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;epoch&quot;</span><span class="p">)</span>
+    <span class="c1">#plt.hold(True)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">net</span><span class="o">.</span><span class="n">testCorrect</span><span class="p">)],[</span><span class="n">n_samples</span><span class="o">-</span><span class="n">NUMTRAIN</span><span class="p">,</span><span class="n">n_samples</span><span class="o">-</span><span class="n">NUMTRAIN</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/MLP_37_0.png" src="_images/MLP_37_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">((</span><span class="s2">&quot;Accuracy: &quot;</span><span class="p">,</span><span class="n">net</span><span class="o">.</span><span class="n">testCorrect</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="nb">float</span><span class="p">((</span><span class="n">n_samples</span><span class="o">-</span><span class="n">NUMTRAIN</span><span class="p">))))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;Accuracy: &#39;, 0.8318695106649937)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Prof. Dr. Johannes Maucher<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="_static/js/index.js"></script>
+    
+  </body>
+</html>
