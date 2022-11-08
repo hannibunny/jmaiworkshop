@@ -42,8 +42,6 @@
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -241,13 +239,6 @@
     <a class="reference internal nav-link" href="#what-is-intelligence">
      What is intelligence?
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#example-plan-route">
-       Example: Plan Route
-      </a>
-     </li>
-    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#from-human-intelligence-to-automation">
@@ -358,6 +349,16 @@
      Drawing
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#clip-semantic-image-search">
+     CLIP: Semantic Image Search
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dall-e2-text-based-image-generation">
+     DALL-E2: Text based image generation
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -404,18 +405,25 @@
 </ul>
 <div class="section" id="ai-is-a-toolbox-for-a-wide-range-of-problems-and-applications">
 <h3>AI is a toolbox for a wide range of problems and applications<a class="headerlink" href="#ai-is-a-toolbox-for-a-wide-range-of-problems-and-applications" title="Permalink to this headline">¶</a></h3>
-<img src="https://maucher.home.hdm-stuttgart.de/Pics/LoesungsEbenen.PNG" style="width:500px" align="center">
-<p>If you manage to translate your problem into the <strong>language of AI</strong>, you may come up with faster and better solutions. Hence everybody should strive to learn this language.</p>
+<p>Quality and efficiency of solutions depend on <strong>knowledge</strong> and <strong>tools</strong>:</p>
+<p><strong>Example:</strong></p>
+<ul class="simple">
+<li><p>Task: Transport water accross a valley</p></li>
+<li><p>Solution, that works:</p></li>
+</ul>
+<img src="https://maucher.home.hdm-stuttgart.de/Pics/aquaductPontDuGard.jpg" style="width:400px" align="center">
+<hr class="docutils" />
+<ul class="simple">
+<li><p>Efficient Solution: Water Hose through the valley</p></li>
+</ul>
+<p><strong>AI is a toolbox:</strong> If you are able to translate your problem into the language of AI, you will find efficient problem-solving tools from AI.</p>
 </div>
 </div>
 <div class="section" id="what-is-artificial-intelligence">
 <h2>What is Artificial Intelligence?<a class="headerlink" href="#what-is-artificial-intelligence" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="what-is-intelligence">
 <h3>What is intelligence?<a class="headerlink" href="#what-is-intelligence" title="Permalink to this headline">¶</a></h3>
-<img src="https://maucher.home.hdm-stuttgart.de/Pics/intelligence.png" style="width:500px" align="center"><div class="section" id="example-plan-route">
-<h4>Example: Plan Route<a class="headerlink" href="#example-plan-route" title="Permalink to this headline">¶</a></h4>
-<img src="https://maucher.home.hdm-stuttgart.de/Pics/planRoute.png" style="width:700px" align="center"></div>
-</div>
+<img src="https://maucher.home.hdm-stuttgart.de/Pics/intelligence.png" style="width:500px" align="center"></div>
 <div class="section" id="from-human-intelligence-to-automation">
 <h3>From Human Intelligence to Automation …<a class="headerlink" href="#from-human-intelligence-to-automation" title="Permalink to this headline">¶</a></h3>
 <img src="https://maucher.home.hdm-stuttgart.de/Pics/automatisierungOhneKI.PNG" width = "600" align="center"></div>
@@ -456,6 +464,7 @@
 <li><p>perceived experience</p></li>
 <li><p>acting capabilities</p></li>
 </ul>
+<p>The performance measure is derived from the agent’s goal. This means the question <em>What is rational?</em> can only be answered in the <strong>context of the given goal</strong>.</p>
 </div>
 </div>
 <div class="section" id="ai-is-not-new">
@@ -464,7 +473,7 @@
 </div>
 <div class="section" id="categories-of-ai">
 <h2>Categories of AI<a class="headerlink" href="#categories-of-ai" title="Permalink to this headline">¶</a></h2>
-<img src="https://maucher.home.hdm-stuttgart.de/Pics/KiKategorien.png" style="width:400px"></div>
+<img src="https://maucher.home.hdm-stuttgart.de/Pics/categoriesEnglish.png" style="width:400px"></div>
 <div class="section" id="some-popular-ai-applications">
 <h2>Some popular AI Applications<a class="headerlink" href="#some-popular-ai-applications" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="digital-assistant">
@@ -484,11 +493,13 @@
 <img src="https://maucher.home.hdm-stuttgart.de/Pics/poker.jpg" style="width:500px" align="center"></div>
 <div class="section" id="early-detection-of-diabetic-retinopathie">
 <h3>Early Detection of Diabetic Retinopathie<a class="headerlink" href="#early-detection-of-diabetic-retinopathie" title="Permalink to this headline">¶</a></h3>
+<hr class="docutils" />
 <div>
-    <img src="https://maucher.home.hdm-stuttgart.de/Pics/retinopathie-app.png" width="200" align="left">
+    <img src="https://maucher.home.hdm-stuttgart.de/Pics/retinopathie-app.png" width="400" align="left">
     <img src="https://maucher.home.hdm-stuttgart.de/Pics/retinopathie-beispiel.png" width="500" align="right">
 </div>
 </div>
+<hr class="docutils" />
 <div class="section" id="cancer-detection">
 <h3>Cancer Detection<a class="headerlink" href="#cancer-detection" title="Permalink to this headline">¶</a></h3>
 <img src="https://maucher.home.hdm-stuttgart.de/Pics/prostate_cancer.png" width="700" align="center">
@@ -518,11 +529,23 @@
 <img src="https://maucher.home.hdm-stuttgart.de/Pics/gauGanDemo.png" style="width:800px">
 <p>Source: <a class="reference external" href="http://nvidia-research-mingyuliu.com/gaugan/">http://nvidia-research-mingyuliu.com/gaugan/</a></p>
 </div>
+<div class="section" id="clip-semantic-image-search">
+<h3>CLIP: Semantic Image Search<a class="headerlink" href="#clip-semantic-image-search" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://openai.com/blog/clip/">CLIP</a> is a neural network trained on a large set (400M) of image and text pairs. As a consequence of this multi-modality training, CLIP can be used to find the text snippet that best represents a given image, or the most suitable image given a text query.</p>
+<img src="https://maucher.home.hdm-stuttgart.de/Pics/CLIPsemanticimagesearch.png" style="width:800px">
+<p>Source: [https://huggingface.co/spaces/vivien/clip)</p>
+</div>
+<div class="section" id="dall-e2-text-based-image-generation">
+<h3>DALL-E2: Text based image generation<a class="headerlink" href="#dall-e2-text-based-image-generation" title="Permalink to this headline">¶</a></h3>
+<img src="https://maucher.home.hdm-stuttgart.de/Pics/dalle2.png" style="width:800px">
+<p>Source: [https://openai.com/dall-e-2/)</p>
+</div>
 </div>
 <div class="section" id="ai-use-cases">
 <h2>AI Use Cases<a class="headerlink" href="#ai-use-cases" title="Permalink to this headline">¶</a></h2>
-<img src="https://maucher.home.hdm-stuttgart.de/Pics/aiUseCases.png" style="width:800px">
-<p>Source: [https://aai.frb.io/assets/images/Library_Use-Case-Familie.png)</p>
+<img src="https://maucher.home.hdm-stuttgart.de/Pics/aiUseCasesIndustry.png" style="width:800px">
+<hr class="docutils" />
+<img src="https://maucher.home.hdm-stuttgart.de/Pics/aiUseCasesEnterprise.png" style="width:800px">
 </div>
 <div class="section" id="problems-challenges-of-ai">
 <h2>Problems/Challenges of AI<a class="headerlink" href="#problems-challenges-of-ai" title="Permalink to this headline">¶</a></h2>
