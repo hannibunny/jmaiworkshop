@@ -3,7 +3,7 @@
 
 # # Artificial Intelligence and Machine Learning
 # * Author: Johannes Maucher
-# * Date: November, 26th, 2021
+# * Date: November, 09th, 2022
 # 
 # 
 # * Homepage Maucher: [http://maucher.pages.mi.hdm-stuttgart.de/ai/](http://maucher.pages.mi.hdm-stuttgart.de/ai/)

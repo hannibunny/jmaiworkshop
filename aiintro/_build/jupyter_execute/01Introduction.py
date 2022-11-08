@@ -20,18 +20,24 @@
 
 # ### AI is a toolbox for a wide range of problems and applications
 # 
-# <img src="https://maucher.home.hdm-stuttgart.de/Pics/LoesungsEbenen.PNG" style="width:500px" align="center">
+# Quality and efficiency of solutions depend on **knowledge** and **tools**:
 # 
-# If you manage to translate your problem into the **language of AI**, you may come up with faster and better solutions. Hence everybody should strive to learn this language. 
+# **Example:**
+# * Task: Transport water accross a valley
+# * Solution, that works:
+# 
+# <img src="https://maucher.home.hdm-stuttgart.de/Pics/aquaductPontDuGard.jpg" style="width:400px" align="center">
+# 
+# ----------------------
+# 
+# * Efficient Solution: Water Hose through the valley
+# 
+# **AI is a toolbox:** If you are able to translate your problem into the language of AI, you will find efficient problem-solving tools from AI.  
 
 # ## What is Artificial Intelligence?
 # ### What is intelligence?
 
 # <img src="https://maucher.home.hdm-stuttgart.de/Pics/intelligence.png" style="width:500px" align="center">
-
-# #### Example: Plan Route
-
-# <img src="https://maucher.home.hdm-stuttgart.de/Pics/planRoute.png" style="width:700px" align="center">
 
 # ### From Human Intelligence to Automation ...
 # 
@@ -73,6 +79,8 @@
 # * built-in knowledge
 # * perceived experience
 # * acting capabilities 
+# 
+# The performance measure is derived from the agent’s goal. This means the question *What is rational?* can only be answered in the **context of the given goal**.
 
 # ### AI is not new
 # 
@@ -80,8 +88,7 @@
 
 # ## Categories of AI
 # 
-# 
-# <img src="https://maucher.home.hdm-stuttgart.de/Pics/KiKategorien.png" style="width:400px">
+# <img src="https://maucher.home.hdm-stuttgart.de/Pics/categoriesEnglish.png" style="width:400px">
 
 # ## Some popular AI Applications 
 
@@ -104,11 +111,14 @@
 
 # ### Early Detection of Diabetic Retinopathie
 # 
+# ---
+# 
 # <div>
-#     <img src="https://maucher.home.hdm-stuttgart.de/Pics/retinopathie-app.png" width="200" align="left">
+#     <img src="https://maucher.home.hdm-stuttgart.de/Pics/retinopathie-app.png" width="400" align="left">
 #     <img src="https://maucher.home.hdm-stuttgart.de/Pics/retinopathie-beispiel.png" width="500" align="right">
 # </div>
 # 
+# ---
 
 # 
 # ### Cancer Detection
@@ -145,11 +155,27 @@
 # 
 # Source: [http://nvidia-research-mingyuliu.com/gaugan/](http://nvidia-research-mingyuliu.com/gaugan/)
 
+# ### CLIP: Semantic Image Search
+# 
+# [CLIP](https://openai.com/blog/clip/) is a neural network trained on a large set (400M) of image and text pairs. As a consequence of this multi-modality training, CLIP can be used to find the text snippet that best represents a given image, or the most suitable image given a text query.
+# 
+# <img src="https://maucher.home.hdm-stuttgart.de/Pics/CLIPsemanticimagesearch.png" style="width:800px">
+# 
+# Source: [https://huggingface.co/spaces/vivien/clip)
+
+# ### DALL-E2: Text based image generation
+# <img src="https://maucher.home.hdm-stuttgart.de/Pics/dalle2.png" style="width:800px">
+# 
+# Source: [https://openai.com/dall-e-2/)
+
 # ## AI Use Cases
 # 
-# <img src="https://maucher.home.hdm-stuttgart.de/Pics/aiUseCases.png" style="width:800px">
+# <img src="https://maucher.home.hdm-stuttgart.de/Pics/aiUseCasesIndustry.png" style="width:800px">
 # 
-# Source: [https://aai.frb.io/assets/images/Library_Use-Case-Familie.png)
+# ---
+# 
+# <img src="https://maucher.home.hdm-stuttgart.de/Pics/aiUseCasesEnterprise.png" style="width:800px">
+# 
 
 # ## Problems/Challenges of AI
 # * Controllability
