@@ -113,10 +113,11 @@
 # 
 # ---
 # 
-# <div>
-#     <img src="https://maucher.home.hdm-stuttgart.de/Pics/retinopathie-app.png" width="400" align="left">
-#     <img src="https://maucher.home.hdm-stuttgart.de/Pics/retinopathie-beispiel.png" width="500" align="right">
-# </div>
+# <img src="https://maucher.home.hdm-stuttgart.de/Pics/retinopathie-app.png" width="400" align="center">
+# 
+# ---
+# 
+# <img src="https://maucher.home.hdm-stuttgart.de/Pics/retinopathie-beispiel.png" width="500" align="center">
 # 
 # ---
 
