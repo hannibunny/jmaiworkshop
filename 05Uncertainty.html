@@ -224,6 +224,13 @@
   <a class="reference internal nav-link" href="#motivation">
    Motivation
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#real-world-example-breast-cancer">
+     Real World Example: Breast Cancer
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#estimation-of-probabilities-from-a-sample">
@@ -283,7 +290,17 @@
 </ul>
 <div class="section" id="motivation">
 <h2>Motivation<a class="headerlink" href="#motivation" title="Permalink to this headline">¶</a></h2>
-<img src="https://maucher.home.hdm-stuttgart.de/Pics/cancerSlide.png" style="width:700px" align="center"><p><strong>Motivation:</strong></p>
+<div class="section" id="real-world-example-breast-cancer">
+<h3>Real World Example: Breast Cancer<a class="headerlink" href="#real-world-example-breast-cancer" title="Permalink to this headline">¶</a></h3>
+<p>Among all women of age 40 and older, who undergo a breast cancer screening:</p>
+<ul class="simple">
+<li><p>1% actually have breast cancer</p></li>
+<li><p>among the women, who actually have breast cancer, only for 80% mammography is positive</p></li>
+<li><p>among the women, who actually have no breast cancer, for 9.6% mammography is falsely positive</p></li>
+</ul>
+<p><strong>Question:</strong> A woman got a positive mammography test-result. What is the probability, that she actually has breast cancer.</p>
+<p><strong>Remark:</strong> This question has been asked to many doctors. Most of them answered, that the probability for cancer, if mammography is positive lies between 70 and 80%. The true answer is 7.76%</p>
+<p><strong>Motivation:</strong></p>
 <ul class="simple">
 <li><p>This example demonstrates <font color="red"> how intuition can mislead us</font>.</p></li>
 <li><p>The book <a class="reference external" href="https://en.wikipedia.org/wiki/Thinking,_Fast_and_Slow">D. Kahnemann, Thinking Fast and Slow</a> is full of such examples, where we estimate probabilities and risks just by intuition.</p></li>
@@ -291,6 +308,7 @@
 <li><p>Bayesian Networks help to model such complex problems.</p></li>
 <li><p>They <font color="red">allow global probability calculation, based on local (pairwise) probability estimates.</font></p></li>
 </ul>
+</div>
 </div>
 <div class="section" id="estimation-of-probabilities-from-a-sample">
 <h2>Estimation of Probabilities from a sample<a class="headerlink" href="#estimation-of-probabilities-from-a-sample" title="Permalink to this headline">¶</a></h2>
